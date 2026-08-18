@@ -1,0 +1,66 @@
+{% extends "site/_base.html" %}
+{% block title %}About — ECO-SENTINEL{% endblock %}
+
+{% block content %}
+<section class="site-section">
+    <h2>About the project</h2>
+    <p class="section-lede">
+        ECO-SENTINEL is an AI-assisted vegetation loss detection and alerting system built to compare
+        satellite imagery of a forest region across two time periods, identify where vegetation
+        has genuinely been lost, and route that information to the right people.
+    </p>
+
+    <div class="card-grid-2">
+        <div>
+            <div class="card">
+                <div class="card-header"><h2>The problem</h2></div>
+                <p style="font-size:13.5px;color:var(--color-text-secondary);line-height:1.7;">
+                    Forest loss is often noticed too late — after it's already visible on the ground,
+                    long after it started. Satellite imagery makes change visible far earlier, but manually
+                    comparing images across time, distinguishing real loss from seasonal variation, and
+                    figuring out who's responsible for follow-up is slow and error-prone.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-header"><h2>The approach</h2></div>
+                <p style="font-size:13.5px;color:var(--color-text-secondary);line-height:1.7;">
+                    The system computes NDVI (a standard vegetation-health measure derived from satellite
+                    bands) for two years, finds where it dropped beyond normal fluctuation, converts those
+                    areas into mapped polygons with real hectare sizes and severity levels, and checks each
+                    one against real land-cover data to determine if it's inside protected forest or not.
+                    Inside-forest loss gets a full evidence package and a tamper-evident blockchain record for
+                    the Forest Department. Outside-forest loss goes to a separate awareness view for NGOs.
+                </p>
+            </div>
+        </div>
+        <div>
+            <div class="card">
+                <div class="card-header"><h2>Study area</h2></div>
+                <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;">
+                    Coastal Karnataka, India (Dakshina Kannada / Mangaluru region), using real Sentinel-2
+                    imagery comparing 2023 and 2025.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-header"><h2>Tech stack</h2></div>
+                <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.7;">
+                    Python, Flask, rasterio, GeoPandas, Shapely, SQLite, Leaflet.js, Bootstrap.
+                    Satellite processing via Sentinel-2 Level-2A imagery. Blockchain integrity via a
+                    SHA-256 chained ledger (a real, verifiable hash chain — not a live public network).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header"><h2>What this system does <em style="font-weight:400;font-size:12px;">and doesn't</em> do</h2></div>
+        <p style="font-size:13.5px;color:var(--color-text-secondary);line-height:1.7;">
+            To be precise about scope: detection here is threshold-based (an NDVI drop past a defined
+            cutoff), not a trained machine-learning classifier. The blockchain layer is a real,
+            independently-verifiable SHA-256 hash chain running locally, not a deployment on a public
+            network like Ethereum. There's no timber supply-chain or permit-tracking component — this
+            system's job ends at detecting, classifying, and alerting on vegetation loss.
+        </p>
+    </div>
+</section>
+{% endblock %}

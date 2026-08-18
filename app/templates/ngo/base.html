@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ECO-SENTINEL — NGO Dashboard{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar" style="--color-primary: var(--color-accent-orange);">
+        <a href="{{ url_for('site.landing') }}" class="sidebar-brand">
+            <span class="sidebar-brand-icon" style="background:var(--color-accent-orange);">ES</span>
+            <span class="sidebar-brand-text">
+                <div class="sidebar-brand-title">ECO-SENTINEL</div>
+                <div class="sidebar-brand-sub">NGO Awareness View</div>
+            </span>
+        </a>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section-label">Overview</div>
+            <a href="{{ url_for('ngo.dashboard') }}" class="sidebar-link {{ 'active' if request.endpoint == 'ngo.dashboard' }}">
+                <span class="icon">&#128506;</span> Map</a>
+            <a href="{{ url_for('ngo.alerts_list') }}" class="sidebar-link {{ 'active' if request.endpoint in ['ngo.alerts_list', 'ngo.alert_detail'] }}">
+                <span class="icon">&#9888;</span> Alerts</a>
+            <a href="{{ url_for('ngo.trends') }}" class="sidebar-link {{ 'active' if request.endpoint == 'ngo.trends' }}">
+                <span class="icon">&#128200;</span> Trend Analysis</a>
+            <a href="{{ url_for('ngo.awareness') }}" class="sidebar-link {{ 'active' if request.endpoint == 'ngo.awareness' }}">
+                <span class="icon">&#127793;</span> Awareness &amp; Restoration</a>
+
+            <div class="sidebar-section-label">Site</div>
+            <a href="{{ url_for('site.landing') }}" class="sidebar-link"><span class="icon">&#8962;</span> Home</a>
+            <a href="{{ url_for('site.how_it_works') }}" class="sidebar-link"><span class="icon">&#8505;</span> How It Works</a>
+            <a href="{{ url_for('government.dashboard') }}" class="sidebar-link"><span class="icon">&#8644;</span> Switch to Government View</a>
+        </nav>
+        <div class="sidebar-footer">
+            <span class="sidebar-status-dot" style="background:var(--color-accent-orange);"></span>Live from pipeline data
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <div class="topbar">
+            <div class="topbar-title">
+                <h1>{% block page_title %}Dashboard{% endblock %}</h1>
+                <p>{% block page_subtitle %}Awareness &amp; community action{% endblock %}</p>
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-live-badge">
+                    <span class="sidebar-status-dot" style="background:var(--color-accent-orange);"></span> Real pipeline data
+                </span>
+                <div class="topbar-role">
+                    <div class="topbar-avatar" style="background:var(--color-accent-orange-light);color:var(--color-accent-orange);">NG</div>
+                    <div>
+                        <div style="font-weight:600;">NGO Partner</div>
+                        <div style="font-size:11px;color:var(--color-text-secondary);">Awareness View</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-body">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

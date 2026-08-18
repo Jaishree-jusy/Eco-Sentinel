@@ -1,0 +1,561 @@
+﻿{% extends "site/_base.html" %}
+{% block title %}ECO-SENTINEL — Real-Time Forest Monitoring{% endblock %}
+
+{% block content %}
+
+<style>
+.chart-section{background:#f5f8f5}
+.chart-section .section-heading{max-width:1280px;margin-left:auto;margin-right:auto}
+.chart-section .chart-card{max-width:1280px;margin:0 auto;padding:28px 30px;background:#fff;border:1px solid #dfe8e0;border-radius:18px;box-shadow:0 8px 24px rgba(23,51,31,.055)}
+.chart-row{padding:4px 0 24px}
+.chart-row+.chart-row{padding-top:24px;border-top:1px solid #edf1ed}
+.chart-row-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:10px}
+.chart-row-header span{color:#52695a;font-size:13px;font-weight:600}
+.chart-row-header strong{color:#173722;font-size:22px;font-weight:800}
+.chart-track{width:100%;height:14px;overflow:hidden;border-radius:999px;background:#e8eee9}
+.chart-bar{height:100%;min-width:4px;border-radius:inherit;transition:width .35s ease}
+.chart-bar-protected{background:#3d8150}
+.chart-bar-outside{background:#6f9eb0}
+.chart-summary{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:6px;padding-top:20px;border-top:1px solid #dfe8e0}
+.chart-summary span{color:#718077;font-size:12px;font-weight:700}
+.chart-summary strong{color:#173722;font-size:26px;font-weight:800}
+@media(max-width:700px){
+.chart-section{padding-left:22px;padding-right:22px}
+.chart-section .chart-card{padding:22px 18px}
+.chart-row-header span{font-size:12px}
+.chart-row-header strong{font-size:20px}
+}
+</style>
+
+
+<!-- HERO -->
+<section class="hero landing-hero">
+
+    <div class="landing-hero-content">
+
+        <div class="live-pill">
+            <span class="live-dot"></span>
+            LIVE ENVIRONMENTAL MONITORING
+        </div>
+
+        <h1>
+            See where the forest changed.<br>
+            <span>Know it's real.</span>
+        </h1>
+
+        <p class="landing-lede">
+            ECO-SENTINEL uses real Sentinel-2 satellite imagery and a
+            geospatial analysis pipeline to detect vegetation loss,
+            identify affected forest areas, and generate verifiable
+            evidence for environmental authorities.
+        </p>
+
+        <div class="landing-actions">
+
+            <a href="{{ url_for('site.get_started') }}"
+               class="btn btn-primary landing-btn">
+                Enter Dashboard <span>&rarr;</span>
+            </a>
+
+            <a href="{{ url_for('site.get_started') }}"
+               class="btn btn-outline landing-btn-secondary">
+                Explore Monitoring
+            </a>
+
+        </div>
+
+        <div class="hero-trust">
+            <span>Real Sentinel-2 imagery</span>
+            <span>Google Earth Engine acquisition</span>
+            <span>Evidence-backed alerts</span>
+        </div>
+
+    </div>
+
+
+    <!-- LIVE STATUS PANEL -->
+    <div class="landing-status-panel">
+
+        <div class="status-panel-header">
+
+            <div>
+                <div class="status-panel-label">
+                    MONITORING STATUS
+                </div>
+
+                <div class="status-panel-title">
+                    Karnataka AOI
+                </div>
+            </div>
+
+            <div class="status-online">
+                <span class="live-dot"></span>
+                ONLINE
+            </div>
+
+        </div>
+
+
+        <div class="status-map-placeholder">
+
+            <div class="map-grid"></div>
+            <div class="map-scan-line"></div>
+
+            <div class="map-center">
+                <div class="map-pulse"></div>
+                <div class="map-marker"></div>
+            </div>
+
+            <div class="map-label map-label-top">
+                SENTINEL-2
+            </div>
+
+            <div class="map-label map-label-bottom">
+                FOREST MONITORING AOI
+            </div>
+
+        </div>
+
+
+        <div class="status-details">
+
+            <div class="status-detail">
+                <span>Data source</span>
+                <strong>Sentinel-2</strong>
+            </div>
+
+            <div class="status-detail">
+                <span>Acquisition</span>
+                <strong>Google Earth Engine</strong>
+            </div>
+
+            <div class="status-detail">
+                <span>Monitoring</span>
+                <strong>Region 1</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LIVE PIPELINE RESULTS -->
+<section class="landing-section stats-section">
+
+    <div class="section-heading">
+
+        <div>
+            <div class="eyebrow">
+                LIVE PIPELINE RESULTS
+            </div>
+
+            <h2>
+                What ECO-SENTINEL is detecting
+            </h2>
+
+            <p class="section-lede">
+                Current results generated from the environmental
+                monitoring pipeline and stored project data.
+            </p>
+        </div>
+
+        <div class="data-badge">
+            <span class="live-dot"></span>
+            Real pipeline data
+        </div>
+
+    </div>
+
+
+    {% if stats %}
+
+    <div class="landing-stat-grid">
+
+        <!-- DETECTED -->
+        <div class="landing-stat-card">
+
+            <div class="landing-stat-icon">
+                <span class="stat-symbol">!</span>
+            </div>
+
+            <div class="stat-card-top-label">
+                DETECTED
+            </div>
+
+            <div class="landing-stat-value">
+                {{ stats.total_alerts }}
+            </div>
+
+            <div class="landing-stat-label">
+                Vegetation loss areas detected
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Across monitored regions</span>
+                <span class="stat-arrow">&rarr;</span>
+            </div>
+
+        </div>
+
+
+        <!-- IMPACT -->
+        <div class="landing-stat-card">
+
+            <div class="landing-stat-icon">
+                <span class="stat-symbol stat-symbol-small">
+                    HA
+                </span>
+            </div>
+
+            <div class="stat-card-top-label">
+                IMPACT
+            </div>
+
+            <div class="landing-stat-value">
+                {{ stats.total_area_ha }}
+                <small>ha</small>
+            </div>
+
+            <div class="landing-stat-label">
+                Total area affected
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Detected vegetation change</span>
+                <span class="stat-arrow">&rarr;</span>
+            </div>
+
+        </div>
+
+
+        <!-- PROTECTED -->
+        <div class="landing-stat-card">
+
+            <div class="landing-stat-icon">
+                <span class="stat-symbol stat-symbol-small">
+                    IN
+                </span>
+            </div>
+
+            <div class="stat-card-top-label">
+                PROTECTED
+            </div>
+
+            <div class="landing-stat-value">
+                {{ stats.inside_count }}
+            </div>
+
+            <div class="landing-stat-label">
+                Inside protected forest
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Priority monitoring alerts</span>
+                <span class="stat-arrow">&rarr;</span>
+            </div>
+
+        </div>
+
+
+        <!-- OUTSIDE -->
+        <div class="landing-stat-card">
+
+            <div class="landing-stat-icon">
+                <span class="stat-symbol stat-symbol-tiny">
+                    OUT
+                </span>
+            </div>
+
+            <div class="stat-card-top-label">
+                AWARENESS
+            </div>
+
+            <div class="landing-stat-value">
+                {{ stats.outside_count }}
+            </div>
+
+            <div class="landing-stat-label">
+                Outside forest boundary
+            </div>
+
+            <div class="stat-card-footer">
+                <span>Community awareness data</span>
+                <span class="stat-arrow">&rarr;</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMPARISON PERIOD -->
+    <div class="comparison-panel">
+
+        <div class="comparison-icon">
+            &larr;&rarr;
+        </div>
+
+        <div class="comparison-period">
+
+            <div class="comparison-label">
+                SATELLITE COMPARISON PERIOD
+            </div>
+
+            <div class="comparison-years">
+                {{ stats.base_year }}
+                <span>&rarr;</span>
+                {{ stats.comparison_year }}
+            </div>
+
+        </div>
+
+        <p>
+            Vegetation change is identified by comparing imagery across
+            the project's selected observation periods.
+        </p>
+
+        <div class="data-badge">
+            <span class="live-dot"></span>
+            ANALYSIS ACTIVE
+        </div>
+
+    </div>
+
+
+    {% else %}
+
+    <div class="landing-empty-state">
+        Pipeline data has not been synchronized yet.
+    </div>
+
+    {% endif %}
+
+</section>
+
+
+<!-- ENVIRONMENTAL DISTRIBUTION -->
+{% if stats %}
+
+<section class="landing-section chart-section">
+
+    <div class="section-heading">
+
+        <div>
+            <div class="eyebrow">
+                DETECTION DISTRIBUTION
+            </div>
+
+            <h2>
+                Where vegetation loss is being detected
+            </h2>
+
+            <p class="section-lede">
+                Detected areas are classified according to whether
+                they fall inside or outside the protected forest boundary.
+            </p>
+        </div>
+
+        <div class="data-badge">
+            <span class="live-dot"></span>
+            Real pipeline data
+        </div>
+
+    </div>
+
+
+    <div class="chart-card">
+
+        <!-- PROTECTED -->
+        <div class="chart-row">
+
+            <div class="chart-row-header">
+                <span>Inside protected forest</span>
+                <strong>{{ stats.inside_count }}</strong>
+            </div>
+
+            <div class="chart-track">
+
+                <div
+                    class="chart-bar chart-bar-protected"
+                    style="width: {{ (((stats.inside_count / (stats.inside_count + stats.outside_count)) * 100)|round(1)) if (stats.inside_count + stats.outside_count) else 0 }}%;">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OUTSIDE -->
+        <div class="chart-row">
+
+            <div class="chart-row-header">
+                <span>Outside forest boundary</span>
+                <strong>{{ stats.outside_count }}</strong>
+            </div>
+
+            <div class="chart-track">
+
+                <div
+                    class="chart-bar chart-bar-outside"
+                    style="width: {{ (((stats.outside_count / (stats.inside_count + stats.outside_count)) * 100)|round(1)) if (stats.inside_count + stats.outside_count) else 0 }}%;">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-summary">
+
+            <span>
+                Total classified areas
+            </span>
+
+            <strong>
+                {{ stats.inside_count + stats.outside_count }}
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
+<!-- USER ROLES -->
+<section class="landing-section roles-section">
+
+    <div class="section-heading centered">
+
+        <div>
+
+            <div class="eyebrow">
+                BUILT FOR COLLABORATION
+            </div>
+
+            <h2>
+                One monitoring system. Two perspectives.
+            </h2>
+
+            <p>
+                Government teams investigate alerts while NGOs use
+                environmental intelligence to support awareness and action.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="role-cards">
+
+
+        <!-- GOVERNMENT -->
+        <a href="{{ url_for('site.get_started') }}"
+           class="role-card government-role">
+
+            <div class="role-card-top">
+
+                <span class="role-icon">
+                    GOV
+                </span>
+
+                <span class="role-arrow">
+                    &rarr;
+                </span>
+
+            </div>
+
+            <div class="role-label">
+                GOVERNMENT
+            </div>
+
+            <h3>
+                Forest Department
+            </h3>
+
+            <p>
+                Monitor vegetation-loss alerts, inspect locations,
+                review evidence and analyse regional patterns.
+            </p>
+
+            <span class="role-link">
+                Open Government Dashboard &rarr;
+            </span>
+
+        </a>
+
+
+        <!-- NGO -->
+        <a href="{{ url_for('site.get_started') }}"
+           class="role-card ngo-role">
+
+            <div class="role-card-top">
+
+                <span class="role-icon">
+                    NGO
+                </span>
+
+                <span class="role-arrow">
+                    &rarr;
+                </span>
+
+            </div>
+
+            <div class="role-label">
+                NGO / COMMUNITY
+            </div>
+
+            <h3>
+                Environmental Awareness
+            </h3>
+
+            <p>
+                Explore environmental trends, view alerts and support
+                awareness and community-level environmental action.
+            </p>
+
+            <span class="role-link">
+                Open NGO Dashboard &rarr;
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="landing-cta">
+
+    <div>
+
+        <div class="eyebrow">
+            ECO-SENTINEL
+        </div>
+
+        <h2>
+            Turn satellite observations into environmental decisions.
+        </h2>
+
+        <p>
+            Explore the monitoring dashboard and inspect the real
+            pipeline results behind the system.
+        </p>
+
+    </div>
+
+
+    <a href="{{ url_for('site.get_started') }}"
+       class="btn btn-primary landing-btn">
+        Get Started &rarr;
+    </a>
+
+</section>
+
+{% endblock %}

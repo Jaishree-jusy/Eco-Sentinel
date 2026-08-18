@@ -1,0 +1,18 @@
+{
+  "alert_id": "ALERT-IN-760337c60fee",
+  "date_time": "2026-08-08T03:43:44.131821+00:00",
+  "location": {
+    "latitude": 12.999675,
+    "longitude": 75.001383
+  },
+  "area_lost_ha": 0.5323,
+  "severity_level": "moderate",
+  "region_division": "Udupi",
+  "polygon_id": "LOSS-0c356a621ce4",
+  "evidence_generated_at": "2026-08-08T03:44:13.782573+00:00",
+  "evidence_files": {
+    "map_snapshot": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-760337c60fee\\map_snapshot.png",
+    "geojson": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-760337c60fee\\polygon.geojson",
+    "pdf_report": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-760337c60fee\\report.pdf"
+  }
+}

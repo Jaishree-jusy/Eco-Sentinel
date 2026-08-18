@@ -1,0 +1,12 @@
+{
+  "run_id": "49fbc4f6-e815-4a43-b319-fe95284d698b",
+  "checked_at": "2026-08-15T07:58:50.999713+00:00",
+  "source_boundary_check_run_id": "15bf89d1-b53d-4403-a642-70e1a0e65035",
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "authorization_dataset_configured": false,
+  "output_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\boundary_check\\legality_checked_2023_2025.geojson",
+  "status_counts": {
+    "legal_status_unknown": 149
+  }
+}

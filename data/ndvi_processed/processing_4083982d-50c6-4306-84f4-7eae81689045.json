@@ -1,0 +1,48 @@
+{
+  "run_id": "4083982d-50c6-4306-84f4-7eae81689045",
+  "processed_at": "2026-08-15T07:14:53.457732+00:00",
+  "source_acquisition_run_id": "92b3bbf5-4e6b-437d-9ff2-e9255425bf29",
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "region": {
+    "name": "Region 1 (Karnataka AOI)",
+    "bbox": {
+      "left": 74.74998260145473,
+      "bottom": 12.599949838117233,
+      "right": 75.1000560676761,
+      "top": 13.000059465664068
+    }
+  },
+  "ndvi_base": {
+    "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ndvi_computed_2023.tif",
+    "output_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ndvi_computed_2023.tif",
+    "total_pixels": 17357238,
+    "cloud_masked_pixels": 156,
+    "cloud_masked_pct": 0.0,
+    "valid_pixel_count": 17355519,
+    "ndvi_min": -0.5344168543815613,
+    "ndvi_max": 0.9098971486091614,
+    "ndvi_mean": 0.3488248884677887
+  },
+  "ndvi_comparison": {
+    "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ndvi_computed_2025.tif",
+    "output_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ndvi_computed_2025.tif",
+    "total_pixels": 17357238,
+    "cloud_masked_pixels": 12386574,
+    "cloud_masked_pct": 71.36,
+    "valid_pixel_count": 4970664,
+    "ndvi_min": -1.0,
+    "ndvi_max": 1.0,
+    "ndvi_mean": 0.05911310389637947
+  },
+  "ndvi_diff": {
+    "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ndvi_diff_2023_2025.tif",
+    "output_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ndvi_diff_2023_2025.tif",
+    "total_pixels": 17357238,
+    "invalid_pixel_count": 12386578,
+    "valid_pixel_count": 4970660,
+    "diff_min": -1.85469388961792,
+    "diff_max": 1.2887816429138184,
+    "diff_mean": -0.5981295108795166
+  }
+}

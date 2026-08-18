@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Something went wrong — ECO-SENTINEL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+</head>
+<body>
+<div class="state-panel">
+    <div class="state-icon" style="background:var(--color-severe-bg);color:var(--color-severe);">!</div>
+    <h2>Something went wrong</h2>
+    <p>The server hit an unexpected error processing this page. If this happened while the pipeline is
+       mid-run, it may resolve itself once the current stage finishes. If it persists, check the terminal
+       running the Flask server for the actual error.</p>
+    <a href="/" class="btn btn-primary">Back to home</a>
+</div>
+</body>
+</html>

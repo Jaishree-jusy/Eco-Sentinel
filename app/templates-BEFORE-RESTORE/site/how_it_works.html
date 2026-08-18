@@ -1,0 +1,107 @@
+{% extends "site/_base.html" %}
+{% block title %}How It Works — ECO-SENTINEL{% endblock %}
+
+{% block content %}
+<section class="site-section">
+    <h2>How it works</h2>
+    <p class="section-lede">
+        This is the actual sequence of stages every run goes through — each one reads the previous
+        stage's output and writes its own, so the whole pipeline can be re-run, audited, or debugged
+        stage by stage.
+    </p>
+
+    <div class="card">
+        <div class="step-list">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div class="step-body">
+                    <h3>Data sources</h3>
+                    <p>Raw Sentinel-2 satellite imagery, ESA WorldCover land-cover data, and administrative
+                       boundary data are validated for integrity before anything else runs.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div class="step-body">
+                    <h3>Acquisition &amp; scheduling</h3>
+                    <p>A region and a year-pair to compare are selected, and every required dataset is
+                       re-confirmed valid before processing begins.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div class="step-body">
+                    <h3>Satellite image processing</h3>
+                    <p>Cloudy pixels are masked out, then NDVI (a vegetation-health measure) is computed
+                       for each year from the raw imagery, and the two years are differenced.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div class="step-body">
+                    <h3>Vegetation loss detection</h3>
+                    <p>Pixels where NDVI dropped beyond a defined threshold are flagged as genuine loss —
+                       filtering out normal seasonal fluctuation.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">5</div>
+                <div class="step-body">
+                    <h3>Polygon generation &amp; analysis</h3>
+                    <p>Flagged pixels are grouped into real mapped areas, each with an accurate hectare size
+                       (via proper map projection) and a severity level.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">6</div>
+                <div class="step-body">
+                    <h3>Forest boundary check</h3>
+                    <p>Each area is checked against real land-cover data to classify it as inside protected
+                       forest, outside it, or unclassifiable due to missing coverage.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">7</div>
+                <div class="step-body">
+                    <h3>Alert generation</h3>
+                    <p>Inside-forest and outside-forest loss areas each become a formal alert record, with
+                       slightly different information suited to each audience.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">8</div>
+                <div class="step-body">
+                    <h3>Evidence generation <span class="badge badge-neutral" style="margin-left:6px;">inside-forest only</span></h3>
+                    <p>Each inside-forest alert gets a PDF report, structured metadata, its exact polygon
+                       shape, and a true-color satellite snapshot of the affected area.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">9</div>
+                <div class="step-body">
+                    <h3>Blockchain integrity layer <span class="badge badge-neutral" style="margin-left:6px;">inside-forest only</span></h3>
+                    <p>Every evidence package is fingerprinted and chained, block by block, so any later
+                       change to the evidence becomes detectable on re-verification.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">10</div>
+                <div class="step-body">
+                    <h3>Government &amp; NGO dashboards</h3>
+                    <p>The Forest Department sees the full picture — map, evidence, blockchain status,
+                       analytics. NGOs see a separate awareness-focused view of outside-forest loss, by
+                       design, without evidence or blockchain features.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" style="border-left:4px solid var(--color-info);">
+        <p style="font-size:13px;color:var(--color-text-secondary);margin:0;line-height:1.6;">
+            <strong>Why "outside forest" doesn't get evidence or blockchain:</strong> those alerts are for
+            awareness and community action, not enforcement — the extra verification overhead isn't needed
+            for that purpose, by design.
+        </p>
+    </div>
+</section>
+{% endblock %}

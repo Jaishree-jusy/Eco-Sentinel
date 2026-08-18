@@ -1,0 +1,31 @@
+{% extends "ngo/base.html" %}
+{% block page_title %}Awareness &amp; Restoration Planning{% endblock %}
+{% block page_subtitle %}Prioritizing outreach and site visits{% endblock %}
+{% block content %}
+
+<div class="card" style="border-left:4px solid var(--color-accent-orange);">
+    <p style="margin:0;font-size:13.5px;color:var(--color-text-secondary);">
+        <strong style="color:var(--color-text-primary);">{{ meta.total_alerts }}</strong> vegetation loss events were detected outside forest boundaries
+        between {{ meta.base_year }} and {{ meta.comparison_year }}, affecting a total of
+        <strong style="color:var(--color-text-primary);">{{ meta.total_area_ha }} hectares</strong>. The table below lists the 15 largest individual
+        loss areas &mdash; a starting point for prioritizing site visits or community outreach.
+    </p>
+</div>
+
+<div class="card">
+    <div class="card-header"><h2>Top 15 Largest Affected Areas</h2></div>
+    <table class="table-clean">
+        <thead><tr><th>Alert ID</th><th>Area Lost (ha)</th><th>Area Type</th><th>Location (Lat, Long)</th></tr></thead>
+        <tbody>
+        {% for a in top_by_area %}
+            <tr>
+                <td><a href="{{ url_for('ngo.alert_detail', alert_id=a.alert_id) }}" style="color:var(--color-accent-orange);font-weight:600;">{{ a.alert_id }}</a></td>
+                <td>{{ "%.4f"|format(a.area_lost_ha) }}</td>
+                <td><span class="badge badge-orange">{{ a.region_area_type }}</span></td>
+                <td style="color:var(--color-text-secondary);">{{ a.location.latitude }}, {{ a.location.longitude }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

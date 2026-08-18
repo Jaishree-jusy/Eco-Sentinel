@@ -1,0 +1,64 @@
+{
+  "run_id": "e8551a69-1356-42e1-9be1-d41609866beb",
+  "triggered_at": "2026-08-16T06:52:52.270125+00:00",
+  "trigger_mode": "scheduled",
+  "status": "no_new_data",
+  "forced": false,
+  "region": {
+    "name": "Region 1 (Karnataka AOI)",
+    "bbox": {
+      "left": 74.74998260145473,
+      "bottom": 12.599949838117233,
+      "right": 75.1000560676761,
+      "top": 13.000059465664068
+    }
+  },
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "datasets": {
+    "worldcover_2021": {
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\landcover\\ESA_WorldCover_2021.tif",
+      "type": "raster",
+      "role": "reference_landcover",
+      "sha256": "b55f398dd4eca8e5fe4f262924a0ea75b6fd2fdecb9551d23ac283a33f19fd9b"
+    },
+    "gadm_forest_boundary": {
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\boundaries\\gadm41_IND.gpkg",
+      "type": "gpkg",
+      "role": "reference_boundary",
+      "sha256": "da586d57875ca7326498a87aeb37bb1573b7842f24217b00bc459a878dd1f0ca"
+    },
+    "fire_archive_1": {
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\fire_archive\\fire_archive_SV-C2_778067.csv",
+      "type": "csv",
+      "role": "reference_fire_context",
+      "sha256": "26588bddba209632f00cd1d8caa12ee326ec63bb9787e40cca7d23bd237e5b51"
+    },
+    "fire_archive_2": {
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\fire_archive\\fire_archive_SV-C2_778068.csv",
+      "type": "csv",
+      "role": "reference_fire_context",
+      "sha256": "e6e5441561de1345330f4380fa27137c1420a9876e4e045e7e4e867bd5814cd2"
+    },
+    "forest_sample_2023": {
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\forest_samples\\Forest_Sample_2023.tif",
+      "type": "raster",
+      "role": "raw_source_imagery",
+      "sha256": "e923d2ebefc3938c5eaffb6a8e82fb1b5d1b69573d94bb4fc53cae5a47671ff4"
+    },
+    "forest_sample_2025": {
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\forest_samples\\Forest_Sample_2025_gee_4f3a00a8_aligned_4f3a00a8.tif",
+      "type": "raster",
+      "role": "raw_source_imagery_gee",
+      "sha256": "124e5dd716dd83a7b4dc399f7fd2153980c847d6cd32731d5ad3b102ad315ed0"
+    }
+  },
+  "use_live_gee": true,
+  "gee_metadata": {
+    "gee_image_id": "COPERNICUS/S2_SR_HARMONIZED/20260724T051649_20260724T053409_T43PDP",
+    "acquisition_date": 1784871339864,
+    "cloud_cover_pct": 14.116104,
+    "was_new_download": false,
+    "was_realigned": false
+  }
+}

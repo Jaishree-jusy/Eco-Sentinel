@@ -1,0 +1,387 @@
+{
+  "path": "data\\raw_images\\forest_samples\\Forest_Sample_2023.tif",
+  "file_size_bytes": 734734003,
+  "crs": "EPSG:4326",
+  "width": 3897,
+  "height": 4454,
+  "band_count": 26,
+  "resolution": {
+    "x": 8.983152841195215e-05,
+    "y": 8.983152841195215e-05
+  },
+  "bounds": {
+    "left": 74.74998260145473,
+    "bottom": 12.599949838117233,
+    "right": 75.1000560676761,
+    "top": 13.000059465664068
+  },
+  "dataset_tags": {
+    "AREA_OR_POINT": "Area"
+  },
+  "bands": [
+    {
+      "band_index": 1,
+      "description": "B1",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 171.5,
+        "max": 2122.5,
+        "mean": 474.91916354166665,
+        "std": 160.3439691541682,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 2,
+      "description": "B2",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 221.5,
+        "max": 4474.0,
+        "mean": 530.880915625,
+        "std": 227.49744941256847,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 3,
+      "description": "B3",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 309.5,
+        "max": 4676.0,
+        "mean": 714.81295625,
+        "std": 253.89985525188328,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 4,
+      "description": "B4",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 220.5,
+        "max": 5398.0,
+        "mean": 761.0974833333333,
+        "std": 460.22056771287185,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 5,
+      "description": "B5",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 282.5,
+        "max": 5580.0,
+        "mean": 1154.8159,
+        "std": 396.04009441503945,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 6,
+      "description": "B6",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 183.0,
+        "max": 5461.0,
+        "mean": 2078.45460625,
+        "std": 396.80647274236946,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 7,
+      "description": "B7",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 177.5,
+        "max": 5254.5,
+        "mean": 2455.34915,
+        "std": 514.8483968925408,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 8,
+      "description": "B8",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 144.5,
+        "max": 5644.0,
+        "mean": 2546.13496875,
+        "std": 584.001341213053,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 9,
+      "description": "B8A",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 131.5,
+        "max": 5125.5,
+        "mean": 2654.048684375,
+        "std": 568.9183155945096,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 10,
+      "description": "B9",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 106.0,
+        "max": 4343.0,
+        "mean": 2664.2621489583335,
+        "std": 513.382717075659,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 11,
+      "description": "B11",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 95.5,
+        "max": 7472.0,
+        "mean": 2110.922415625,
+        "std": 661.8753146678022,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 12,
+      "description": "B12",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 66.0,
+        "max": 7769.0,
+        "mean": 1359.4220291666666,
+        "std": 663.1709849722702,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 13,
+      "description": "AOT",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 193.0,
+        "max": 243.0,
+        "mean": 213.684534375,
+        "std": 14.049175638696505,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw digital number / classification label (integer-like, [0, 255])"
+    },
+    {
+      "band_index": 14,
+      "description": "WVP",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 968.0,
+        "max": 2802.5,
+        "mean": 1877.047315625,
+        "std": 138.85215056656776,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw Sentinel-2 surface reflectance (scaled digital numbers)"
+    },
+    {
+      "band_index": 15,
+      "description": "SCL",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 2.0,
+        "max": 7.0,
+        "mean": 4.398215625,
+        "std": 0.5247428371807719,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw digital number / classification label (integer-like, [0, 255])"
+    },
+    {
+      "band_index": 16,
+      "description": "TCI_R",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 23.0,
+        "max": 255.0,
+        "mean": 77.61436875,
+        "std": 45.76581698346511,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw digital number / classification label (integer-like, [0, 255])"
+    },
+    {
+      "band_index": 17,
+      "description": "TCI_G",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 31.0,
+        "max": 255.0,
+        "mean": 73.06272395833334,
+        "std": 25.2629437033616,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw digital number / classification label (integer-like, [0, 255])"
+    },
+    {
+      "band_index": 18,
+      "description": "TCI_B",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 23.0,
+        "max": 255.0,
+        "mean": 54.402001041666665,
+        "std": 22.85023059821641,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible raw digital number / classification label (integer-like, [0, 255])"
+    },
+    {
+      "band_index": 19,
+      "description": "MSK_CLDPRB",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 2.5,
+        "mean": 0.002108333333333333,
+        "std": 0.040385289366577794,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "unclear from value range alone"
+    },
+    {
+      "band_index": 20,
+      "description": "MSK_SNWPRB",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    },
+    {
+      "band_index": 21,
+      "description": "QA10",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    },
+    {
+      "band_index": 22,
+      "description": "QA20",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    },
+    {
+      "band_index": 23,
+      "description": "QA60",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    },
+    {
+      "band_index": 24,
+      "description": "MSK_CLASSI_OPAQUE",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    },
+    {
+      "band_index": 25,
+      "description": "MSK_CLASSI_CIRRUS",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    },
+    {
+      "band_index": 26,
+      "description": "MSK_CLASSI_SNOW_ICE",
+      "dtype": "float64",
+      "tags": {},
+      "approx_stats": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "sampled_pixels": 480000
+      },
+      "heuristic_guess": "possible vegetation index (e.g. NDVI-like, range ~[-1, 1])"
+    }
+  ]
+}

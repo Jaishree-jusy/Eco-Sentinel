@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ECO-SENTINEL{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <a href="{{ url_for('site.landing') }}" style="display:flex;align-items:center;gap:10px;">
+            <span class="sidebar-brand-icon" style="background:var(--color-primary);">ES</span>
+            <span style="font-weight:800;font-size:16px;">ECO-SENTINEL</span>
+        </a>
+        <nav class="site-nav">
+           <nav class="site-nav">
+    <a href="{{ url_for('site.landing') }}">Home</a>
+    <a href="{{ url_for('site.get_started') }}" class="btn btn-primary btn-sm">Get Started</a>
+</nav>  
+  </header>
+
+    {% block content %}{% endblock %}
+
+    <footer class="site-footer">
+        ECO-SENTINEL &mdash; AI-Based Vegetation Loss Detection &amp; Classification with Alerting System.
+        Built on real Sentinel-2 satellite imagery, processed end-to-end through 10 pipeline modules.
+    </footer>
+</body>
+</html>

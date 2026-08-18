@@ -1,0 +1,58 @@
+{% extends "government/base.html" %}
+{% block page_title %}Analytics{% endblock %}
+{% block page_subtitle %}Severity and regional breakdown{% endblock %}
+{% block head %}<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+
+<div class="card-grid-2">
+    <div class="card">
+        <div class="card-header"><h2>Severity Breakdown</h2></div>
+        <div style="display:flex;align-items:center;gap:24px;">
+            <div style="width:160px;height:160px;flex-shrink:0;"><canvas id="severityChart"></canvas></div>
+            <div style="flex:1;">
+                <table class="table-clean">
+                    <tr><td><span class="badge badge-mild">Mild</span></td><td style="text-align:right;font-weight:600;">{{ severity_counts.get('mild', 0) }}</td></tr>
+                    <tr><td><span class="badge badge-moderate">Moderate</span></td><td style="text-align:right;font-weight:600;">{{ severity_counts.get('moderate', 0) }}</td></tr>
+                    <tr><td><span class="badge badge-severe">Severe</span></td><td style="text-align:right;font-weight:600;">{{ severity_counts.get('severe', 0) }}</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header"><h2>Top 10 Regions by Alert Count</h2></div>
+        <table class="table-clean">
+            <thead><tr><th>Region</th><th style="text-align:right;">Alert Count</th></tr></thead>
+            <tbody>
+            {% for region, count in top_regions %}
+                <tr><td>{{ region }}</td><td style="text-align:right;font-weight:600;">{{ count }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header"><h2>Summary</h2></div>
+    <table class="table-clean">
+        <tr><td style="color:var(--color-text-secondary);">Comparison period</td><td>{{ meta.base_year }} &rarr; {{ meta.comparison_year }}</td></tr>
+        <tr><td style="color:var(--color-text-secondary);">Total inside-forest alerts</td><td>{{ meta.total_alerts }}</td></tr>
+        <tr><td style="color:var(--color-text-secondary);">Total area lost</td><td>{{ meta.total_area_ha }} ha</td></tr>
+        <tr><td style="color:var(--color-text-secondary);">Evidence packages generated</td><td>{{ meta.evidence_generated_count }} / {{ meta.total_alerts }}</td></tr>
+    </table>
+</div>
+
+<script>
+new Chart(document.getElementById('severityChart'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Mild', 'Moderate', 'Severe'],
+        datasets: [{
+            data: [{{ severity_counts.get('mild', 0) }}, {{ severity_counts.get('moderate', 0) }}, {{ severity_counts.get('severe', 0) }}],
+            backgroundColor: ['#16a34a', '#f59e0b', '#dc2626'],
+            borderWidth: 0,
+        }]
+    },
+    options: { plugins: { legend: { display: false } }, cutout: '68%' }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,888 @@
+{% extends "government/base.html" %}
+
+{% block page_title %}Forest Intelligence{% endblock %}
+
+{% block page_subtitle %}
+Comparison period {{ meta.base_year }} &rarr; {{ meta.comparison_year }}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+    .live-monitor-card {
+        margin-bottom: 18px;
+        border: 1px solid var(--color-primary-light);
+        background: linear-gradient(
+            135deg,
+            var(--color-primary-light),
+            #ffffff
+        );
+    }
+
+    .live-monitor-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+    }
+
+    .live-monitor-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .live-monitor-title h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .live-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 6px 11px;
+        border-radius: 999px;
+        background: #dcfce7;
+        color: #166534;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .03em;
+    }
+
+    .live-status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #16a34a;
+    }
+
+    .live-status.checking {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    .live-status.checking .live-status-dot {
+        background: #f59e0b;
+    }
+
+    .live-status.error {
+        background: #fee2e2;
+        color: #991b1b;
+    }
+
+    .live-status.error .live-status-dot {
+        background: #dc2626;
+    }
+
+    .live-monitor-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .live-monitor-item {
+        padding: 13px 15px;
+        border-radius: 9px;
+        background: rgba(255,255,255,.8);
+        border: 1px solid rgba(0,0,0,.06);
+    }
+
+    .live-monitor-label {
+        font-size: 11px;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        margin-bottom: 5px;
+    }
+
+    .live-monitor-value {
+        font-size: 14px;
+        font-weight: 650;
+        color: #111827;
+        word-break: break-word;
+    }
+
+    .live-monitor-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-top: 16px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(0,0,0,.08);
+    }
+
+    .live-monitor-message {
+        font-size: 13px;
+        color: #6b7280;
+    }
+
+    .fetch-live-btn {
+        border: 0;
+        border-radius: 8px;
+        padding: 10px 17px;
+        background: var(--color-primary);
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        transition: opacity .15s ease, transform .15s ease;
+    }
+
+    .fetch-live-btn:hover {
+        opacity: .9;
+        transform: translateY(-1px);
+    }
+
+    .fetch-live-btn:disabled {
+        opacity: .55;
+        cursor: wait;
+        transform: none;
+    }
+
+    @media (max-width: 900px) {
+        .live-monitor-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .live-monitor-header,
+        .live-monitor-actions {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .live-monitor-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<!-- =========================================================
+     LIVE GEE MONITORING
+     ========================================================= -->
+
+<div class="card live-monitor-card">
+
+    <div class="live-monitor-header">
+
+        <div class="live-monitor-title">
+            <span style="font-size:22px;">&#127757;</span>
+
+            <div>
+                <h3>Live GEE Monitoring</h3>
+                <div style="font-size:12px;color:#6b7280;margin-top:3px;">
+                    Real Sentinel-2 acquisition monitoring
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="live-status"
+            id="liveStatus"
+        >
+            <span class="live-status-dot"></span>
+            <span id="liveStatusText">
+                LOADING
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="live-monitor-grid">
+
+        <div class="live-monitor-item">
+            <div class="live-monitor-label">
+                Latest Sentinel-2
+            </div>
+
+            <div
+                class="live-monitor-value"
+                id="liveImageDate"
+            >
+                Loading...
+            </div>
+        </div>
+
+
+        <div class="live-monitor-item">
+            <div class="live-monitor-label">
+                Cloud Cover
+            </div>
+
+            <div
+                class="live-monitor-value"
+                id="liveCloudCover"
+            >
+                Loading...
+            </div>
+        </div>
+
+
+        <div class="live-monitor-item">
+            <div class="live-monitor-label">
+                Search Window
+            </div>
+
+            <div
+                class="live-monitor-value"
+                id="liveWindow"
+            >
+                Loading...
+            </div>
+        </div>
+
+
+        <div class="live-monitor-item">
+            <div class="live-monitor-label">
+                Latest GEE Image
+            </div>
+
+            <div
+                class="live-monitor-value"
+                id="liveImageId"
+            >
+                Loading...
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="live-monitor-actions">
+
+        <div
+            class="live-monitor-message"
+            id="liveMessage"
+        >
+            Checking live-monitoring status...
+        </div>
+
+        <button
+            type="button"
+            class="fetch-live-btn"
+            id="fetchLiveButton"
+        >
+            &#8635; FETCH NEW LIVE DATA
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     EXISTING KPI CARDS
+     ========================================================= -->
+
+<div class="stat-grid">
+
+    <div class="stat-card">
+
+        <div
+            class="stat-card-icon"
+            style="background:var(--color-info-bg);color:var(--color-info);"
+        >
+            &#128197;
+        </div>
+
+        <div class="stat-card-label">
+            Comparison Period
+        </div>
+
+        <div
+            class="stat-card-value"
+            style="font-size:19px;"
+        >
+            {{ meta.base_year }}
+            &rarr;
+            {{ meta.comparison_year }}
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-card-icon"
+            style="background:var(--color-severe-bg);color:var(--color-severe);"
+        >
+            &#9888;
+        </div>
+
+        <div class="stat-card-label">
+            Inside-Forest Alerts
+        </div>
+
+        <div class="stat-card-value">
+            {{ meta.total_alerts }}
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-card-icon"
+            style="background:var(--color-moderate-bg);color:var(--color-moderate);"
+        >
+            &#127795;
+        </div>
+
+        <div class="stat-card-label">
+            Total Area Lost
+        </div>
+
+        <div class="stat-card-value">
+            {{ meta.total_area_ha }}
+
+            <span style="font-size:14px;font-weight:500;">
+                ha
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div
+            class="stat-card-icon"
+            style="background:var(--color-primary-light);color:var(--color-primary);"
+        >
+            &#128196;
+        </div>
+
+        <div class="stat-card-label">
+            Evidence Generated
+        </div>
+
+        <div class="stat-card-value">
+            {{ meta.evidence_generated_count }}
+            /
+            {{ meta.total_alerts }}
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     EXISTING ALERT MAP
+     ========================================================= -->
+
+<div class="card" style="padding:8px;">
+
+    <div class="map-container">
+
+        <div
+            id="map"
+            style="height:100%;"
+        ></div>
+
+        <div
+            class="map-loading"
+            id="mapLoading"
+        >
+            <div class="spinner"></div>
+
+            <span>
+                Loading
+                {{ meta.total_alerts }}
+                alerts onto the map&hellip;
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+<script>
+
+/* ============================================================
+   LIVE MONITORING
+   ============================================================ */
+
+const liveStatus = document.getElementById(
+    'liveStatus'
+);
+
+const liveStatusText = document.getElementById(
+    'liveStatusText'
+);
+
+const liveImageDate = document.getElementById(
+    'liveImageDate'
+);
+
+const liveCloudCover = document.getElementById(
+    'liveCloudCover'
+);
+
+const liveWindow = document.getElementById(
+    'liveWindow'
+);
+
+const liveImageId = document.getElementById(
+    'liveImageId'
+);
+
+const liveMessage = document.getElementById(
+    'liveMessage'
+);
+
+const fetchLiveButton = document.getElementById(
+    'fetchLiveButton'
+);
+
+
+function setLiveStatus(
+    text,
+    state = 'active'
+) {
+    liveStatus.className = 'live-status';
+
+    if (state === 'checking') {
+        liveStatus.classList.add('checking');
+    }
+
+    if (state === 'error') {
+        liveStatus.classList.add('error');
+    }
+
+    liveStatusText.textContent = text;
+}
+
+
+function formatAcquisitionDate(value) {
+
+    if (!value) {
+        return 'No acquisition yet';
+    }
+
+    /*
+     * GEE system:time_start is normally milliseconds
+     * since Unix epoch.
+     */
+
+    let date;
+
+    if (
+        typeof value === 'number' ||
+        /^\d+$/.test(String(value))
+    ) {
+        date = new Date(
+            Number(value)
+        );
+    } else {
+        date = new Date(value);
+    }
+
+    if (Number.isNaN(date.getTime())) {
+        return String(value);
+    }
+
+    return date.toLocaleDateString(
+        undefined,
+        {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+        }
+    );
+}
+
+
+function shortImageId(value) {
+
+    if (!value) {
+        return 'No image';
+    }
+
+    const text = String(value);
+
+    if (text.length <= 30) {
+        return text;
+    }
+
+    return text.slice(0, 14)
+        + '...'
+        + text.slice(-15);
+}
+
+
+function updateLiveStatus() {
+
+    fetch(
+        "{{ url_for('government.live_monitoring_status') }}"
+    )
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error(
+                    'Status request failed'
+                );
+            }
+
+            return response.json();
+        })
+
+        .then(data => {
+
+            const monitoring =
+                data.monitoring || {};
+
+            const latest =
+                data.latest_acquisition || {};
+
+            setLiveStatus(
+                'LIVE MONITORING'
+            );
+
+            liveWindow.textContent =
+                'Last '
+                + (
+                    monitoring.search_window_days
+                    ?? 30
+                )
+                + ' days';
+
+            liveImageDate.textContent =
+                formatAcquisitionDate(
+                    latest.acquisition_date
+                );
+
+            if (
+                latest.cloud_cover_pct !== null &&
+                latest.cloud_cover_pct !== undefined
+            ) {
+                liveCloudCover.textContent =
+                    Number(
+                        latest.cloud_cover_pct
+                    ).toFixed(1)
+                    + '%';
+            } else {
+                liveCloudCover.textContent =
+                    '—';
+            }
+
+            liveImageId.textContent =
+                shortImageId(
+                    latest.gee_image_id
+                );
+
+            if (latest.status === 'success') {
+
+                liveMessage.textContent =
+                    'Latest live acquisition completed successfully.';
+
+            } else if (
+                latest.status === 'no_new_data'
+            ) {
+
+                liveMessage.textContent =
+                    'No newer suitable Sentinel-2 image was available.';
+
+            } else {
+
+                liveMessage.textContent =
+                    'Live GEE monitoring is configured.';
+            }
+        })
+
+        .catch(error => {
+
+            console.error(
+                'Live monitoring status:',
+                error
+            );
+
+            setLiveStatus(
+                'STATUS UNAVAILABLE',
+                'error'
+            );
+
+            liveMessage.textContent =
+                'Could not load live-monitoring status.';
+        });
+}
+
+
+function fetchLiveData() {
+
+    fetchLiveButton.disabled = true;
+
+    fetchLiveButton.textContent =
+        'Checking GEE...';
+
+    setLiveStatus(
+        'CHECKING GEE',
+        'checking'
+    );
+
+    liveMessage.textContent =
+        'Searching for the newest suitable Sentinel-2 image...';
+
+
+    fetch(
+        "{{ url_for('government.fetch_live_data') }}",
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+    )
+
+        .then(response =>
+            response.json().then(data => ({
+                ok: response.ok,
+                data: data
+            }))
+        )
+
+        .then(result => {
+
+            if (!result.ok || !result.data.success) {
+                throw new Error(
+                    result.data.message ||
+                    'Live acquisition failed.'
+                );
+            }
+
+            const data =
+                result.data;
+
+            if (
+                data.status === 'success'
+            ) {
+
+                liveMessage.textContent =
+                    'New live imagery acquired successfully.';
+
+            } else {
+
+                liveMessage.textContent =
+                    data.message ||
+                    'No new imagery available.';
+            }
+
+            /*
+             * Refresh the displayed metadata from
+             * the real acquisition manifest.
+             */
+
+            updateLiveStatus();
+        })
+
+        .catch(error => {
+
+            console.error(
+                'Live acquisition:',
+                error
+            );
+
+            setLiveStatus(
+                'ACQUISITION ERROR',
+                'error'
+            );
+
+            liveMessage.textContent =
+                error.message ||
+                'Live acquisition failed.';
+        })
+
+        .finally(() => {
+
+            fetchLiveButton.disabled = false;
+
+            fetchLiveButton.textContent =
+                '↻ FETCH NEW LIVE DATA';
+        });
+}
+
+
+fetchLiveButton.addEventListener(
+    'click',
+    fetchLiveData
+);
+
+
+/*
+ * Load real monitoring information when
+ * the dashboard opens.
+ */
+
+updateLiveStatus();
+
+
+/* ============================================================
+   EXISTING ALERT MAP
+   ============================================================ */
+
+const map = L.map(
+    'map',
+    {
+        renderer: L.canvas()
+    }
+).setView(
+    [12.8, 74.9],
+    11
+);
+
+
+L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+        attribution:
+            '&copy; OpenStreetMap contributors'
+    }
+).addTo(map);
+
+
+const severityColors = {
+    mild: '#16a34a',
+    moderate: '#f59e0b',
+    severe: '#dc2626'
+};
+
+
+const mapLoading =
+    document.getElementById(
+        'mapLoading'
+    );
+
+
+fetch(
+    "{{ url_for('government.alerts_geojson') }}"
+)
+
+    .then(res => res.json())
+
+    .then(data => {
+
+        /*
+         * True polygon shapes.
+         */
+
+        L.geoJSON(
+            data,
+            {
+                style: feature => ({
+                    color:
+                        severityColors[
+                            feature.properties
+                                .severity_level
+                        ]
+                        || '#7f8c8d',
+
+                    weight: 1.5,
+
+                    fillOpacity: 0.5,
+                }),
+            }
+        ).addTo(map);
+
+
+        /*
+         * Fixed-size markers ensure every alert
+         * remains visible at region-wide zoom.
+         */
+
+        data.features.forEach(
+            feature => {
+
+                const p =
+                    feature.properties;
+
+                const marker =
+                    L.circleMarker(
+                        [
+                            p.latitude,
+                            p.longitude
+                        ],
+                        {
+                            radius: 6,
+
+                            color: '#222',
+
+                            weight: 1,
+
+                            fillColor:
+                                severityColors[
+                                    p.severity_level
+                                ]
+                                || '#7f8c8d',
+
+                            fillOpacity: 0.85,
+                        }
+                    ).addTo(map);
+
+
+                const evidenceNote =
+                    p.evidence_available
+
+                    ? '<a href="/government/alerts/'
+                        + p.alert_id
+                        + '">View Evidence</a>'
+
+                    : '<span style="color:#9ca3af;">'
+                        + 'Evidence not yet generated'
+                        + '</span>';
+
+
+                marker.bindPopup(
+                    '<b>'
+                    + p.alert_id
+                    + '</b><br>'
+
+                    + 'Severity: '
+                    + p.severity_level
+                    + '<br>'
+
+                    + 'Area: '
+                    + p.area_lost_ha
+                    + ' ha<br>'
+
+                    + 'Region: '
+                    + p.region_division
+                    + '<br>'
+
+                    + evidenceNote
+                );
+            }
+        );
+
+
+        mapLoading.hidden = true;
+    })
+
+    .catch(() => {
+
+        mapLoading.innerHTML =
+            '<span style="color:var(--color-severe);">'
+            + 'Could not load alert data. '
+            + 'Check the server is running and '
+            + 'the database has been synced.'
+            + '</span>';
+    });
+
+</script>
+
+{% endblock %}

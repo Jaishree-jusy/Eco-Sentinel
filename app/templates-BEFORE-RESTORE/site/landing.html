@@ -1,0 +1,70 @@
+{% extends "site/_base.html" %}
+{% block title %}ECO-SENTINEL — Vegetation Loss Detection & Alerting{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>See where the forest changed.<br>Know it's real.</h1>
+    <p>ECO-SENTINEL compares real Sentinel-2 satellite imagery across two time periods to detect
+       vegetation loss, classify it as inside or outside protected forest, and generate
+       blockchain-verified evidence for the Forest Department — plus an awareness view for NGOs.</p>
+    <a href="{{ url_for('site.get_started') }}" class="btn btn-primary" style="padding:12px 26px;font-size:14.5px;">Enter Dashboard &rarr;</a>
+    <a href="{{ url_for('site.how_it_works') }}" class="btn btn-outline" style="padding:12px 26px;font-size:14.5px;background:transparent;border-color:#2c4d3c;color:#cfe4d8;">See How It Works</a>
+
+    {% if stats %}
+    <div class="hero-stats">
+        <div><div class="hero-stat-value">{{ stats.total_alerts }}</div><div class="hero-stat-label">Vegetation loss areas detected</div></div>
+        <div><div class="hero-stat-value">{{ stats.total_area_ha }} ha</div><div class="hero-stat-label">Total area affected</div></div>
+        <div><div class="hero-stat-value">{{ stats.inside_count }}</div><div class="hero-stat-label">Inside protected forest</div></div>
+        <div><div class="hero-stat-value">{{ stats.outside_count }}</div><div class="hero-stat-label">Outside forest boundary</div></div>
+        <div><div class="hero-stat-value">{{ stats.base_year }}&rarr;{{ stats.comparison_year }}</div><div class="hero-stat-label">Comparison period</div></div>
+    </div>
+    {% else %}
+    <div class="hero-stats">
+        <div style="max-width:420px;"><p style="color:#8fab9c;font-size:13px;margin:0;">
+            No pipeline data synced yet. Run the analysis pipeline and
+            <code style="background:#1c3a29;padding:2px 6px;border-radius:4px;">python -m app.database.cli sync</code>
+            to see live figures here.
+        </p></div>
+    </div>
+    {% endif %}
+</section>
+
+<section class="site-section">
+    <h2>Built on a real, verifiable pipeline</h2>
+    <p class="section-lede">Every number on this site comes from an actual 10-stage processing pipeline run
+        against real satellite data — not a simulation or a mockup.</p>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🛰️</div>
+            <h3>Real satellite imagery</h3>
+            <p>Raw Sentinel-2 Level-2A imagery, cloud-masked and processed to compute NDVI vegetation health for both time periods.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📐</div>
+            <h3>Precise change detection</h3>
+            <p>NDVI difference thresholding isolates genuine vegetation loss from normal seasonal variation, then maps it to real hectare areas.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌲</div>
+            <h3>Forest boundary aware</h3>
+            <p>Every loss area is checked against real land-cover data to determine if it's inside protected forest or outside it.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>Tamper-evident records</h3>
+            <p>Forest-loss evidence is hashed and chained block-by-block. Any later change to the evidence is detectable.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏛️</div>
+            <h3>Government dashboard</h3>
+            <p>Interactive map, full evidence packages, and blockchain verification for the Forest Department.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>NGO awareness view</h3>
+            <p>A separate, simpler view of outside-forest loss for community action and restoration planning.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

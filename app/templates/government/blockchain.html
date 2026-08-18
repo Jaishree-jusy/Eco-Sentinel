@@ -1,0 +1,53 @@
+{% extends "government/base.html" %}
+{% block page_title %}Blockchain Verification{% endblock %}
+{% block page_subtitle %}Tamper-evident integrity ledger (SHA-256 chained, verified live from disk){% endblock %}
+{% block content %}
+
+{% if not chain_exists %}
+<div class="state-panel" style="margin-top:40px;">
+    <div class="state-icon">&#128274;</div>
+    <h2>No blockchain ledger found</h2>
+    <p>Run <code>python -m app.blockchain.cli record</code> first.</p>
+</div>
+{% else %}
+
+<div class="card" style="border-left:4px solid {{ 'var(--color-primary)' if valid else 'var(--color-severe)' }};">
+    {% if valid %}
+        <div style="display:flex;align-items:center;gap:10px;">
+            <span class="badge badge-mild" style="font-size:13px;padding:6px 14px;">Verified</span>
+            <span>Chain integrity verified. No tampering detected across {{ chain|length }} block(s).</span>
+        </div>
+    {% else %}
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+            <span class="badge badge-severe" style="font-size:13px;padding:6px 14px;">Tampering Detected</span>
+            <span>{{ issues|length }} issue(s) found:</span>
+        </div>
+        <ul style="font-size:13px;color:var(--color-text-secondary);margin:0;">
+        {% for issue in issues %}
+            <li>Block {{ issue.block_index }} ({{ issue.alert_id }}): {{ issue.issue }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+
+<div class="card">
+    <div class="card-header"><h2>Block Chain</h2><span class="card-subtitle">{{ chain|length }} blocks</span></div>
+    <table class="table-clean">
+        <thead>
+            <tr><th>#</th><th>Alert ID</th><th>Transaction Hash</th><th>Previous Hash</th><th>Timestamp</th></tr>
+        </thead>
+        <tbody>
+            {% for block in chain %}
+            <tr>
+                <td>{{ block.block_index }}</td>
+                <td><a href="{{ url_for('government.alert_detail', alert_id=block.alert_id) }}" style="color:var(--color-primary);font-weight:600;">{{ block.alert_id }}</a></td>
+                <td style="word-break:break-all;font-size:11px;font-family:monospace;">{{ block.block_hash }}</td>
+                <td style="word-break:break-all;font-size:11px;font-family:monospace;">{{ block.previous_block_hash }}</td>
+                <td style="color:var(--color-text-secondary);">{{ block.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock %}

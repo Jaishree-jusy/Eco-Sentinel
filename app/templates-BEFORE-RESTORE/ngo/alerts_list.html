@@ -1,0 +1,34 @@
+{% extends "ngo/base.html" %}
+{% block page_title %}Outside-Forest Alerts{% endblock %}
+{% block page_subtitle %}{{ meta.total_alerts }} total alerts{% endblock %}
+{% block content %}
+
+<div class="card">
+    <table class="table-clean">
+        <thead>
+            <tr>
+                <th>Alert ID</th>
+                <th>Date / Time</th>
+                <th>Area Lost (ha)</th>
+                <th>Area Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in alerts %}
+            <tr>
+                <td><a href="{{ url_for('ngo.alert_detail', alert_id=a.alert_id) }}" style="color:var(--color-accent-orange);font-weight:600;">{{ a.alert_id }}</a></td>
+                <td style="color:var(--color-text-secondary);">{{ a.date_time }}</td>
+                <td>{{ "%.4f"|format(a.area_lost_ha) }}</td>
+                <td><span class="badge badge-orange">{{ a.region_area_type }}</span></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="pagination">
+    {% if page > 1 %}<a href="?page={{ page - 1 }}">&larr; Previous</a>{% endif %}
+    <span class="current">Page {{ page }} of {{ total_pages }}</span>
+    {% if page < total_pages %}<a href="?page={{ page + 1 }}">Next &rarr;</a>{% endif %}
+</div>
+{% endblock %}

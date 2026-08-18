@@ -1,0 +1,16 @@
+{
+  "run_id": "a5e47f14-86bc-450a-8e72-a2756144192b",
+  "processed_at": "2026-08-15T07:16:22.659925+00:00",
+  "source_acquisition_run_id": "92b3bbf5-4e6b-437d-9ff2-e9255425bf29",
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "anomaly_score": {
+    "output_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\ndvi_processed\\ai_anomaly_score_2023_2025.tif",
+    "total_valid_pixels": 4970660,
+    "anomalous_pixel_count": 4351531,
+    "anomaly_score_mean": 0.5672085600897315,
+    "anomaly_score_max": 0.9999999986253106,
+    "training_sample_size": 74979,
+    "contamination_param": 0.05
+  }
+}

@@ -1,0 +1,45 @@
+{% extends "ngo/base.html" %}
+{% block page_title %}{{ alert.alert_id }}{% endblock %}
+{% block page_subtitle %}Alert detail{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+{% endblock %}
+{% block content %}
+
+<div class="card-grid-2">
+    <div class="card">
+        <div class="card-header"><h2>Alert Details</h2></div>
+        <table class="table-clean">
+            <tr><td style="color:var(--color-text-secondary);">Alert ID</td><td style="font-weight:600;">{{ alert.alert_id }}</td></tr>
+            <tr><td style="color:var(--color-text-secondary);">Date &amp; Time</td><td>{{ alert.date_time }}</td></tr>
+            <tr><td style="color:var(--color-text-secondary);">Latitude</td><td>{{ alert.location.latitude }}</td></tr>
+            <tr><td style="color:var(--color-text-secondary);">Longitude</td><td>{{ alert.location.longitude }}</td></tr>
+            <tr><td style="color:var(--color-text-secondary);">Area Lost</td><td>{{ "%.4f"|format(alert.area_lost_ha) }} ha</td></tr>
+            <tr><td style="color:var(--color-text-secondary);">Region / Area Type</td><td><span class="badge badge-orange">{{ alert.region_area_type }}</span></td></tr>
+            <tr><td style="color:var(--color-text-secondary);">Polygon ID</td><td style="font-size:12px;">{{ alert.polygon_id }}</td></tr>
+        </table>
+        <div class="card" style="background:var(--color-neutral-bg);box-shadow:none;margin:16px 0 0;padding:14px;">
+            <p style="margin:0;font-size:12.5px;color:var(--color-text-secondary);">
+                No evidence package or blockchain record exists for outside-forest alerts, per project
+                design &mdash; this branch is for awareness, not enforcement.
+            </p>
+        </div>
+    </div>
+    <div class="card" style="padding:8px;">
+        <div id="detail-map" style="height:100%;min-height:350px;border-radius:10px;"></div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const geometry = {{ alert.geometry | tojson }};
+const map = L.map('detail-map').setView([{{ alert.location.latitude }}, {{ alert.location.longitude }}], 16);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+if (geometry) {
+    const layer = L.geoJSON(geometry, { style: { color: '#ea580c', weight: 2 } }).addTo(map);
+    map.fitBounds(layer.getBounds(), { maxZoom: 18 });
+}
+</script>
+{% endblock %}

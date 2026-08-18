@@ -1,0 +1,14 @@
+{% extends "ngo/base.html" %}
+{% block page_title %}No Data Yet{% endblock %}
+{% block content %}
+<div class="state-panel" style="margin-top:40px;">
+    <div class="state-icon">&#128203;</div>
+    <h2>No data available</h2>
+    <p>The pipeline hasn't been run and synced to the database yet. Run these, ending with:</p>
+    <div class="card" style="text-align:left;font-family:monospace;font-size:12.5px;line-height:1.9;background:#2c1608;color:#f5d9c3;padding:18px;">
+        python -m app.boundary_check.cli check<br>
+        python -m app.alerts.cli generate<br>
+        python -m app.database.cli sync
+    </div>
+</div>
+{% endblock %}

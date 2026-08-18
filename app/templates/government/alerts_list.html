@@ -1,0 +1,44 @@
+{% extends "government/base.html" %}
+{% block page_title %}Inside-Forest Alerts{% endblock %}
+{% block page_subtitle %}{{ meta.total_alerts }} total alerts{% endblock %}
+{% block content %}
+
+<div class="card">
+    <table class="table-clean">
+        <thead>
+            <tr>
+                <th>Alert ID</th>
+                <th>Date / Time</th>
+                <th>Area Lost (ha)</th>
+                <th>Severity</th>
+                <th>Region</th>
+                <th>Evidence</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in alerts %}
+            <tr>
+                <td><a href="{{ url_for('government.alert_detail', alert_id=a.alert_id) }}" style="color:var(--color-primary);font-weight:600;">{{ a.alert_id }}</a></td>
+                <td style="color:var(--color-text-secondary);">{{ a.date_time }}</td>
+                <td>{{ "%.4f"|format(a.area_lost_ha) }}</td>
+                <td><span class="badge badge-{{ a.severity_level }}">{{ a.severity_level }}</span></td>
+                <td>{{ a.region_division }}</td>
+                <td>
+                    {% if a.evidence_available %}
+                        <span class="badge badge-mild">Available</span>
+                    {% else %}
+                        <span class="badge badge-neutral">Pending</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="pagination">
+    {% if page > 1 %}<a href="?page={{ page - 1 }}">&larr; Previous</a>{% endif %}
+    <span class="current">Page {{ page }} of {{ total_pages }}</span>
+    {% if page < total_pages %}<a href="?page={{ page + 1 }}">Next &rarr;</a>{% endif %}
+</div>
+{% endblock %}

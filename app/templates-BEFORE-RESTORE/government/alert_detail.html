@@ -1,0 +1,57 @@
+{% extends "government/base.html" %}
+{% block page_title %}{{ alert.alert_id }}{% endblock %}
+{% block page_subtitle %}Alert detail{% endblock %}
+{% block content %}
+
+<div class="card-grid-2">
+    <div>
+        <div class="card">
+            <div class="card-header"><h2>Alert Details</h2></div>
+            <table class="table-clean">
+                <tr><td style="color:var(--color-text-secondary);">Alert ID</td><td style="font-weight:600;">{{ alert.alert_id }}</td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Date &amp; Time</td><td>{{ alert.date_time }}</td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Latitude</td><td>{{ alert.location.latitude }}</td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Longitude</td><td>{{ alert.location.longitude }}</td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Area Lost</td><td>{{ "%.4f"|format(alert.area_lost_ha) }} ha</td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Severity</td><td><span class="badge badge-{{ alert.severity_level }}">{{ alert.severity_level }}</span></td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Region / Division</td><td>{{ alert.region_division }}</td></tr>
+                <tr><td style="color:var(--color-text-secondary);">Polygon ID</td><td style="font-size:12px;">{{ alert.polygon_id }}</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h2>Blockchain Verification</h2></div>
+            {% if alert.blockchain_available %}
+                <p class="badge badge-mild" style="margin-bottom:14px;">Recorded on the integrity ledger</p>
+                <table class="table-clean">
+                    <tr><td style="color:var(--color-text-secondary);">Block Index</td><td>{{ alert.blockchain.block_index }}</td></tr>
+                    <tr><td style="color:var(--color-text-secondary);">Transaction Hash</td><td style="word-break:break-all;font-size:11.5px;">{{ alert.blockchain.block_hash }}</td></tr>
+                    <tr><td style="color:var(--color-text-secondary);">Content Hash</td><td style="word-break:break-all;font-size:11.5px;">{{ alert.blockchain.content_hash }}</td></tr>
+                    <tr><td style="color:var(--color-text-secondary);">Recorded At</td><td>{{ alert.blockchain.timestamp }}</td></tr>
+                </table>
+                <a href="{{ url_for('government.blockchain_view') }}" class="btn btn-outline btn-sm" style="margin-top:12px;">Verify Full Chain</a>
+            {% else %}
+                <p style="color:var(--color-text-secondary);font-size:13px;">Not yet recorded on the blockchain. Run Module 9 for this alert's evidence batch.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div>
+        <div class="card">
+            <div class="card-header"><h2>Evidence</h2></div>
+            {% if alert.evidence_available %}
+                <img src="{{ url_for('government.serve_evidence_file', alert_id=alert.alert_id, filename='map_snapshot.png') }}"
+                     style="width:100%;border-radius:10px;margin-bottom:16px;" alt="Satellite snapshot of the affected area">
+                <a class="btn btn-primary btn-sm" style="width:100%;justify-content:center;margin-bottom:8px;"
+                   href="{{ url_for('government.serve_evidence_file', alert_id=alert.alert_id, filename='report.pdf') }}"
+                   target="_blank">Download PDF Report</a>
+                <a class="btn btn-outline btn-sm" style="width:100%;justify-content:center;"
+                   href="{{ url_for('government.serve_evidence_file', alert_id=alert.alert_id, filename='polygon.geojson') }}"
+                   target="_blank">Download GeoJSON</a>
+            {% else %}
+                <p style="color:var(--color-text-secondary);font-size:13px;">Evidence not yet generated for this alert. Run Module 8 to include it in the evidence batch.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

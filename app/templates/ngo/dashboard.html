@@ -1,0 +1,88 @@
+{% extends "ngo/base.html" %}
+{% block page_title %}Outside-Forest Loss Map{% endblock %}
+{% block page_subtitle %}Comparison period {{ meta.base_year }} &rarr; {{ meta.comparison_year }}{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+{% endblock %}
+{% block content %}
+
+<div class="stat-grid">
+    <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--color-info-bg);color:var(--color-info);">&#128197;</div>
+        <div class="stat-card-label">Comparison Period</div>
+        <div class="stat-card-value" style="font-size:19px;">{{ meta.base_year }} &rarr; {{ meta.comparison_year }}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--color-accent-orange-light);color:var(--color-accent-orange);">&#9888;</div>
+        <div class="stat-card-label">Vegetation Loss Alerts</div>
+        <div class="stat-card-value">{{ meta.total_alerts }}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-card-icon" style="background:var(--color-mild-bg);color:var(--color-mild);">&#127795;</div>
+        <div class="stat-card-label">Total Area Affected</div>
+        <div class="stat-card-value">{{ meta.total_area_ha }} <span style="font-size:14px;font-weight:500;">ha</span></div>
+    </div>
+</div>
+
+<div class="card" style="border-left:4px solid var(--color-accent-orange);">
+    <p style="margin:0;font-size:13.5px;color:var(--color-text-secondary);">
+        These alerts are for <strong style="color:var(--color-text-primary);">awareness and community action</strong>,
+        not enforcement. No evidence package or blockchain record is generated for this branch, per project design.
+    </p>
+</div>
+
+<div class="card" style="padding:8px;">
+    <div class="map-container">
+        <div id="map" style="height:100%;"></div>
+        <div class="map-loading" id="mapLoading">
+            <div class="spinner"></div>
+            <span>Loading {{ meta.total_alerts }} alerts onto the map&hellip;</span>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map', { renderer: L.canvas() }).setView([12.8, 74.9], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const typeColors = { Urban: '#3498db', Rural: '#27ae60', Others: '#95a5a6' };
+const mapLoading = document.getElementById('mapLoading');
+
+fetch("{{ url_for('ngo.alerts_geojson') }}")
+    .then(res => res.json())
+    .then(data => {
+        L.geoJSON(data, {
+            style: feature => ({
+                color: typeColors[feature.properties.region_area_type] || '#7f8c8d',
+                weight: 1.5,
+                fillOpacity: 0.5,
+            }),
+        }).addTo(map);
+
+        data.features.forEach(feature => {
+            const p = feature.properties;
+            const marker = L.circleMarker([p.latitude, p.longitude], {
+                radius: 6,
+                color: '#222',
+                weight: 1,
+                fillColor: typeColors[p.region_area_type] || '#7f8c8d',
+                fillOpacity: 0.85,
+            }).addTo(map);
+
+            marker.bindPopup(
+                '<b>' + p.alert_id + '</b><br>' +
+                'Area: ' + p.area_lost_ha + ' ha<br>' +
+                'Area Type: ' + p.region_area_type + '<br>' +
+                '<a href="/ngo/alerts/' + p.alert_id + '">View Details</a>'
+            );
+        });
+        mapLoading.hidden = true;
+    })
+    .catch(() => {
+        mapLoading.innerHTML = '<span style="color:var(--color-severe);">Could not load alert data. Check the server is running and the database has been synced.</span>';
+    });
+</script>
+{% endblock %}

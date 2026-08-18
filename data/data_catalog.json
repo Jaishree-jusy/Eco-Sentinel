@@ -1,0 +1,277 @@
+{
+  "generated_at": "2026-08-04T02:51:28.247477+00:00",
+  "datasets": {
+    "ndvi_2023": {
+      "filename": "NDVI_2023.tif",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\ndvi\\NDVI_2023.tif",
+      "type": "raster",
+      "description": "Sentinel-2 derived NDVI, 2023",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "crs": "EPSG:4326",
+        "width": 3897,
+        "height": 4454,
+        "band_count": 1,
+        "bounds": {
+          "left": 74.74998260145473,
+          "bottom": 12.599949838117233,
+          "right": 75.1000560676761,
+          "top": 13.000059465664068
+        },
+        "resolution": {
+          "x": 8.983152841195215e-05,
+          "y": 8.983152841195215e-05
+        },
+        "dtype": "float32",
+        "nodata": null
+      },
+      "file_size_bytes": 73115887,
+      "sha256": "afe66b7ae4c37b19a125c64fd4d57e0b93881bdf611447e20cd1e93b14486afd"
+    },
+    "ndvi_2025": {
+      "filename": "NDVI_2025.tif",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\ndvi\\NDVI_2025.tif",
+      "type": "raster",
+      "description": "Sentinel-2 derived NDVI, 2025",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "crs": "EPSG:4326",
+        "width": 3897,
+        "height": 4454,
+        "band_count": 1,
+        "bounds": {
+          "left": 74.74998260145473,
+          "bottom": 12.599949838117233,
+          "right": 75.1000560676761,
+          "top": 13.000059465664068
+        },
+        "resolution": {
+          "x": 8.983152841195215e-05,
+          "y": 8.983152841195215e-05
+        },
+        "dtype": "float32",
+        "nodata": null
+      },
+      "file_size_bytes": 72162351,
+      "sha256": "1697f662543508bcf1723c089d71d9a78211460f45e80cb311a121b95f414e05"
+    },
+    "worldcover_2021": {
+      "filename": "ESA_WorldCover_2021.tif",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\landcover\\ESA_WorldCover_2021.tif",
+      "type": "raster",
+      "description": "ESA WorldCover land cover classification, 2021",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "crs": "EPSG:4326",
+        "width": 3897,
+        "height": 4455,
+        "band_count": 1,
+        "bounds": {
+          "left": 74.74999748843226,
+          "bottom": 12.599924924555374,
+          "right": 75.10007095465363,
+          "top": 13.00012438363062
+        },
+        "resolution": {
+          "x": 8.983152841195215e-05,
+          "y": 8.983152841195215e-05
+        },
+        "dtype": "uint8",
+        "nodata": null
+      },
+      "file_size_bytes": 720196,
+      "sha256": "b55f398dd4eca8e5fe4f262924a0ea75b6fd2fdecb9551d23ac283a33f19fd9b"
+    },
+    "forest_sample_2023": {
+      "filename": "Forest_Sample_2023.tif",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\forest_samples\\Forest_Sample_2023.tif",
+      "type": "raster",
+      "description": "Forest sample raster, 2023",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "crs": "EPSG:4326",
+        "width": 3897,
+        "height": 4454,
+        "band_count": 26,
+        "bounds": {
+          "left": 74.74998260145473,
+          "bottom": 12.599949838117233,
+          "right": 75.1000560676761,
+          "top": 13.000059465664068
+        },
+        "resolution": {
+          "x": 8.983152841195215e-05,
+          "y": 8.983152841195215e-05
+        },
+        "dtype": "float64",
+        "nodata": null
+      },
+      "file_size_bytes": 734734003,
+      "sha256": "e923d2ebefc3938c5eaffb6a8e82fb1b5d1b69573d94bb4fc53cae5a47671ff4"
+    },
+    "forest_sample_2025": {
+      "filename": "Forest_Sample_2025.tif",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\forest_samples\\Forest_Sample_2025.tif",
+      "type": "raster",
+      "description": "Forest sample raster, 2025",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "crs": "EPSG:4326",
+        "width": 3897,
+        "height": 4454,
+        "band_count": 26,
+        "bounds": {
+          "left": 74.74998260145473,
+          "bottom": 12.599949838117233,
+          "right": 75.1000560676761,
+          "top": 13.000059465664068
+        },
+        "resolution": {
+          "x": 8.983152841195215e-05,
+          "y": 8.983152841195215e-05
+        },
+        "dtype": "float64",
+        "nodata": null
+      },
+      "file_size_bytes": 751448243,
+      "sha256": "43143c8c568b4fcb65b986fdde977c6ba829eaa99b257d0ba0f877ebd21cfa15"
+    },
+    "gadm_forest_boundary": {
+      "filename": "gadm41_IND.gpkg",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\boundaries\\gadm41_IND.gpkg",
+      "type": "gpkg",
+      "description": "GADM administrative/forest boundary data for India",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "layers": [
+          "ADM_ADM_0",
+          "ADM_ADM_1",
+          "ADM_ADM_2",
+          "ADM_ADM_3"
+        ],
+        "primary_layer": "ADM_ADM_0",
+        "feature_count": 6,
+        "crs": "EPSG:4326",
+        "columns": [
+          "GID_0",
+          "COUNTRY",
+          "geometry"
+        ],
+        "bounds": [
+          68.18624900000009,
+          6.754256000000055,
+          97.41516113000006,
+          35.50133132900004
+        ]
+      },
+      "file_size_bytes": 51994624,
+      "sha256": "da586d57875ca7326498a87aeb37bb1573b7842f24217b00bc459a878dd1f0ca"
+    },
+    "fire_archive_1": {
+      "filename": "fire_archive_SV-C2_778067.csv",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\fire_archive\\fire_archive_SV-C2_778067.csv",
+      "type": "csv",
+      "description": "NASA FIRMS fire archive (batch 1)",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "row_count": 4654296,
+        "columns": [
+          "latitude",
+          "longitude",
+          "brightness",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_t31",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "date_range": {
+          "min": "2025-01-01",
+          "max": "2025-03-31"
+        }
+      },
+      "file_size_bytes": 372661977,
+      "sha256": "26588bddba209632f00cd1d8caa12ee326ec63bb9787e40cca7d23bd237e5b51"
+    },
+    "fire_archive_2": {
+      "filename": "fire_archive_SV-C2_778068.csv",
+      "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\fire_archive\\fire_archive_SV-C2_778068.csv",
+      "type": "csv",
+      "description": "NASA FIRMS fire archive (batch 2)",
+      "exists": true,
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "row_count": 4527259,
+        "columns": [
+          "latitude",
+          "longitude",
+          "brightness",
+          "scan",
+          "track",
+          "acq_date",
+          "acq_time",
+          "satellite",
+          "instrument",
+          "confidence",
+          "version",
+          "bright_t31",
+          "frp",
+          "daynight",
+          "type"
+        ],
+        "date_range": {
+          "min": "2023-01-01",
+          "max": "2023-03-31"
+        }
+      },
+      "file_size_bytes": 362756802,
+      "sha256": "e6e5441561de1345330f4380fa27137c1420a9876e4e045e7e4e867bd5814cd2"
+    }
+  },
+  "raster_crs_consistency": {
+    "consistent": true,
+    "crs_by_dataset": {
+      "ndvi_2023": "EPSG:4326",
+      "ndvi_2025": "EPSG:4326",
+      "worldcover_2021": "EPSG:4326",
+      "forest_sample_2023": "EPSG:4326",
+      "forest_sample_2025": "EPSG:4326"
+    }
+  },
+  "summary": {
+    "total_datasets": 8,
+    "valid": 8,
+    "invalid": 0,
+    "missing": 0
+  }
+}

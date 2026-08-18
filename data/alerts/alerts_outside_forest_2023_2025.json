@@ -1,0 +1,2521 @@
+[
+  {
+    "alert_id": "ALERT-OUT-d065b62909dd",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.996389,
+      "longitude": 75.017611
+    },
+    "area_lost_ha": 0.3194,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-26cf91f44fba"
+  },
+  {
+    "alert_id": "ALERT-OUT-9f21fb233bb2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.9959,
+      "longitude": 75.017282
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-232994d64cd3"
+  },
+  {
+    "alert_id": "ALERT-OUT-280252de374f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.995037,
+      "longitude": 75.016502
+    },
+    "area_lost_ha": 0.2806,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-68ff80be9d6b"
+  },
+  {
+    "alert_id": "ALERT-OUT-e379492b3233",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.992673,
+      "longitude": 75.015537
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-4622c567d67e"
+  },
+  {
+    "alert_id": "ALERT-OUT-4524a2adff32",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.988292,
+      "longitude": 75.014068
+    },
+    "area_lost_ha": 0.1355,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-aa87075ec7cb"
+  },
+  {
+    "alert_id": "ALERT-OUT-1e2e0f5736d5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.987373,
+      "longitude": 75.015757
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-75672ee68a08"
+  },
+  {
+    "alert_id": "ALERT-OUT-1c6c336db099",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.986007,
+      "longitude": 75.013384
+    },
+    "area_lost_ha": 0.2613,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d2821fd32177"
+  },
+  {
+    "alert_id": "ALERT-OUT-d5fc38477275",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.985035,
+      "longitude": 75.012695
+    },
+    "area_lost_ha": 0.1161,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-57c06e951f00"
+  },
+  {
+    "alert_id": "ALERT-OUT-1bcf26c6f3ef",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.984539,
+      "longitude": 75.012736
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-5002e741df19"
+  },
+  {
+    "alert_id": "ALERT-OUT-16c5d59eff20",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.984606,
+      "longitude": 75.012284
+    },
+    "area_lost_ha": 0.2032,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-0328c86c7dd2"
+  },
+  {
+    "alert_id": "ALERT-OUT-a8ed5591b889",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.981668,
+      "longitude": 75.011112
+    },
+    "area_lost_ha": 1.0065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-9b5f60fbe76f"
+  },
+  {
+    "alert_id": "ALERT-OUT-f20f1666fba3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.980998,
+      "longitude": 75.011914
+    },
+    "area_lost_ha": 0.1258,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-9de633793e48"
+  },
+  {
+    "alert_id": "ALERT-OUT-8376ebb05358",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.980542,
+      "longitude": 75.010304
+    },
+    "area_lost_ha": 0.1258,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f5e232cb13e9"
+  },
+  {
+    "alert_id": "ALERT-OUT-71294c97920d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.980527,
+      "longitude": 75.011257
+    },
+    "area_lost_ha": 1.0355,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-052ffa63a49b"
+  },
+  {
+    "alert_id": "ALERT-OUT-0da7a70fc80c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.978787,
+      "longitude": 75.012789
+    },
+    "area_lost_ha": 0.1936,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-46bc5ec2d83d"
+  },
+  {
+    "alert_id": "ALERT-OUT-bfa568c754c2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.978251,
+      "longitude": 75.013136
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-9ab0956dafd3"
+  },
+  {
+    "alert_id": "ALERT-OUT-6a431517df86",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.979275,
+      "longitude": 75.012141
+    },
+    "area_lost_ha": 2.1098,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-8535791eab91"
+  },
+  {
+    "alert_id": "ALERT-OUT-38b95a678cb6",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.977687,
+      "longitude": 75.013111
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-98c1450ab71c"
+  },
+  {
+    "alert_id": "ALERT-OUT-139a2334a7ea",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.977265,
+      "longitude": 75.012092
+    },
+    "area_lost_ha": 0.2323,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-3f7a1834ceff"
+  },
+  {
+    "alert_id": "ALERT-OUT-d8dce85f6bc4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.976355,
+      "longitude": 75.010455
+    },
+    "area_lost_ha": 0.1549,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-8e055788bc85"
+  },
+  {
+    "alert_id": "ALERT-OUT-d60f2cee633f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.965212,
+      "longitude": 75.011542
+    },
+    "area_lost_ha": 0.1161,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-a276c37bcf21"
+  },
+  {
+    "alert_id": "ALERT-OUT-7baff3a56b2a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.958887,
+      "longitude": 75.012126
+    },
+    "area_lost_ha": 0.1161,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-c234223fd8e0"
+  },
+  {
+    "alert_id": "ALERT-OUT-622602f4158a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.956354,
+      "longitude": 75.000429
+    },
+    "area_lost_ha": 0.6969,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-cd6739d57a50"
+  },
+  {
+    "alert_id": "ALERT-OUT-2b4778d05f8b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.955473,
+      "longitude": 75.002304
+    },
+    "area_lost_ha": 0.1161,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-43a99c336fa0"
+  },
+  {
+    "alert_id": "ALERT-OUT-03ce2fc43b6b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.95495,
+      "longitude": 75.003258
+    },
+    "area_lost_ha": 0.5614,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-b9b6701e05dd"
+  },
+  {
+    "alert_id": "ALERT-OUT-9e2b08a54105",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.925446,
+      "longitude": 75.034875
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-30fd52e0e59f"
+  },
+  {
+    "alert_id": "ALERT-OUT-5b6b6d3ad5fa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.908439,
+      "longitude": 75.049533
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-6e6284274276"
+  },
+  {
+    "alert_id": "ALERT-OUT-76a8b9aaaaaf",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.899876,
+      "longitude": 75.056449
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-fca007ec37d3"
+  },
+  {
+    "alert_id": "ALERT-OUT-51d7ae41901c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.899499,
+      "longitude": 75.058036
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-8e4964517646"
+  },
+  {
+    "alert_id": "ALERT-OUT-c43394486ae9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.899628,
+      "longitude": 75.058852
+    },
+    "area_lost_ha": 0.5421,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-9c664e2ed913"
+  },
+  {
+    "alert_id": "ALERT-OUT-088e2ae84099",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.899254,
+      "longitude": 75.055971
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-e03ba42e4669"
+  },
+  {
+    "alert_id": "ALERT-OUT-a7090c8631d6",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.899163,
+      "longitude": 75.060355
+    },
+    "area_lost_ha": 0.4744,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-b91c919a7834"
+  },
+  {
+    "alert_id": "ALERT-OUT-ed77ba7a429d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.899009,
+      "longitude": 75.055662
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-57e6878278c8"
+  },
+  {
+    "alert_id": "ALERT-OUT-719ebf3b2510",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.898162,
+      "longitude": 75.055969
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-a17ed3e13447"
+  },
+  {
+    "alert_id": "ALERT-OUT-0f15b65539c6",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.898154,
+      "longitude": 75.06229
+    },
+    "area_lost_ha": 1.4715,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-a523bdafec04"
+  },
+  {
+    "alert_id": "ALERT-OUT-ba83db965b75",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.897861,
+      "longitude": 75.065684
+    },
+    "area_lost_ha": 0.5131,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-4630ac786988"
+  },
+  {
+    "alert_id": "ALERT-OUT-d58f21b878fc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.897625,
+      "longitude": 75.068489
+    },
+    "area_lost_ha": 0.1936,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-0d49c4b430e7"
+  },
+  {
+    "alert_id": "ALERT-OUT-aee5058d7398",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.897681,
+      "longitude": 75.059542
+    },
+    "area_lost_ha": 0.1743,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-d03295984a8f"
+  },
+  {
+    "alert_id": "ALERT-OUT-ac5424faae8d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.897151,
+      "longitude": 75.068684
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-81b28fc9b27d"
+  },
+  {
+    "alert_id": "ALERT-OUT-a6dc9047d641",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.897585,
+      "longitude": 75.06653
+    },
+    "area_lost_ha": 0.8907,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-14b7819171ca"
+  },
+  {
+    "alert_id": "ALERT-OUT-eae48cd2fca8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.896439,
+      "longitude": 75.066766
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-5e9b2b6d9ff0"
+  },
+  {
+    "alert_id": "ALERT-OUT-068ca8fe6ad9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.896022,
+      "longitude": 75.070579
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-8944323dc932"
+  },
+  {
+    "alert_id": "ALERT-OUT-75d12b68d887",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.895687,
+      "longitude": 75.042413
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-4abf08f72e52"
+  },
+  {
+    "alert_id": "ALERT-OUT-b3299bbe8dd9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.895223,
+      "longitude": 75.072708
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-b9c96fe587c0"
+  },
+  {
+    "alert_id": "ALERT-OUT-4dbe1f74a1bd",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.894574,
+      "longitude": 75.072139
+    },
+    "area_lost_ha": 1.2005,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-26efd56c5777"
+  },
+  {
+    "alert_id": "ALERT-OUT-8278b3c3a865",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.893817,
+      "longitude": 75.073307
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-cfda6fba33d1"
+  },
+  {
+    "alert_id": "ALERT-OUT-6433164f00e0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.893714,
+      "longitude": 75.072762
+    },
+    "area_lost_ha": 0.3485,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-4ee2df19c484"
+  },
+  {
+    "alert_id": "ALERT-OUT-aa1f474695e3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.89298,
+      "longitude": 75.073581
+    },
+    "area_lost_ha": 0.1355,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-b7f4763a8879"
+  },
+  {
+    "alert_id": "ALERT-OUT-445cfa60327c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.892816,
+      "longitude": 75.07402
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-e7431ecb1ab9"
+  },
+  {
+    "alert_id": "ALERT-OUT-15a3637dea78",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.89268,
+      "longitude": 75.073241
+    },
+    "area_lost_ha": 0.242,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-9a7ece17806f"
+  },
+  {
+    "alert_id": "ALERT-OUT-a97edd5ecae8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.892283,
+      "longitude": 75.074367
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-aa7f4596daa0"
+  },
+  {
+    "alert_id": "ALERT-OUT-f34019023222",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.892209,
+      "longitude": 75.074929
+    },
+    "area_lost_ha": 0.2324,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-2efa4f70a660"
+  },
+  {
+    "alert_id": "ALERT-OUT-4af25382b068",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.891952,
+      "longitude": 75.073787
+    },
+    "area_lost_ha": 0.3873,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-b5303f0b69b9"
+  },
+  {
+    "alert_id": "ALERT-OUT-e04c0f635bfe",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.891766,
+      "longitude": 75.075407
+    },
+    "area_lost_ha": 0.5325,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-f3889cee51cc"
+  },
+  {
+    "alert_id": "ALERT-OUT-aac4999c56d9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.89089,
+      "longitude": 75.075743
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-c286f4fca343"
+  },
+  {
+    "alert_id": "ALERT-OUT-a7040ca2fab3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.890191,
+      "longitude": 75.07699
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-78b5b69bc79b"
+  },
+  {
+    "alert_id": "ALERT-OUT-1ba2a41bd0c0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.889624,
+      "longitude": 75.082731
+    },
+    "area_lost_ha": 0.1355,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-44cb3a40af58"
+  },
+  {
+    "alert_id": "ALERT-OUT-0f8b0506b99f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.889522,
+      "longitude": 75.081738
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-e97fe40665f0"
+  },
+  {
+    "alert_id": "ALERT-OUT-d78f5a785130",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.889067,
+      "longitude": 75.082347
+    },
+    "area_lost_ha": 0.6196,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-c07c7aa2a6aa"
+  },
+  {
+    "alert_id": "ALERT-OUT-9b4f7e55f3fa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.88848,
+      "longitude": 75.086608
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-fa3fa4534d54"
+  },
+  {
+    "alert_id": "ALERT-OUT-bbc7e4792a0c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.888369,
+      "longitude": 75.079904
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f98ad783538b"
+  },
+  {
+    "alert_id": "ALERT-OUT-a45a6eaf1f69",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.88847,
+      "longitude": 75.085986
+    },
+    "area_lost_ha": 0.3969,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-1435ea450de4"
+  },
+  {
+    "alert_id": "ALERT-OUT-931329961fa5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.888565,
+      "longitude": 75.078489
+    },
+    "area_lost_ha": 0.4163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-6ebb3c30ba65"
+  },
+  {
+    "alert_id": "ALERT-OUT-1af4e6bc2647",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.887372,
+      "longitude": 75.088051
+    },
+    "area_lost_ha": 0.1355,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f48d5fa1930e"
+  },
+  {
+    "alert_id": "ALERT-OUT-bbe57be08893",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.887208,
+      "longitude": 75.079483
+    },
+    "area_lost_ha": 0.2033,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-58b56df15714"
+  },
+  {
+    "alert_id": "ALERT-OUT-dee897631fca",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.886676,
+      "longitude": 75.087581
+    },
+    "area_lost_ha": 0.184,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-0c9f9114d0fd"
+  },
+  {
+    "alert_id": "ALERT-OUT-56a7dbe1accb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.885488,
+      "longitude": 75.038419
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-304a2bd62195"
+  },
+  {
+    "alert_id": "ALERT-OUT-3e82689d04dc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.885149,
+      "longitude": 75.089331
+    },
+    "area_lost_ha": 0.455,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-f7f96344f43c"
+  },
+  {
+    "alert_id": "ALERT-OUT-a5046dd88038",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.884418,
+      "longitude": 75.089419
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-235999d66c9f"
+  },
+  {
+    "alert_id": "ALERT-OUT-158485b5f325",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.884189,
+      "longitude": 75.088891
+    },
+    "area_lost_ha": 0.184,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-1e139353049d"
+  },
+  {
+    "alert_id": "ALERT-OUT-339dee9c2d1f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.884283,
+      "longitude": 75.090489
+    },
+    "area_lost_ha": 0.5422,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-5a2758c95492"
+  },
+  {
+    "alert_id": "ALERT-OUT-df31353bdef5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.884028,
+      "longitude": 75.091256
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-ba088c49d59c"
+  },
+  {
+    "alert_id": "ALERT-OUT-9730c967698d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.883458,
+      "longitude": 75.088288
+    },
+    "area_lost_ha": 0.1355,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-768f9cde9b30"
+  },
+  {
+    "alert_id": "ALERT-OUT-fa120023c199",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.883499,
+      "longitude": 75.090439
+    },
+    "area_lost_ha": 0.6777,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-ea7f340b8592"
+  },
+  {
+    "alert_id": "ALERT-OUT-fe90c74cf288",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.883413,
+      "longitude": 75.09191
+    },
+    "area_lost_ha": 0.1646,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-373ab912ceca"
+  },
+  {
+    "alert_id": "ALERT-OUT-9b8cabd7d4bd",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.883206,
+      "longitude": 75.089397
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-34cf6eb1fe59"
+  },
+  {
+    "alert_id": "ALERT-OUT-2e1bf9c1638a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.883144,
+      "longitude": 75.088887
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d8799cd325f8"
+  },
+  {
+    "alert_id": "ALERT-OUT-7f94a46554f7",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.88324,
+      "longitude": 75.092768
+    },
+    "area_lost_ha": 0.2614,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-48bda835c73b"
+  },
+  {
+    "alert_id": "ALERT-OUT-d49ba9ef5aca",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882977,
+      "longitude": 75.090643
+    },
+    "area_lost_ha": 0.1355,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-add3c408ba8b"
+  },
+  {
+    "alert_id": "ALERT-OUT-f5142eb6e6d7",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.883066,
+      "longitude": 75.035021
+    },
+    "area_lost_ha": 0.3485,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-3c3695a60607"
+  },
+  {
+    "alert_id": "ALERT-OUT-0769f1516785",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882858,
+      "longitude": 75.089574
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-bd41b6b22c07"
+  },
+  {
+    "alert_id": "ALERT-OUT-2bec7b4a0343",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882543,
+      "longitude": 75.030594
+    },
+    "area_lost_ha": 0.1549,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-b1e00f98be8f"
+  },
+  {
+    "alert_id": "ALERT-OUT-b5a32a893d3d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882286,
+      "longitude": 75.028685
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-5099926fa32c"
+  },
+  {
+    "alert_id": "ALERT-OUT-32ce3e6edcc0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882499,
+      "longitude": 75.091477
+    },
+    "area_lost_ha": 0.61,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-efa8edc679a1"
+  },
+  {
+    "alert_id": "ALERT-OUT-18ab12b689e0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882405,
+      "longitude": 75.090467
+    },
+    "area_lost_ha": 0.3098,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-5530c3b7d873"
+  },
+  {
+    "alert_id": "ALERT-OUT-8d13be83cb80",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882198,
+      "longitude": 75.029655
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-3b14c6e9e96c"
+  },
+  {
+    "alert_id": "ALERT-OUT-c5a9f68827bf",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882122,
+      "longitude": 75.088316
+    },
+    "area_lost_ha": 0.1549,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-cba5f5dfaa86"
+  },
+  {
+    "alert_id": "ALERT-OUT-5a5ef0a4cfea",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.881984,
+      "longitude": 75.094597
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-3d9cc26c8d4c"
+  },
+  {
+    "alert_id": "ALERT-OUT-184d33c2f458",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.881843,
+      "longitude": 75.028347
+    },
+    "area_lost_ha": 0.2808,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-8b12f2ca66ec"
+  },
+  {
+    "alert_id": "ALERT-OUT-fe69fffbbe4b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.881722,
+      "longitude": 75.089333
+    },
+    "area_lost_ha": 0.8423,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-885d806ffa55"
+  },
+  {
+    "alert_id": "ALERT-OUT-1d0a210a152f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.881535,
+      "longitude": 75.090958
+    },
+    "area_lost_ha": 0.7842,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-34a84277e11f"
+  },
+  {
+    "alert_id": "ALERT-OUT-c41832301500",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.881063,
+      "longitude": 75.044413
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-191266236080"
+  },
+  {
+    "alert_id": "ALERT-OUT-5a927e85fb21",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880958,
+      "longitude": 75.089848
+    },
+    "area_lost_ha": 0.1452,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-84d4a6535098"
+  },
+  {
+    "alert_id": "ALERT-OUT-bcef558e0093",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880759,
+      "longitude": 75.092531
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-94e68d2e5dba"
+  },
+  {
+    "alert_id": "ALERT-OUT-4643eae3ff50",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880775,
+      "longitude": 75.09116
+    },
+    "area_lost_ha": 0.184,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-6fc23cc7b07e"
+  },
+  {
+    "alert_id": "ALERT-OUT-12ccc94572b4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880763,
+      "longitude": 75.091662
+    },
+    "area_lost_ha": 0.4647,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-d8d9e5840eb7"
+  },
+  {
+    "alert_id": "ALERT-OUT-0d04e3ead070",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880481,
+      "longitude": 75.027672
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-0aa0ca4c4a06"
+  },
+  {
+    "alert_id": "ALERT-OUT-e07666afd7e2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880539,
+      "longitude": 75.021573
+    },
+    "area_lost_ha": 0.3873,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-4d9ff848a649"
+  },
+  {
+    "alert_id": "ALERT-OUT-ec8b5cb9e659",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880532,
+      "longitude": 75.02353
+    },
+    "area_lost_ha": 0.2517,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-20011e4771ce"
+  },
+  {
+    "alert_id": "ALERT-OUT-b9942ce3486d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880612,
+      "longitude": 75.024251
+    },
+    "area_lost_ha": 0.4357,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-70a1c44ec841"
+  },
+  {
+    "alert_id": "ALERT-OUT-723c9a6518af",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.879483,
+      "longitude": 75.090534
+    },
+    "area_lost_ha": 0.1549,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-a8a3967d0993"
+  },
+  {
+    "alert_id": "ALERT-OUT-15ef73c63914",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.879096,
+      "longitude": 75.090801
+    },
+    "area_lost_ha": 0.3292,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-7c2270408296"
+  },
+  {
+    "alert_id": "ALERT-OUT-895855b76cdc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.877005,
+      "longitude": 75.039218
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-c6bc8c17e9f3"
+  },
+  {
+    "alert_id": "ALERT-OUT-33bf0d641ba9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.875179,
+      "longitude": 75.035072
+    },
+    "area_lost_ha": 0.2033,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-1ac97c7e8b8f"
+  },
+  {
+    "alert_id": "ALERT-OUT-b8f1d5948c74",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.874945,
+      "longitude": 75.045242
+    },
+    "area_lost_ha": 0.184,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-29e036748c99"
+  },
+  {
+    "alert_id": "ALERT-OUT-aa4fc347cd2d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.873751,
+      "longitude": 75.00471
+    },
+    "area_lost_ha": 0.1743,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-ee50f9ffd787"
+  },
+  {
+    "alert_id": "ALERT-OUT-5f1a6ea3a9ec",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.872132,
+      "longitude": 75.004445
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-b4ac095c6d36"
+  },
+  {
+    "alert_id": "ALERT-OUT-0c2771956c57",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.871662,
+      "longitude": 75.00109
+    },
+    "area_lost_ha": 0.213,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-3f293f4802ed"
+  },
+  {
+    "alert_id": "ALERT-OUT-b180b0ae4df4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.867105,
+      "longitude": 75.049968
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-08574ae829c5"
+  },
+  {
+    "alert_id": "ALERT-OUT-fbb05f91312e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.86377,
+      "longitude": 75.05335
+    },
+    "area_lost_ha": 0.2905,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-eeb2c55a7582"
+  },
+  {
+    "alert_id": "ALERT-OUT-1018d75cec1b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.863168,
+      "longitude": 75.050171
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-a632b94302a7"
+  },
+  {
+    "alert_id": "ALERT-OUT-95ef7c045f21",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.863018,
+      "longitude": 75.052269
+    },
+    "area_lost_ha": 0.2324,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-342e68195290"
+  },
+  {
+    "alert_id": "ALERT-OUT-f531e6ffdc98",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.862426,
+      "longitude": 75.038079
+    },
+    "area_lost_ha": 0.184,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-48acc66f1e01"
+  },
+  {
+    "alert_id": "ALERT-OUT-a9f3d85bc8fb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.859019,
+      "longitude": 75.046331
+    },
+    "area_lost_ha": 0.2421,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-0bced3c4d0a8"
+  },
+  {
+    "alert_id": "ALERT-OUT-1ff0f8f265ff",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.854508,
+      "longitude": 75.039022
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-bfcafb464a3d"
+  },
+  {
+    "alert_id": "ALERT-OUT-95cbf6b553e6",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.851104,
+      "longitude": 75.028438
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-521c084e86e6"
+  },
+  {
+    "alert_id": "ALERT-OUT-c511b9f66529",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.848691,
+      "longitude": 75.067392
+    },
+    "area_lost_ha": 0.1646,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-48b72777da18"
+  },
+  {
+    "alert_id": "ALERT-OUT-793efa9ae3b5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.847489,
+      "longitude": 75.065189
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-da82ba1fd85c"
+  },
+  {
+    "alert_id": "ALERT-OUT-87270f66c413",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.843696,
+      "longitude": 75.074177
+    },
+    "area_lost_ha": 0.7456,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-4bd3fa0c2ee1"
+  },
+  {
+    "alert_id": "ALERT-OUT-f07c86c7f1bf",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.843147,
+      "longitude": 75.073708
+    },
+    "area_lost_ha": 0.2033,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-d4456c5a71ce"
+  },
+  {
+    "alert_id": "ALERT-OUT-3e46965c1d24",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.842469,
+      "longitude": 75.005815
+    },
+    "area_lost_ha": 0.2808,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-53e31a004f43"
+  },
+  {
+    "alert_id": "ALERT-OUT-cb62905821cc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841535,
+      "longitude": 75.011808
+    },
+    "area_lost_ha": 0.1549,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-116d2354fd99"
+  },
+  {
+    "alert_id": "ALERT-OUT-1eb3570f6c4c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841726,
+      "longitude": 75.081509
+    },
+    "area_lost_ha": 0.5326,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-01b08bd6e6ab"
+  },
+  {
+    "alert_id": "ALERT-OUT-2d77e7652728",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841103,
+      "longitude": 75.006652
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-8a1fca0409d7"
+  },
+  {
+    "alert_id": "ALERT-OUT-44506892f87c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840842,
+      "longitude": 75.013516
+    },
+    "area_lost_ha": 0.2033,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-6e77c83f6936"
+  },
+  {
+    "alert_id": "ALERT-OUT-90670a9e956a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840576,
+      "longitude": 75.006079
+    },
+    "area_lost_ha": 0.1356,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-8016dd9e211b"
+  },
+  {
+    "alert_id": "ALERT-OUT-08e33dc0ae12",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840594,
+      "longitude": 75.007125
+    },
+    "area_lost_ha": 0.3195,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-fec0f4513be8"
+  },
+  {
+    "alert_id": "ALERT-OUT-0632abdca72d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840414,
+      "longitude": 75.005052
+    },
+    "area_lost_ha": 0.1162,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-26ef2916e906"
+  },
+  {
+    "alert_id": "ALERT-OUT-a57f76526d7e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840211,
+      "longitude": 75.006731
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-7ec58c25f16c"
+  },
+  {
+    "alert_id": "ALERT-OUT-b6b46ca7610b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.839869,
+      "longitude": 75.011111
+    },
+    "area_lost_ha": 0.1065,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-6e0cfd2ebd6d"
+  },
+  {
+    "alert_id": "ALERT-OUT-f9120dc0eba9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.839423,
+      "longitude": 75.011868
+    },
+    "area_lost_ha": 0.2905,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-144f83fcebff"
+  },
+  {
+    "alert_id": "ALERT-OUT-ffff0db4ab42",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.839003,
+      "longitude": 75.010026
+    },
+    "area_lost_ha": 0.368,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-1a54adb2517f"
+  },
+  {
+    "alert_id": "ALERT-OUT-5bf1fa76a88f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.836654,
+      "longitude": 75.012146
+    },
+    "area_lost_ha": 0.184,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-14584b217de7"
+  },
+  {
+    "alert_id": "ALERT-OUT-0d19662fe3ea",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.836435,
+      "longitude": 75.011768
+    },
+    "area_lost_ha": 0.2711,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-3ee5428060de"
+  },
+  {
+    "alert_id": "ALERT-OUT-53c20e3a3e30",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.836375,
+      "longitude": 75.013082
+    },
+    "area_lost_ha": 0.3099,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-3dc08b115b77"
+  },
+  {
+    "alert_id": "ALERT-OUT-ebdd902a41a7",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.835258,
+      "longitude": 75.011897
+    },
+    "area_lost_ha": 0.1646,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-ac856c0a01e6"
+  },
+  {
+    "alert_id": "ALERT-OUT-792589ad088c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.826177,
+      "longitude": 75.001031
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-21ca38f8bf70"
+  },
+  {
+    "alert_id": "ALERT-OUT-4e059c13febb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.816978,
+      "longitude": 75.057745
+    },
+    "area_lost_ha": 0.1743,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-cf7eab70ec72"
+  },
+  {
+    "alert_id": "ALERT-OUT-cc7c7c870e21",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.815531,
+      "longitude": 75.054395
+    },
+    "area_lost_ha": 0.1453,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-77f83bcebc35"
+  },
+  {
+    "alert_id": "ALERT-OUT-ec89fecca1aa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.804607,
+      "longitude": 75.018306
+    },
+    "area_lost_ha": 0.1453,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-572e5d373c3d"
+  },
+  {
+    "alert_id": "ALERT-OUT-ae634b8f0870",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.802706,
+      "longitude": 75.00378
+    },
+    "area_lost_ha": 0.2034,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-9f415f96afbc"
+  },
+  {
+    "alert_id": "ALERT-OUT-c07ca2b57c1e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.802188,
+      "longitude": 75.004139
+    },
+    "area_lost_ha": 0.2421,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-9c499592a0be"
+  },
+  {
+    "alert_id": "ALERT-OUT-a6ffd8c122bc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.727364,
+      "longitude": 75.005836
+    },
+    "area_lost_ha": 0.6006,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f389a3c103bf"
+  },
+  {
+    "alert_id": "ALERT-OUT-9b108cf89c47",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.722393,
+      "longitude": 75.034968
+    },
+    "area_lost_ha": 0.1841,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-686e70f88d13"
+  },
+  {
+    "alert_id": "ALERT-OUT-b32bbea3c78e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.72238,
+      "longitude": 75.041877
+    },
+    "area_lost_ha": 0.3294,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-2c8df8022218"
+  },
+  {
+    "alert_id": "ALERT-OUT-41235e65a128",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.721158,
+      "longitude": 75.032897
+    },
+    "area_lost_ha": 0.2713,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-e7dea65c31eb"
+  },
+  {
+    "alert_id": "ALERT-OUT-007d0fbb1816",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.720843,
+      "longitude": 75.03396
+    },
+    "area_lost_ha": 0.4263,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d51dbfbecbcf"
+  },
+  {
+    "alert_id": "ALERT-OUT-e35ab4e3708d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.719639,
+      "longitude": 75.049262
+    },
+    "area_lost_ha": 0.155,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-8681bd79eedc"
+  },
+  {
+    "alert_id": "ALERT-OUT-46e1cb8e48eb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.718795,
+      "longitude": 75.056041
+    },
+    "area_lost_ha": 0.2034,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-bc48130edd56"
+  },
+  {
+    "alert_id": "ALERT-OUT-3491745f31e4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.717219,
+      "longitude": 75.024788
+    },
+    "area_lost_ha": 0.155,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-9b42878af24f"
+  },
+  {
+    "alert_id": "ALERT-OUT-a50d1940188f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.708797,
+      "longitude": 75.082927
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-0d4d8d9e93e3"
+  },
+  {
+    "alert_id": "ALERT-OUT-04a34639147c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.708794,
+      "longitude": 75.032028
+    },
+    "area_lost_ha": 0.1356,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-866591fa2f68"
+  },
+  {
+    "alert_id": "ALERT-OUT-40d4757054ca",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.708017,
+      "longitude": 75.083312
+    },
+    "area_lost_ha": 0.1744,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-0cbfd87e42c4"
+  },
+  {
+    "alert_id": "ALERT-OUT-1b9ab276443c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.705277,
+      "longitude": 75.010641
+    },
+    "area_lost_ha": 0.1453,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-bb9ac82ceea0"
+  },
+  {
+    "alert_id": "ALERT-OUT-85a3b3a8350f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.704918,
+      "longitude": 75.013491
+    },
+    "area_lost_ha": 0.1356,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-443be09777c5"
+  },
+  {
+    "alert_id": "ALERT-OUT-1cea1d2e111b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.704946,
+      "longitude": 75.009986
+    },
+    "area_lost_ha": 0.1259,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-9b8c2443b6c3"
+  },
+  {
+    "alert_id": "ALERT-OUT-c3f85039170f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.70415,
+      "longitude": 75.012013
+    },
+    "area_lost_ha": 0.2131,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-cbfb97187d9c"
+  },
+  {
+    "alert_id": "ALERT-OUT-a3c92dd32c6b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.70144,
+      "longitude": 75.033316
+    },
+    "area_lost_ha": 0.1744,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-7d1964610c37"
+  },
+  {
+    "alert_id": "ALERT-OUT-28296ba1bdbf",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.679242,
+      "longitude": 75.00537
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-e0f8e7846982"
+  },
+  {
+    "alert_id": "ALERT-OUT-b7e9e2b46944",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.674794,
+      "longitude": 75.017851
+    },
+    "area_lost_ha": 0.1453,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-8a46c1e64609"
+  },
+  {
+    "alert_id": "ALERT-OUT-26c30859e235",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.673969,
+      "longitude": 75.000044
+    },
+    "area_lost_ha": 0.2229,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-24b994ef5e3a"
+  },
+  {
+    "alert_id": "ALERT-OUT-6989966c74aa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.672616,
+      "longitude": 75.004142
+    },
+    "area_lost_ha": 0.1841,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-2b17ae388bd4"
+  },
+  {
+    "alert_id": "ALERT-OUT-d6972fcb6f02",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.668101,
+      "longitude": 75.01928
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-92ad451b8deb"
+  },
+  {
+    "alert_id": "ALERT-OUT-abbe1bd9ae89",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.668137,
+      "longitude": 75.032717
+    },
+    "area_lost_ha": 0.1744,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-360c4e7eded2"
+  },
+  {
+    "alert_id": "ALERT-OUT-dddce5019549",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.667659,
+      "longitude": 75.0201
+    },
+    "area_lost_ha": 0.7655,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-79e2e4f75679"
+  },
+  {
+    "alert_id": "ALERT-OUT-a9e9c996722f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.666874,
+      "longitude": 75.02063
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-b01f8478ebf0"
+  },
+  {
+    "alert_id": "ALERT-OUT-fae1b9031744",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.666577,
+      "longitude": 75.015578
+    },
+    "area_lost_ha": 0.3004,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-c8431489f7f0"
+  },
+  {
+    "alert_id": "ALERT-OUT-9f9aff572dd5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.666159,
+      "longitude": 75.01246
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-e0ccdf13c1cd"
+  },
+  {
+    "alert_id": "ALERT-OUT-6a2fd3a5614d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.66607,
+      "longitude": 75.01334
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-b73e503151e9"
+  },
+  {
+    "alert_id": "ALERT-OUT-ddab5abd5aeb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.665947,
+      "longitude": 75.009503
+    },
+    "area_lost_ha": 0.1647,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f07ff074c307"
+  },
+  {
+    "alert_id": "ALERT-OUT-39bd24143be0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.665692,
+      "longitude": 75.014024
+    },
+    "area_lost_ha": 0.1453,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-c1388bff8ba7"
+  },
+  {
+    "alert_id": "ALERT-OUT-c3577c3d055b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.665549,
+      "longitude": 75.013298
+    },
+    "area_lost_ha": 0.3101,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-8d7dbd13cf67"
+  },
+  {
+    "alert_id": "ALERT-OUT-8f4b0cf25328",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.66469,
+      "longitude": 75.021147
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-e75cfafafa27"
+  },
+  {
+    "alert_id": "ALERT-OUT-ee1ee2c3a640",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.664292,
+      "longitude": 75.012126
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f51d89d5a143"
+  },
+  {
+    "alert_id": "ALERT-OUT-4736d3567af5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.664314,
+      "longitude": 75.021491
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-1d2f62c81727"
+  },
+  {
+    "alert_id": "ALERT-OUT-2116b3d402d4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.663457,
+      "longitude": 75.031831
+    },
+    "area_lost_ha": 0.3585,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-21ced1efa12f"
+  },
+  {
+    "alert_id": "ALERT-OUT-1e9d50f9d84b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.662697,
+      "longitude": 75.007787
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-94119840c71b"
+  },
+  {
+    "alert_id": "ALERT-OUT-a7f7dd1584bd",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.661963,
+      "longitude": 75.029599
+    },
+    "area_lost_ha": 0.1647,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-de128fd5e1b8"
+  },
+  {
+    "alert_id": "ALERT-OUT-f04849ec5600",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.661806,
+      "longitude": 75.023767
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-428d74ef0258"
+  },
+  {
+    "alert_id": "ALERT-OUT-41663ac0b080",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.660928,
+      "longitude": 75.077795
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-aca56dced1f4"
+  },
+  {
+    "alert_id": "ALERT-OUT-86502588a82d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.660611,
+      "longitude": 75.000074
+    },
+    "area_lost_ha": 0.2132,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-4d29cb58f4d5"
+  },
+  {
+    "alert_id": "ALERT-OUT-7fab619e1665",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.659418,
+      "longitude": 75.081117
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d7bd3f1f9423"
+  },
+  {
+    "alert_id": "ALERT-OUT-be65f0268aef",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.659486,
+      "longitude": 75.080282
+    },
+    "area_lost_ha": 0.155,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-5bfcfda3594c"
+  },
+  {
+    "alert_id": "ALERT-OUT-a60dbc01796c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.655297,
+      "longitude": 75.059624
+    },
+    "area_lost_ha": 0.3295,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d7632ee29517"
+  },
+  {
+    "alert_id": "ALERT-OUT-6c447c64844c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.654343,
+      "longitude": 75.054916
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-68188370084b"
+  },
+  {
+    "alert_id": "ALERT-OUT-44d34d199d37",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.654334,
+      "longitude": 75.01293
+    },
+    "area_lost_ha": 0.2035,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-74d1696e19de"
+  },
+  {
+    "alert_id": "ALERT-OUT-da87d3a76cc2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.65298,
+      "longitude": 75.069359
+    },
+    "area_lost_ha": 0.2229,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-b0417eb0aac5"
+  },
+  {
+    "alert_id": "ALERT-OUT-2c3907952804",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.652576,
+      "longitude": 75.069543
+    },
+    "area_lost_ha": 0.1744,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-167a29932741"
+  },
+  {
+    "alert_id": "ALERT-OUT-abfe4b6d92a1",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.652353,
+      "longitude": 75.070063
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-1dcd17963f5f"
+  },
+  {
+    "alert_id": "ALERT-OUT-43682bcd9d04",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.65066,
+      "longitude": 75.05692
+    },
+    "area_lost_ha": 0.155,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-0d2a8ec8f13d"
+  },
+  {
+    "alert_id": "ALERT-OUT-686d43033fcb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.650565,
+      "longitude": 75.058076
+    },
+    "area_lost_ha": 0.1647,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-e078dd9768ea"
+  },
+  {
+    "alert_id": "ALERT-OUT-d524902ce0b8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.650039,
+      "longitude": 75.057994
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d43e2d7349aa"
+  },
+  {
+    "alert_id": "ALERT-OUT-e3deaa1f25df",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.649974,
+      "longitude": 75.05675
+    },
+    "area_lost_ha": 0.1841,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f862f88e474a"
+  },
+  {
+    "alert_id": "ALERT-OUT-0adf5f5aae14",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.649925,
+      "longitude": 75.058625
+    },
+    "area_lost_ha": 0.1647,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-a0dc223fdf32"
+  },
+  {
+    "alert_id": "ALERT-OUT-c340175c4e2e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.648785,
+      "longitude": 75.058036
+    },
+    "area_lost_ha": 0.1454,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-f2d8a8404ddd"
+  },
+  {
+    "alert_id": "ALERT-OUT-29b315d28ffe",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.648144,
+      "longitude": 75.057472
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-397fc00af205"
+  },
+  {
+    "alert_id": "ALERT-OUT-ba34eaa99af1",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.646808,
+      "longitude": 75.078145
+    },
+    "area_lost_ha": 0.1647,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-1a97434655f7"
+  },
+  {
+    "alert_id": "ALERT-OUT-a7e243deaa6c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.644222,
+      "longitude": 75.090691
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-41aeb368fe5a"
+  },
+  {
+    "alert_id": "ALERT-OUT-f8db41f1fc80",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.643637,
+      "longitude": 75.087231
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-9d543a98fbb1"
+  },
+  {
+    "alert_id": "ALERT-OUT-e435df400569",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.643422,
+      "longitude": 75.080717
+    },
+    "area_lost_ha": 0.1357,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-47c0a68ada3e"
+  },
+  {
+    "alert_id": "ALERT-OUT-180e2b053152",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.643376,
+      "longitude": 75.091183
+    },
+    "area_lost_ha": 0.2423,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-5b14183c1425"
+  },
+  {
+    "alert_id": "ALERT-OUT-83680e5882ff",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.638258,
+      "longitude": 75.094882
+    },
+    "area_lost_ha": 0.1938,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-048a2c2ac41a"
+  },
+  {
+    "alert_id": "ALERT-OUT-a5c3e4a2ee56",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.631436,
+      "longitude": 75.091137
+    },
+    "area_lost_ha": 0.1357,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-71be26451382"
+  },
+  {
+    "alert_id": "ALERT-OUT-211696624f4b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.630049,
+      "longitude": 75.091416
+    },
+    "area_lost_ha": 0.3586,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-8e7d9b10b568"
+  },
+  {
+    "alert_id": "ALERT-OUT-53ebf32f0496",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.629677,
+      "longitude": 75.090496
+    },
+    "area_lost_ha": 0.533,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-2a3726728caa"
+  },
+  {
+    "alert_id": "ALERT-OUT-c5530b714849",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.629453,
+      "longitude": 75.074897
+    },
+    "area_lost_ha": 0.1357,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-df02194141aa"
+  },
+  {
+    "alert_id": "ALERT-OUT-e60f571110d4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.628166,
+      "longitude": 75.088734
+    },
+    "area_lost_ha": 0.1454,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-ad712ecbae88"
+  },
+  {
+    "alert_id": "ALERT-OUT-ca75d5442f05",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.625915,
+      "longitude": 75.091461
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Others",
+    "polygon_id": "LOSS-f20c8767af07"
+  },
+  {
+    "alert_id": "ALERT-OUT-7e91ecabd352",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.626206,
+      "longitude": 75.090631
+    },
+    "area_lost_ha": 1.1533,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-20a44f23088c"
+  },
+  {
+    "alert_id": "ALERT-OUT-f65ca51ab9b1",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.625442,
+      "longitude": 75.092008
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-a3b96f6f7a58"
+  },
+  {
+    "alert_id": "ALERT-OUT-2ad0f4c3c1d4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.624974,
+      "longitude": 75.090107
+    },
+    "area_lost_ha": 0.1551,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-453beb149f11"
+  },
+  {
+    "alert_id": "ALERT-OUT-f30db5cece50",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.624813,
+      "longitude": 75.091257
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-435f4739f6fa"
+  },
+  {
+    "alert_id": "ALERT-OUT-54be40c89450",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.623853,
+      "longitude": 75.091039
+    },
+    "area_lost_ha": 0.3101,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-d0d16942a751"
+  },
+  {
+    "alert_id": "ALERT-OUT-b534c7516236",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.623269,
+      "longitude": 75.046635
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-c88c0b045e5c"
+  },
+  {
+    "alert_id": "ALERT-OUT-9edf83c2fda9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.623024,
+      "longitude": 75.047019
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Urban",
+    "polygon_id": "LOSS-3963b2b37050"
+  },
+  {
+    "alert_id": "ALERT-OUT-f1e550004c71",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.61133,
+      "longitude": 75.005517
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-a2533283c667"
+  },
+  {
+    "alert_id": "ALERT-OUT-2d7e26143a52",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.611231,
+      "longitude": 75.009502
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-7c371ae1c3f2"
+  },
+  {
+    "alert_id": "ALERT-OUT-96530e4cc301",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.611261,
+      "longitude": 75.000186
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-eb9de5c7dc7a"
+  },
+  {
+    "alert_id": "ALERT-OUT-0708d39e4be7",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.610819,
+      "longitude": 75.00004
+    },
+    "area_lost_ha": 0.2326,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-99d6ef8166db"
+  },
+  {
+    "alert_id": "ALERT-OUT-64e9f17a9fc5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.609987,
+      "longitude": 75.000731
+    },
+    "area_lost_ha": 0.1648,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-62b0e256efd7"
+  },
+  {
+    "alert_id": "ALERT-OUT-59872e63605a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.610024,
+      "longitude": 75.001152
+    },
+    "area_lost_ha": 0.1357,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f4b23554ed69"
+  },
+  {
+    "alert_id": "ALERT-OUT-642a5bb54239",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.60996,
+      "longitude": 75.006304
+    },
+    "area_lost_ha": 0.1357,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-c8f6af322d8f"
+  },
+  {
+    "alert_id": "ALERT-OUT-9f4fec6c9b45",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.608896,
+      "longitude": 75.005733
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-c59ae8a59601"
+  },
+  {
+    "alert_id": "ALERT-OUT-7f597e021be9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.607257,
+      "longitude": 75.004734
+    },
+    "area_lost_ha": 0.126,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-f2964ff54de5"
+  },
+  {
+    "alert_id": "ALERT-OUT-36c21f17d89d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.607211,
+      "longitude": 75.005263
+    },
+    "area_lost_ha": 0.1454,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-9044cd07ab75"
+  },
+  {
+    "alert_id": "ALERT-OUT-1065b6b46beb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.607159,
+      "longitude": 75.006025
+    },
+    "area_lost_ha": 0.1163,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-6561e80029d9"
+  },
+  {
+    "alert_id": "ALERT-OUT-bc2215c58146",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.606628,
+      "longitude": 75.004426
+    },
+    "area_lost_ha": 0.1841,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-edf625cf8971"
+  },
+  {
+    "alert_id": "ALERT-OUT-ef2bd81c6b41",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.606144,
+      "longitude": 75.000314
+    },
+    "area_lost_ha": 0.1066,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-226d37dab1ca"
+  },
+  {
+    "alert_id": "ALERT-OUT-fa2a36daf4ba",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.605939,
+      "longitude": 75.003845
+    },
+    "area_lost_ha": 0.5815,
+    "region_area_type": "Rural",
+    "polygon_id": "LOSS-aaf5dc5a2227"
+  }
+]

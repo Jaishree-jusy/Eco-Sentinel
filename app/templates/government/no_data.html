@@ -1,0 +1,20 @@
+{% extends "government/base.html" %}
+{% block page_title %}No Data Yet{% endblock %}
+{% block content %}
+<div class="state-panel" style="margin-top:40px;">
+    <div class="state-icon">&#128203;</div>
+    <h2>No data available</h2>
+    <p>The pipeline hasn't been run and synced to the database yet. Run these in order:</p>
+    <div class="card" style="text-align:left;font-family:monospace;font-size:12.5px;line-height:1.9;background:#0f1a14;color:#c8e6d5;padding:18px;">
+        python -m app.acquisition.cli run<br>
+        python -m app.gee_processing.cli process<br>
+        python -m app.loss_detection.cli detect<br>
+        python -m app.polygon_analysis.cli analyze<br>
+        python -m app.boundary_check.cli check<br>
+        python -m app.alerts.cli generate<br>
+        python -m app.evidence.cli generate<br>
+        python -m app.blockchain.cli record<br>
+        python -m app.database.cli sync
+    </div>
+</div>
+{% endblock %}

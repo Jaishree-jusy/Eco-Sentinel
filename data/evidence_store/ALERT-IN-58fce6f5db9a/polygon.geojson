@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "alert_id": "ALERT-IN-58fce6f5db9a", "date_time": "2026-08-08T03:43:44.131821+00:00", "area_lost_ha": 0.1065, "severity_level": "moderate", "region_division": "Dakshina Kannada", "polygon_id": "LOSS-0955cb3a737c", "latitude": 12.92614, "longitude": 75.048546 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 75.048402938839232, 12.926307780837854 ], [ 75.048402938839232, 12.926038286252618 ], [ 75.048492770367645, 12.926038286252618 ], [ 75.048492770367645, 12.925948454724207 ], [ 75.048672433424471, 12.925948454724207 ], [ 75.048672433424471, 12.926307780837854 ], [ 75.048402938839232, 12.926307780837854 ] ] ] } }
+]
+}

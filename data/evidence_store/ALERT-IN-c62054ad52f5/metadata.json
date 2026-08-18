@@ -1,0 +1,18 @@
+{
+  "alert_id": "ALERT-IN-c62054ad52f5",
+  "date_time": "2026-08-08T03:43:44.131821+00:00",
+  "location": {
+    "latitude": 12.968922,
+    "longitude": 74.824295
+  },
+  "area_lost_ha": 0.4162,
+  "severity_level": "mild",
+  "region_division": "Dakshina Kannada",
+  "polygon_id": "LOSS-3ad6ec81daa8",
+  "evidence_generated_at": "2026-08-08T03:45:20.770554+00:00",
+  "evidence_files": {
+    "map_snapshot": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-c62054ad52f5\\map_snapshot.png",
+    "geojson": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-c62054ad52f5\\polygon.geojson",
+    "pdf_report": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-c62054ad52f5\\report.pdf"
+  }
+}

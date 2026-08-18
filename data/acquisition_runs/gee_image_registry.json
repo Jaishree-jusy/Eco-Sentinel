@@ -1,0 +1,14 @@
+{
+  "COPERNICUS/S2_SR_HARMONIZED/20251211T052231_20251211T053300_T43PEQ": {
+    "local_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\forest_samples\\Forest_Sample_2025_gee_f27ad2f4.tif",
+    "sha256": "8fb78d69eeea3c68888be32d848bd2dc3e4b13c559d0954e36a73881a5455ae6",
+    "acquired_at": "2026-08-11T03:47:49.161014+00:00",
+    "cloud_cover_pct": 1e-05
+  },
+  "COPERNICUS/S2_SR_HARMONIZED/20260724T051649_20260724T053409_T43PDP": {
+    "local_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\raw_images\\forest_samples\\Forest_Sample_2025_gee_4f3a00a8_aligned_4f3a00a8.tif",
+    "sha256": "124e5dd716dd83a7b4dc399f7fd2153980c847d6cd32731d5ad3b102ad315ed0",
+    "acquired_at": "2026-08-16T02:30:47.787175+00:00",
+    "cloud_cover_pct": 14.116104
+  }
+}

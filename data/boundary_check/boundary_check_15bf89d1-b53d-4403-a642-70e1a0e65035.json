@@ -1,0 +1,24 @@
+{
+  "run_id": "15bf89d1-b53d-4403-a642-70e1a0e65035",
+  "checked_at": "2026-08-15T07:57:59.002889+00:00",
+  "source_polygon_analysis_run_id": "9f529d9a-f39a-4612-b2b0-a755bb87aae0",
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "region_column_used": "NAME_2",
+  "inside_forest": {
+    "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\boundary_check\\inside_forest_2023_2025.geojson",
+    "count": 149,
+    "total_area_ha": 39378.8441
+  },
+  "outside_forest": {
+    "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\boundary_check\\outside_forest_2023_2025.geojson",
+    "count": 229,
+    "total_area_ha": 55.8668
+  },
+  "unknown_classification": {
+    "path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\boundary_check\\unknown_classification_2023_2025.geojson",
+    "count": 0,
+    "total_area_ha": 0.0,
+    "note": "Polygons with no WorldCover coverage to classify. Not routed to either alert pathway - requires manual review."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "region": {
+    "name": "Region 1 (Karnataka AOI)",
+    "bbox": {
+      "left": 74.74998260145473,
+      "bottom": 12.599949838117233,
+      "right": 75.1000560676761,
+      "top": 13.000059465664068
+    }
+  },
+  "reference_dataset": "UMD/hansen/global_forest_change_2025_v1_13",
+  "reference_treecover_threshold": 30,
+  "positive_loss_years": [
+    2024,
+    2025
+  ],
+  "feature_columns": [
+    "delta_B1",
+    "delta_B2",
+    "delta_B3",
+    "delta_B4",
+    "delta_B5",
+    "delta_B6",
+    "delta_B7",
+    "delta_B8",
+    "delta_B8A",
+    "delta_B9",
+    "delta_B11",
+    "delta_B12",
+    "delta_ndvi",
+    "delta_nbr",
+    "delta_ndwi",
+    "delta_ndmi"
+  ],
+  "samples_per_class": 25000,
+  "total_samples": 50000,
+  "positive_samples": 25000,
+  "negative_samples": 25000,
+  "output_csv": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\supervised\\training_samples.csv",
+  "reference_raster": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\supervised\\hansen_reference.tif",
+  "cloud_scl_codes": [
+    0,
+    1,
+    3,
+    8,
+    9,
+    10
+  ]
+}

@@ -1,0 +1,48 @@
+{% extends "site/_base.html" %}
+{% block title %}Get Started — ECO-SENTINEL{% endblock %}
+
+{% block content %}
+<section class="site-section" style="text-align:center;">
+    <h2>Choose your view</h2>
+    <p class="section-lede" style="margin-left:auto;margin-right:auto;">
+        ECO-SENTINEL shows different information depending on who's looking. Pick the view that matches you.
+    </p>
+
+    <div class="role-grid">
+        <a href="/government/" class="role-card">
+            <div style="font-size:26px;margin-bottom:12px;">🏛️</div>
+            <h3>Forest Department / Government</h3>
+            <p>Full access: interactive map, complete evidence packages, blockchain verification, and
+               detailed analytics for every inside-forest vegetation loss alert.</p>
+            {% if stats %}
+            <p style="font-size:12px;color:var(--color-text-muted);margin-bottom:16px;">
+                {{ stats.inside_count }} alerts currently tracked
+            </p>
+            {% endif %}
+            <span class="btn btn-primary btn-sm">Enter Government Dashboard &rarr;</span>
+        </a>
+
+        <a href="/ngo/" class="role-card orange">
+            <div style="font-size:26px;margin-bottom:12px;">🤝</div>
+            <h3>NGO / Environmental Organization</h3>
+            <p>Awareness-focused view: outside-forest vegetation loss, trend analysis, and area context
+               to help plan community action and restoration efforts.</p>
+            {% if stats %}
+            <p style="font-size:12px;color:var(--color-text-muted);margin-bottom:16px;">
+                {{ stats.outside_count }} alerts currently tracked
+            </p>
+            {% endif %}
+            <span class="btn btn-orange btn-sm">Enter NGO Dashboard &rarr;</span>
+        </a>
+    </div>
+
+    {% if not stats %}
+    <div class="card" style="max-width:500px;margin:40px auto 0;text-align:left;">
+        <p style="font-size:13px;color:var(--color-text-secondary);margin:0;">
+            No pipeline data has been synced yet. Both dashboards will show an empty state until the
+            pipeline has been run and <code>python -m app.database.cli sync</code> has been executed.
+        </p>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

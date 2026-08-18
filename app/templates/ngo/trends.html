@@ -1,0 +1,52 @@
+{% extends "ngo/base.html" %}
+{% block page_title %}Trend Analysis{% endblock %}
+{% block page_subtitle %}Area-type breakdown{% endblock %}
+{% block head %}<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>{% endblock %}
+{% block content %}
+
+<div class="card" style="border-left:4px solid var(--color-info);">
+    <p style="margin:0;font-size:13px;color:var(--color-text-secondary);">
+        <strong style="color:var(--color-text-primary);">Note:</strong> trend analysis over time requires multiple comparison periods
+        (e.g. 2021&rarr;2023, 2023&rarr;2025, ...). Currently only one acquisition run exists
+        ({{ meta.base_year }} &rarr; {{ meta.comparison_year }}), so this page shows the
+        current period's breakdown. Once more periods are run, this page will show change over time.
+    </p>
+</div>
+
+<div class="card-grid-2">
+    <div class="card">
+        <div class="card-header"><h2>Alert Count by Area Type</h2></div>
+        <div style="display:flex;align-items:center;gap:24px;">
+            <div style="width:150px;height:150px;flex-shrink:0;"><canvas id="countChart"></canvas></div>
+            <table class="table-clean">
+                {% for area_type, count in area_type_counts.items() %}
+                <tr><td>{{ area_type }}</td><td style="text-align:right;font-weight:600;">{{ count }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header"><h2>Area Lost (ha) by Area Type</h2></div>
+        <table class="table-clean">
+            {% for area_type, ha in area_type_ha.items() %}
+            <tr><td>{{ area_type }}</td><td style="text-align:right;font-weight:600;">{{ ha }} ha</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<script>
+new Chart(document.getElementById('countChart'), {
+    type: 'doughnut',
+    data: {
+        labels: [{% for area_type in area_type_counts.keys() %}"{{ area_type }}",{% endfor %}],
+        datasets: [{
+            data: [{% for count in area_type_counts.values() %}{{ count }},{% endfor %}],
+            backgroundColor: ['#3498db', '#27ae60', '#95a5a6', '#ea580c'],
+            borderWidth: 0,
+        }]
+    },
+    options: { plugins: { legend: { display: false } }, cutout: '65%' }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,2535 @@
+[
+  {
+    "alert_id": "ALERT-IN-9615c8ba5513",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.999896,
+      "longitude": 75.052978
+    },
+    "area_lost_ha": 0.3387,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a475980ecff0",
+    "ai_disturbance_score": 0.555592954158783,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-35c1f08a4ee2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.998958,
+      "longitude": 75.012889
+    },
+    "area_lost_ha": 0.3581,
+    "severity_level": "severe",
+    "region_division": "Udupi",
+    "polygon_id": "LOSS-4a14474b587d",
+    "ai_disturbance_score": 0.5365239977836609,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-fc3d79aa625a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.998637,
+      "longitude": 75.013953
+    },
+    "area_lost_ha": 0.1161,
+    "severity_level": "moderate",
+    "region_division": "Udupi",
+    "polygon_id": "LOSS-842e558e73e8",
+    "ai_disturbance_score": 0.5394325852394104,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-174654e9eeea",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.997742,
+      "longitude": 75.037578
+    },
+    "area_lost_ha": 0.2903,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3b75dcec6a5b",
+    "ai_disturbance_score": 0.5859751105308533,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-742ca236dd2f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.991521,
+      "longitude": 75.064021
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-6bb999fe8ec7",
+    "ai_disturbance_score": 0.5848931074142456,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-696ef1432e88",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.990403,
+      "longitude": 75.023193
+    },
+    "area_lost_ha": 0.1452,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-05ed5a63fa11",
+    "ai_disturbance_score": 0.5489969253540039,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-f012f823aa56",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.988741,
+      "longitude": 75.071647
+    },
+    "area_lost_ha": 0.1548,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-70793a437d7e",
+    "ai_disturbance_score": 0.5386338233947754,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-0d953bdb9046",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.986607,
+      "longitude": 75.091215
+    },
+    "area_lost_ha": 0.1161,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b7d1d1979994",
+    "ai_disturbance_score": 0.540756106376648,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-e073db518f47",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.985455,
+      "longitude": 75.030984
+    },
+    "area_lost_ha": 0.2613,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-87688155944d",
+    "ai_disturbance_score": 0.5441396236419678,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1b8d835dc8f8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.984738,
+      "longitude": 75.093728
+    },
+    "area_lost_ha": 0.1645,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-68365167a778",
+    "ai_disturbance_score": 0.5304384827613831,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1ee913d1dbdf",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.983378,
+      "longitude": 75.028393
+    },
+    "area_lost_ha": 0.3484,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3238ae1ed76b",
+    "ai_disturbance_score": 0.5247466564178467,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-23f8ca346ced",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.98086,
+      "longitude": 75.043572
+    },
+    "area_lost_ha": 0.2129,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d7c9c0e96a36",
+    "ai_disturbance_score": 0.5381557941436768,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7542f4e48424",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.980169,
+      "longitude": 75.051925
+    },
+    "area_lost_ha": 0.2323,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-516cd67eddeb",
+    "ai_disturbance_score": 0.5463982224464417,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-ce46be760bfe",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.979809,
+      "longitude": 75.088705
+    },
+    "area_lost_ha": 0.1355,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-663e968bde95",
+    "ai_disturbance_score": 0.5392853021621704,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-01e729c2cb19",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.978671,
+      "longitude": 75.016495
+    },
+    "area_lost_ha": 0.1936,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-00e8d95f32a8",
+    "ai_disturbance_score": 0.5591192245483398,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-4daab22aaa48",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.978462,
+      "longitude": 75.009261
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-788af69f1538",
+    "ai_disturbance_score": 0.5550795793533325,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-4f66f0a754aa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.977218,
+      "longitude": 75.084159
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-010380dc97d2",
+    "ai_disturbance_score": 0.5390353798866272,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c385855693eb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.977108,
+      "longitude": 75.082429
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "mild",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-345149175225",
+    "ai_disturbance_score": 0.5302999019622803,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-a79c262398e8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.976359,
+      "longitude": 75.094268
+    },
+    "area_lost_ha": 0.1452,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-dce3c849643d",
+    "ai_disturbance_score": 0.5334625840187073,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-e25ce1533b1c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.975989,
+      "longitude": 75.006529
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-400ed6bab8d1",
+    "ai_disturbance_score": 0.63326096534729,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-f3fa1aaee9c5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.975928,
+      "longitude": 75.027199
+    },
+    "area_lost_ha": 0.2323,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-e62d8c607139",
+    "ai_disturbance_score": 0.6014298796653748,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-26c1a9b10d5a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.972395,
+      "longitude": 75.0724
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-e6f0b9d88637",
+    "ai_disturbance_score": 0.5260262489318848,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-e336b2299819",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.967652,
+      "longitude": 75.022888
+    },
+    "area_lost_ha": 0.1839,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-36c77906cadb",
+    "ai_disturbance_score": 0.5264442563056946,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-6356d1962d8d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.967448,
+      "longitude": 75.023628
+    },
+    "area_lost_ha": 0.1645,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d9fdab161924",
+    "ai_disturbance_score": 0.5364761352539062,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1df3ff1fa3c1",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.966998,
+      "longitude": 75.02324
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-46a4da7ae96b",
+    "ai_disturbance_score": 0.5342387557029724,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-ec791ce5dcc6",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.965985,
+      "longitude": 75.014916
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-65dfa59159da",
+    "ai_disturbance_score": 0.5336815714836121,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-d184c1032231",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.965642,
+      "longitude": 75.08278
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-9a73c9a00a10",
+    "ai_disturbance_score": 0.5408206582069397,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c5477f99f649",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.965322,
+      "longitude": 75.07218
+    },
+    "area_lost_ha": 0.2033,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-01aee011445f",
+    "ai_disturbance_score": 0.5324958562850952,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7f042f26de2a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.965168,
+      "longitude": 75.074646
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-9422e0e1b800",
+    "ai_disturbance_score": 0.5333741903305054,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-04ca5e585a59",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.965036,
+      "longitude": 75.028692
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-618793b8aac3",
+    "ai_disturbance_score": 0.5397921204566956,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-eb68b20fe3a1",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.9643,
+      "longitude": 75.081891
+    },
+    "area_lost_ha": 0.1355,
+    "severity_level": "mild",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-7a936cf8988d",
+    "ai_disturbance_score": 0.5129498243331909,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-0654c3d81cd8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.963169,
+      "longitude": 75.05014
+    },
+    "area_lost_ha": 0.1161,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b1813b5656d0",
+    "ai_disturbance_score": 0.5313373804092407,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-57d189c3ae2e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.962106,
+      "longitude": 75.086654
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-67f03fe050e4",
+    "ai_disturbance_score": 0.5610631704330444,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-62d5ebd043b8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.961969,
+      "longitude": 75.05667
+    },
+    "area_lost_ha": 0.1839,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-acd025e3bd8e",
+    "ai_disturbance_score": 0.7262809872627258,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-2de25d4cc068",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.960121,
+      "longitude": 75.027717
+    },
+    "area_lost_ha": 0.6582,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-fda1511f4f5a",
+    "ai_disturbance_score": 0.5285407900810242,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-0c5b13a3314e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.958939,
+      "longitude": 75.06443
+    },
+    "area_lost_ha": 0.1161,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-75255caca5b0",
+    "ai_disturbance_score": 0.512995183467865,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-4db45772f85e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.958253,
+      "longitude": 75.000124
+    },
+    "area_lost_ha": 0.1645,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d5a94e81c68e",
+    "ai_disturbance_score": 0.5557857155799866,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-db867e4d0937",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.958222,
+      "longitude": 75.064552
+    },
+    "area_lost_ha": 0.542,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-ee6e1ce7cc40",
+    "ai_disturbance_score": 0.5123607516288757,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-29aad7f20188",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.954611,
+      "longitude": 75.000316
+    },
+    "area_lost_ha": 0.2904,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-c6b041844d51",
+    "ai_disturbance_score": 0.6003115177154541,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-21e1a03b4005",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.954013,
+      "longitude": 75.062433
+    },
+    "area_lost_ha": 0.2129,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-66a5153658c8",
+    "ai_disturbance_score": 0.729186475276947,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-4a4bf70950a0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.949447,
+      "longitude": 75.02736
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-79e645734197",
+    "ai_disturbance_score": 0.5596785545349121,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-bf43ba56eb70",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.948997,
+      "longitude": 75.08107
+    },
+    "area_lost_ha": 0.1355,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b50e2ff9d3af",
+    "ai_disturbance_score": 0.5518404841423035,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-96a41fb07a5a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.948182,
+      "longitude": 75.003732
+    },
+    "area_lost_ha": 0.2517,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-024247e9111d",
+    "ai_disturbance_score": 0.5066515207290649,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-37a382faeaf0",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.94788,
+      "longitude": 75.003197
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-0c29d3a19848",
+    "ai_disturbance_score": 0.5136055946350098,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-dc516686e58c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.946655,
+      "longitude": 75.032423
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3effda1ba5b2",
+    "ai_disturbance_score": 0.5268317461013794,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-09e543db8b45",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.946013,
+      "longitude": 75.030963
+    },
+    "area_lost_ha": 0.1355,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-85b2db56a727",
+    "ai_disturbance_score": 0.5505459904670715,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-5fbb40cec56e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.944458,
+      "longitude": 75.020951
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-8864dacdd8a3",
+    "ai_disturbance_score": 0.47228068113327026,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-cc05a15d42f9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.940565,
+      "longitude": 75.01607
+    },
+    "area_lost_ha": 0.1355,
+    "severity_level": "mild",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-697c4e1a4a11",
+    "ai_disturbance_score": 0.47621607780456543,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-05138c4fc0bb",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.940301,
+      "longitude": 75.003181
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-9e5d376b48cb",
+    "ai_disturbance_score": 0.5167122483253479,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-09584eb7ba29",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.939932,
+      "longitude": 75.010262
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-586be81c598c",
+    "ai_disturbance_score": 0.47157755494117737,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-871740dd9133",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.939222,
+      "longitude": 75.023007
+    },
+    "area_lost_ha": 0.1839,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-2598c2a67f1c",
+    "ai_disturbance_score": 0.4872254729270935,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-d5516452d92c",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.939081,
+      "longitude": 75.023765
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "mild",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a6c0450e35b1",
+    "ai_disturbance_score": 0.46904900670051575,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9ef3638588d3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.938802,
+      "longitude": 75.032196
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-894d22d5ca47",
+    "ai_disturbance_score": 0.601121723651886,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-6f7ca816e5c2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.938887,
+      "longitude": 75.080059
+    },
+    "area_lost_ha": 0.1839,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-fd1e29b5d9f2",
+    "ai_disturbance_score": 0.579598605632782,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9b8bb4e153de",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.937184,
+      "longitude": 75.056419
+    },
+    "area_lost_ha": 0.2517,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-de08590c1fc6",
+    "ai_disturbance_score": 0.5162839293479919,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-ae25650a7e89",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.936773,
+      "longitude": 75.010061
+    },
+    "area_lost_ha": 0.213,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-12687dbdb97b",
+    "ai_disturbance_score": 0.4905029535293579,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-02da3253db12",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.936277,
+      "longitude": 75.000158
+    },
+    "area_lost_ha": 0.5517,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b00cfbe31507",
+    "ai_disturbance_score": 0.5209892392158508,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-69fbd2115b4e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.934805,
+      "longitude": 75.090554
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-ad5922dde700",
+    "ai_disturbance_score": 0.5332782864570618,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7e23e94e5b2f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.929967,
+      "longitude": 75.055254
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-223c1474e626",
+    "ai_disturbance_score": 0.4898720979690552,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c92fb89fc4c5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.929602,
+      "longitude": 75.080885
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-deefd3251d46",
+    "ai_disturbance_score": 0.5170459151268005,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-258289088b67",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.923416,
+      "longitude": 75.099798
+    },
+    "area_lost_ha": 0.1549,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3bfb8548c42b",
+    "ai_disturbance_score": 0.6726638078689575,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-8c5438cd13b3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.923315,
+      "longitude": 75.051429
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-c983e747844f",
+    "ai_disturbance_score": 0.5679687261581421,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-0458283183c2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.921424,
+      "longitude": 75.045921
+    },
+    "area_lost_ha": 0.1452,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f03978005619",
+    "ai_disturbance_score": 0.5921841859817505,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-083b28388697",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.916161,
+      "longitude": 75.010376
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a25f71e68f17",
+    "ai_disturbance_score": 0.5468754768371582,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-b50c289f234a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.912494,
+      "longitude": 75.059072
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-5d4bcd32eea1",
+    "ai_disturbance_score": 0.49727046489715576,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9c6a6eaf41e6",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.911385,
+      "longitude": 75.003278
+    },
+    "area_lost_ha": 0.2807,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-28e864eb5183",
+    "ai_disturbance_score": 0.8669218420982361,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7c6a88d09659",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.910024,
+      "longitude": 75.088209
+    },
+    "area_lost_ha": 0.1258,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-4bb5e3219bfc",
+    "ai_disturbance_score": 0.5491721630096436,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-8c4455580ffa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.903805,
+      "longitude": 75.099905
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-fafd90752137",
+    "ai_disturbance_score": 0.5264859199523926,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-64f30cdc6ca8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.903812,
+      "longitude": 75.050132
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-aa9e30200363",
+    "ai_disturbance_score": 0.47685274481773376,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-e4bea9f1aeea",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.901622,
+      "longitude": 75.054161
+    },
+    "area_lost_ha": 0.1936,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-be9de8c9062d",
+    "ai_disturbance_score": 0.6451007127761841,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-e7a60f6d52ca",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.900578,
+      "longitude": 75.090399
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-4ac9677b9f40",
+    "ai_disturbance_score": 0.5158016085624695,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-15d73e403263",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.898121,
+      "longitude": 75.072874
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-c7ea2364210b",
+    "ai_disturbance_score": 0.6159934401512146,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-d104b610208f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.895886,
+      "longitude": 75.093163
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-25e2d4c41a7f",
+    "ai_disturbance_score": 0.5202491879463196,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-068a4f6208e1",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.895451,
+      "longitude": 75.022702
+    },
+    "area_lost_ha": 0.1452,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a2bf54ff5b60",
+    "ai_disturbance_score": 0.5177525877952576,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-48bf98284bba",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.893856,
+      "longitude": 75.047827
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d2932d337161",
+    "ai_disturbance_score": 0.537073016166687,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-49b7aada5620",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.891146,
+      "longitude": 75.032506
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-6fb026e61756",
+    "ai_disturbance_score": 0.5235798358917236,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1e7abe380862",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.886565,
+      "longitude": 75.049632
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3f122d85007d",
+    "ai_disturbance_score": 0.5137171149253845,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-e481d2caad86",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.882219,
+      "longitude": 75.033715
+    },
+    "area_lost_ha": 0.2324,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-26f948faf903",
+    "ai_disturbance_score": 0.6013461947441101,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-5152c8f0acec",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.881485,
+      "longitude": 75.029182
+    },
+    "area_lost_ha": 0.2711,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a6f42f44dfe5",
+    "ai_disturbance_score": 0.6704718470573425,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-60f654e6ae9f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.880392,
+      "longitude": 75.039587
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-49a9eea25f81",
+    "ai_disturbance_score": 0.7342135906219482,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1fa80c4be6e2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.879977,
+      "longitude": 75.045311
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-18b42b44ebd5",
+    "ai_disturbance_score": 0.6794227957725525,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-556b5e5cf62d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.877311,
+      "longitude": 75.047394
+    },
+    "area_lost_ha": 0.1452,
+    "severity_level": "mild",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-58168c30afb7",
+    "ai_disturbance_score": 0.8344480395317078,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-89825d2559f8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.941887,
+      "longitude": 75.048827
+    },
+    "area_lost_ha": 10944.3662,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d53be47568ad",
+    "ai_disturbance_score": 0.5510469675064087,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c2c9c39ad0df",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.871421,
+      "longitude": 75.023744
+    },
+    "area_lost_ha": 0.3873,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-cff68c76976b",
+    "ai_disturbance_score": 0.6532523036003113,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-73458561821e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.870987,
+      "longitude": 75.047879
+    },
+    "area_lost_ha": 0.2905,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f1bef18dbc6f",
+    "ai_disturbance_score": 0.6360820531845093,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c4f4d6849290",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.865293,
+      "longitude": 75.008248
+    },
+    "area_lost_ha": 0.1356,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f5a64f537455",
+    "ai_disturbance_score": 0.5002864003181458,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-a6a9fd7dd0ee",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.863527,
+      "longitude": 75.045854
+    },
+    "area_lost_ha": 0.1549,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-015b7c39bf26",
+    "ai_disturbance_score": 0.6810320019721985,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-bb06844f5da3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.859724,
+      "longitude": 74.999997
+    },
+    "area_lost_ha": 0.1646,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-febeb7eb69a1",
+    "ai_disturbance_score": 0.5366738438606262,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-04f3c352ff7b",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.859698,
+      "longitude": 75.055865
+    },
+    "area_lost_ha": 0.1356,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f53424f4be46",
+    "ai_disturbance_score": 0.5483026504516602,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7340684dfe6e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.859394,
+      "longitude": 75.055164
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-39aeaecd5747",
+    "ai_disturbance_score": 0.7228468656539917,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-6604d044c592",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.859216,
+      "longitude": 74.999963
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-e18703b8ca0a",
+    "ai_disturbance_score": 0.5033316016197205,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-94aa1b5cfbc9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.858399,
+      "longitude": 75.080771
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3be066ca0c7e",
+    "ai_disturbance_score": 0.5228977799415588,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-3180e8926c6d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.85674,
+      "longitude": 75.090662
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b2158abcee74",
+    "ai_disturbance_score": 0.5768042802810669,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9cf4610a5a92",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.856684,
+      "longitude": 75.090008
+    },
+    "area_lost_ha": 0.1937,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-2c8de15f40e0",
+    "ai_disturbance_score": 0.803601861000061,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9e2c0f1bf792",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.855176,
+      "longitude": 75.094988
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a31aa835076a",
+    "ai_disturbance_score": 0.4949741065502167,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-f2d9a12d7f7e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.853471,
+      "longitude": 75.020492
+    },
+    "area_lost_ha": 0.2421,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-793364ad1727",
+    "ai_disturbance_score": 0.9223155975341797,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c749007c3fa8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.850415,
+      "longitude": 75.058928
+    },
+    "area_lost_ha": 0.1452,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d633e941adef",
+    "ai_disturbance_score": 0.5017582178115845,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-179b4727068f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.850213,
+      "longitude": 75.059235
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3d08757b7120",
+    "ai_disturbance_score": 0.4964413344860077,
+    "detection_class": "vegetation_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-6c9569a2f10e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.842817,
+      "longitude": 75.074533
+    },
+    "area_lost_ha": 0.2324,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-cf0e664a2ca5",
+    "ai_disturbance_score": 0.6873137354850769,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-d99a3fd413cc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.842568,
+      "longitude": 75.075
+    },
+    "area_lost_ha": 0.184,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-67aa2dcc268d",
+    "ai_disturbance_score": 0.7433514595031738,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-4d2ba64fe3aa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.84252,
+      "longitude": 75.077133
+    },
+    "area_lost_ha": 0.3873,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-29cb6df39a26",
+    "ai_disturbance_score": 0.7215276956558228,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-5aeb347a3e64",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841558,
+      "longitude": 75.092013
+    },
+    "area_lost_ha": 0.2905,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b169123b2ac5",
+    "ai_disturbance_score": 0.6913315653800964,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-fdcf83671fe9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841282,
+      "longitude": 75.096144
+    },
+    "area_lost_ha": 0.2033,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-8137cbf930b5",
+    "ai_disturbance_score": 0.7993437647819519,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-b1d095822537",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841109,
+      "longitude": 75.082962
+    },
+    "area_lost_ha": 0.1356,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-70653238dfc0",
+    "ai_disturbance_score": 0.8002001047134399,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-fc58de52df87",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840923,
+      "longitude": 75.087846
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-315bab3456fc",
+    "ai_disturbance_score": 0.7341482639312744,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-3ec005d6082f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.841,
+      "longitude": 75.082135
+    },
+    "area_lost_ha": 0.3486,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-43dea6308d2b",
+    "ai_disturbance_score": 0.6648848056793213,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1d8ed2497cf8",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.840824,
+      "longitude": 75.09759
+    },
+    "area_lost_ha": 0.1937,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-7ffca3e110db",
+    "ai_disturbance_score": 0.6399046182632446,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-385af3a02d25",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.839672,
+      "longitude": 75.006593
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-353e61a37e5b",
+    "ai_disturbance_score": 0.7026233077049255,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-87d95a2c1a80",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.839522,
+      "longitude": 75.00761
+    },
+    "area_lost_ha": 0.1453,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a98f9a820bea",
+    "ai_disturbance_score": 0.692191481590271,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-78c04d438847",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.828379,
+      "longitude": 75.091845
+    },
+    "area_lost_ha": 0.213,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-11dfb1a740f3",
+    "ai_disturbance_score": 0.6045416593551636,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-58ecf0f93de4",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.824999,
+      "longitude": 75.012827
+    },
+    "area_lost_ha": 0.184,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f2b3e80acb37",
+    "ai_disturbance_score": 0.6452176570892334,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-18090cf5cfa9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.824511,
+      "longitude": 75.012946
+    },
+    "area_lost_ha": 0.1937,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f8ffcee64104",
+    "ai_disturbance_score": 0.5370810627937317,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-8618ac0fe257",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.821459,
+      "longitude": 75.069768
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d58f41bb8958",
+    "ai_disturbance_score": 0.5040314197540283,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-df8eb8317c2e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.819184,
+      "longitude": 75.091986
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-befad2544b0a",
+    "ai_disturbance_score": 0.5056907534599304,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-8391d46d9351",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.816788,
+      "longitude": 75.093483
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d2e544a58e92",
+    "ai_disturbance_score": 0.5483136773109436,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c3817c13d848",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.811436,
+      "longitude": 75.071085
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-b53f7e65cbac",
+    "ai_disturbance_score": 0.5737423300743103,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1b5a6149a586",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.809474,
+      "longitude": 75.038903
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-78e8e17e3945",
+    "ai_disturbance_score": 0.6365318894386292,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-dca3b9dba6f3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.807719,
+      "longitude": 75.099708
+    },
+    "area_lost_ha": 0.155,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-6cefdad4f40e",
+    "ai_disturbance_score": 0.5163877010345459,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7a461bbc7314",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.801649,
+      "longitude": 75.078284
+    },
+    "area_lost_ha": 0.1453,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-7cee719276cd",
+    "ai_disturbance_score": 0.6482512354850769,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-06fb5a886c64",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.792923,
+      "longitude": 75.098873
+    },
+    "area_lost_ha": 0.2615,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-ab39e9fd8861",
+    "ai_disturbance_score": 0.5368040204048157,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-f712849da572",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.764611,
+      "longitude": 75.093379
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-2e64778c0249",
+    "ai_disturbance_score": 0.572021484375,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1a368f1ca8d2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.760486,
+      "longitude": 75.046269
+    },
+    "area_lost_ha": 0.1162,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-be7d83bd8fac",
+    "ai_disturbance_score": 0.5677701830863953,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-003cfdfee9d9",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.760401,
+      "longitude": 75.038607
+    },
+    "area_lost_ha": 0.1065,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-5c84d3352a2c",
+    "ai_disturbance_score": 0.5787172913551331,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-cfc2ff6973a2",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.759155,
+      "longitude": 75.028429
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-5a412d1e6374",
+    "ai_disturbance_score": 0.5489596128463745,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-43e06c097aec",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.758768,
+      "longitude": 75.043548
+    },
+    "area_lost_ha": 0.1066,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f73151e05ac0",
+    "ai_disturbance_score": 0.543464720249176,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-61f1d252a952",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.755107,
+      "longitude": 75.074848
+    },
+    "area_lost_ha": 0.1647,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-edc8ba68ddc8",
+    "ai_disturbance_score": 0.561244785785675,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-54ff4981e24e",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.752142,
+      "longitude": 75.052836
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-3c7e56c15310",
+    "ai_disturbance_score": 0.5327807068824768,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-a89215988e56",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.74947,
+      "longitude": 75.093154
+    },
+    "area_lost_ha": 0.2034,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-45f3d3ad0856",
+    "ai_disturbance_score": 0.5555951595306396,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-c5a9d860d629",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.748794,
+      "longitude": 75.093165
+    },
+    "area_lost_ha": 0.1356,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-f37d435ab4fb",
+    "ai_disturbance_score": 0.5661063194274902,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-7c6be376c302",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.746779,
+      "longitude": 75.071486
+    },
+    "area_lost_ha": 0.1066,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-4313cd85b6c1",
+    "ai_disturbance_score": 0.700831949710846,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-f5de89020dcc",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.744983,
+      "longitude": 75.058736
+    },
+    "area_lost_ha": 0.1841,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-40daf3afa15c",
+    "ai_disturbance_score": 0.5639466643333435,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-3cf0c20f028f",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.734745,
+      "longitude": 75.037507
+    },
+    "area_lost_ha": 0.3197,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-d0136bf878dc",
+    "ai_disturbance_score": 0.5604224801063538,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-bcffe4e60c39",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.723693,
+      "longitude": 74.999953
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "moderate",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-e8a8f0fbc98f",
+    "ai_disturbance_score": 0.5273724794387817,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-86558869d580",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.722534,
+      "longitude": 75.066097
+    },
+    "area_lost_ha": 0.1841,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-7cc18e210709",
+    "ai_disturbance_score": 0.5003154277801514,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-a4be7aa19395",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.721924,
+      "longitude": 75.017321
+    },
+    "area_lost_ha": 0.155,
+    "severity_level": "moderate",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-acee45ddc460",
+    "ai_disturbance_score": 0.6271421313285828,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-0f7fea23a23a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.710455,
+      "longitude": 75.081408
+    },
+    "area_lost_ha": 0.1066,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-89a3124e22f3",
+    "ai_disturbance_score": 0.5184911489486694,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9893d2c4d781",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.710373,
+      "longitude": 75.066488
+    },
+    "area_lost_ha": 0.1066,
+    "severity_level": "mild",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-065a754c73a7",
+    "ai_disturbance_score": 0.6672017574310303,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-2f36cbc98402",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.705284,
+      "longitude": 75.008601
+    },
+    "area_lost_ha": 0.1356,
+    "severity_level": "severe",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-6c8b7b10f733",
+    "ai_disturbance_score": 0.6056657433509827,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-27b65aabe1e5",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.705194,
+      "longitude": 75.087352
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-a2e26539c5d7",
+    "ai_disturbance_score": 0.5699923038482666,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-4689ba513e4d",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.702603,
+      "longitude": 75.006414
+    },
+    "area_lost_ha": 0.1259,
+    "severity_level": "severe",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-c092f66504ae",
+    "ai_disturbance_score": 0.6549206376075745,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-62cdac969fd3",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.69009,
+      "longitude": 75.053161
+    },
+    "area_lost_ha": 0.2907,
+    "severity_level": "moderate",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-3759ca4cf01f",
+    "ai_disturbance_score": 0.5421436429023743,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-9cb421d28e89",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.678752,
+      "longitude": 75.084086
+    },
+    "area_lost_ha": 0.1744,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-e9bf9a8b85ea",
+    "ai_disturbance_score": 0.5612033009529114,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-aedfa96fcd95",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.662559,
+      "longitude": 75.011407
+    },
+    "area_lost_ha": 0.1453,
+    "severity_level": "moderate",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-996be1597582",
+    "ai_disturbance_score": 0.6162993311882019,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-1b49188d6642",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.656475,
+      "longitude": 75.082957
+    },
+    "area_lost_ha": 0.1841,
+    "severity_level": "moderate",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-765901ff318b",
+    "ai_disturbance_score": 0.6670534610748291,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-bec6cad51a37",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.651564,
+      "longitude": 75.072972
+    },
+    "area_lost_ha": 0.4167,
+    "severity_level": "moderate",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-6a85fa6833d8",
+    "ai_disturbance_score": 0.7917888760566711,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-19bbe0255089",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.636371,
+      "longitude": 75.096946
+    },
+    "area_lost_ha": 0.1551,
+    "severity_level": "severe",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-195ec49bbc37",
+    "ai_disturbance_score": 0.6465854644775391,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-44c900a29a4a",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.623417,
+      "longitude": 75.043777
+    },
+    "area_lost_ha": 0.1454,
+    "severity_level": "severe",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-2ad0e9783abf",
+    "ai_disturbance_score": 0.6185833215713501,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-821285cd0568",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.609041,
+      "longitude": 75.043619
+    },
+    "area_lost_ha": 0.1938,
+    "severity_level": "severe",
+    "region_division": "Kasaragod",
+    "polygon_id": "LOSS-569d34d9358b",
+    "ai_disturbance_score": 0.6796693205833435,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  },
+  {
+    "alert_id": "ALERT-IN-44f90c40b7aa",
+    "date_time": "2026-08-15T07:58:51.054883+00:00",
+    "location": {
+      "latitude": 12.739655,
+      "longitude": 75.050753
+    },
+    "area_lost_ha": 28408.9848,
+    "severity_level": "severe",
+    "region_division": "Dakshina Kannada",
+    "polygon_id": "LOSS-820996a8cd1c",
+    "ai_disturbance_score": 0.5621861815452576,
+    "detection_class": "high_confidence_loss",
+    "legality_status": "legal_status_unknown",
+    "matched_authorization_id": null,
+    "final_category": "legal_status_unknown"
+  }
+]

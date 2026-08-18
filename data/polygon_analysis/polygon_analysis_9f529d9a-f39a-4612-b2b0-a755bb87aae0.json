@@ -1,0 +1,33 @@
+{
+  "run_id": "9f529d9a-f39a-4612-b2b0-a755bb87aae0",
+  "analyzed_at": "2026-08-15T07:56:51.738093+00:00",
+  "source_loss_detection_run_id": "ef42e729-0d41-42a7-bf03-64d21a81556d",
+  "base_year": 2023,
+  "comparison_year": 2025,
+  "region": {
+    "name": "Region 1 (Karnataka AOI)",
+    "bbox": {
+      "left": 74.74998260145473,
+      "bottom": 12.599949838117233,
+      "right": 75.1000560676761,
+      "top": 13.000059465664068
+    }
+  },
+  "geojson_path": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\polygon_analysis\\loss_polygons_2023_2025.geojson",
+  "stats": {
+    "raw_polygon_count": 10779,
+    "filtered_polygon_count": 378,
+    "min_area_ha_filter": 0.1,
+    "total_loss_area_ha": 39434.7109,
+    "severity_counts": {
+      "moderate": 190,
+      "severe": 171,
+      "mild": 17
+    },
+    "ai_scoring_applied": true,
+    "detection_class_counts": {
+      "high_confidence_loss": 367,
+      "vegetation_loss": 11
+    }
+  }
+}

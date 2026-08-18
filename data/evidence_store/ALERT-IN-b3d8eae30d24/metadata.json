@@ -1,0 +1,18 @@
+{
+  "alert_id": "ALERT-IN-b3d8eae30d24",
+  "date_time": "2026-08-08T03:43:44.131821+00:00",
+  "location": {
+    "latitude": 12.647539,
+    "longitude": 75.016335
+  },
+  "area_lost_ha": 0.2229,
+  "severity_level": "moderate",
+  "region_division": "Kasaragod",
+  "polygon_id": "LOSS-24e5def0b83f",
+  "evidence_generated_at": "2026-08-08T03:56:59.765654+00:00",
+  "evidence_files": {
+    "map_snapshot": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-b3d8eae30d24\\map_snapshot.png",
+    "geojson": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-b3d8eae30d24\\polygon.geojson",
+    "pdf_report": "C:\\Users\\jaish\\Downloads\\final-eco-sentinel\\eco-sentinel\\data\\evidence_store\\ALERT-IN-b3d8eae30d24\\report.pdf"
+  }
+}

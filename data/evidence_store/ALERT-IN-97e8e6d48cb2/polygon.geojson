@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "alert_id": "ALERT-IN-97e8e6d48cb2", "date_time": "2026-08-08T03:43:44.131821+00:00", "area_lost_ha": 0.1357, "severity_level": "mild", "region_division": "Kasaragod", "polygon_id": "LOSS-32464c061641", "latitude": 12.669127, "longitude": 74.967067 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 74.9669257425696, 12.669389609579671 ], [ 74.9669257425696, 12.668940451937612 ], [ 74.967285068683239, 12.668940451937612 ], [ 74.967285068683239, 12.669120114994437 ], [ 74.967105405626427, 12.669120114994437 ], [ 74.967105405626427, 12.669389609579671 ], [ 74.9669257425696, 12.669389609579671 ] ] ] } }
+]
+}
