@@ -1,11 +1,10 @@
+
 """
 Module 6B pipeline orchestration.
 
-Sits between Module 6 (forest boundary) and Module 7 (alerts). Reads
-Module 6's inside-forest polygons, applies the legality check to each,
-writes a new GeoJSON with legality_status/matched_authorization_id
-attached. With no authorization dataset configured (the current, honest
-default), every polygon gets "legal_status_unknown".
+Applies legality checks to Module 6 inside-forest polygons.
+An optional output_suffix keeps isolated test outputs separate from
+the standard year-based legality file.
 """
 
 import os
@@ -16,8 +15,14 @@ from datetime import datetime, timezone
 
 import geopandas as gpd
 
-from app.boundary_check.config import BOUNDARY_CHECK_DIR, AUTHORIZATION_DATASET_PATH
-from app.boundary_check.legality import load_authorization_dataset, check_legality, LEGAL_STATUS_UNKNOWN
+from app.boundary_check.config import (
+    BOUNDARY_CHECK_DIR,
+    AUTHORIZATION_DATASET_PATH,
+)
+from app.boundary_check.legality import (
+    load_authorization_dataset,
+    check_legality,
+)
 
 
 class LegalityCheckError(Exception):
@@ -25,22 +30,34 @@ class LegalityCheckError(Exception):
 
 
 def _find_latest_boundary_check_manifest():
-    pattern = os.path.join(BOUNDARY_CHECK_DIR, "boundary_check_*.json")
+    pattern = os.path.join(
+        BOUNDARY_CHECK_DIR,
+        "boundary_check_*.json",
+    )
     candidates = []
+
     for path in glob.glob(pattern):
         try:
-            with open(path) as f:
+            with open(path, encoding="utf-8") as f:
                 data = json.load(f)
             candidates.append((data["checked_at"], path, data))
-        except (json.JSONDecodeError, KeyError):
+        except (OSError, json.JSONDecodeError, KeyError):
             continue
+
     if not candidates:
-        raise LegalityCheckError("No Module 6 boundary-check manifest found. Run Module 6 first.")
-    candidates.sort(key=lambda x: x[0])
+        raise LegalityCheckError(
+            "No Module 6 boundary-check manifest found. Run Module 6 first."
+        )
+
+    candidates.sort(key=lambda item: item[0])
     return candidates[-1][2]
 
 
-def run_legality_check(boundary_manifest=None, authorization_dataset_path=AUTHORIZATION_DATASET_PATH):
+def run_legality_check(
+    boundary_manifest=None,
+    authorization_dataset_path=AUTHORIZATION_DATASET_PATH,
+    output_suffix=None,
+):
     if boundary_manifest is None:
         boundary_manifest = _find_latest_boundary_check_manifest()
 
@@ -49,34 +66,62 @@ def run_legality_check(boundary_manifest=None, authorization_dataset_path=AUTHOR
     comparison_year = boundary_manifest["comparison_year"]
 
     if not os.path.exists(inside_path):
-        raise LegalityCheckError(f"Inside-forest GeoJSON not found: {inside_path}")
+        raise LegalityCheckError(
+            f"Inside-forest GeoJSON not found: {inside_path}"
+        )
 
     gdf = gpd.read_file(inside_path)
 
     try:
-        authorization_gdf = load_authorization_dataset(authorization_dataset_path)
-    except ValueError as e:
-        raise LegalityCheckError(str(e))
+        authorization_gdf = load_authorization_dataset(
+            authorization_dataset_path
+        )
+    except ValueError as exc:
+        raise LegalityCheckError(str(exc)) from exc
 
-    detection_date = f"{comparison_year}-01-01"  # best available granularity right now
+    required_columns = {"geometry", "polygon_id"}
+    missing = required_columns - set(gdf.columns)
+    if missing:
+        raise LegalityCheckError(
+            f"Inside-forest GeoJSON is missing fields: {sorted(missing)}"
+        )
+
+    detection_date = f"{comparison_year}-01-01"
 
     legality_statuses = []
     matched_ids = []
+
     for _, row in gdf.iterrows():
-        result = check_legality(row.geometry, detection_date, authorization_gdf)
+        result = check_legality(
+            row.geometry,
+            detection_date,
+            authorization_gdf,
+        )
         legality_statuses.append(result["legality_status"])
         matched_ids.append(result["matched_authorization_id"])
 
-    gdf = gdf.copy()
-    gdf["legality_status"] = legality_statuses
-    gdf["matched_authorization_id"] = matched_ids
+    result_gdf = gdf.copy()
+    result_gdf["legality_status"] = legality_statuses
+    result_gdf["matched_authorization_id"] = matched_ids
 
     run_id = str(uuid.uuid4())
     os.makedirs(BOUNDARY_CHECK_DIR, exist_ok=True)
-    output_path = os.path.join(BOUNDARY_CHECK_DIR, f"legality_checked_{base_year}_{comparison_year}.geojson")
-    gdf.to_file(output_path, driver="GeoJSON")
 
-    status_counts = gdf["legality_status"].value_counts().to_dict()
+    # Preserve the original filename when no suffix is supplied.
+    suffix = f"_{output_suffix}" if output_suffix else ""
+    output_path = os.path.join(
+        BOUNDARY_CHECK_DIR,
+        f"legality_checked_{base_year}_{comparison_year}{suffix}.geojson",
+    )
+
+    result_gdf.to_file(output_path, driver="GeoJSON")
+
+    status_counts = {
+        str(key): int(value)
+        for key, value in result_gdf["legality_status"]
+        .value_counts(dropna=False)
+        .items()
+    }
 
     manifest = {
         "run_id": run_id,
@@ -84,13 +129,18 @@ def run_legality_check(boundary_manifest=None, authorization_dataset_path=AUTHOR
         "source_boundary_check_run_id": boundary_manifest.get("run_id"),
         "base_year": base_year,
         "comparison_year": comparison_year,
+        "output_suffix": output_suffix,
         "authorization_dataset_configured": authorization_gdf is not None,
         "output_path": output_path,
         "status_counts": status_counts,
     }
 
-    manifest_path = os.path.join(BOUNDARY_CHECK_DIR, f"legality_check_{run_id}.json")
-    with open(manifest_path, "w") as f:
+    manifest_path = os.path.join(
+        BOUNDARY_CHECK_DIR,
+        f"legality_check_{run_id}.json",
+    )
+
+    with open(manifest_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
 
     manifest["manifest_path"] = manifest_path

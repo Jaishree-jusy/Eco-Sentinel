@@ -16,7 +16,12 @@ Target:
 Features:
     12 Sentinel-2 spectral-band changes
     + NDVI, NBR, NDWI, NDMI changes
-    = 16 features
+    + 6 spatial NBR/context features inspired by the SSLT literature
+    = 22 features
+
+Additional dataset information:
+    row = Sentinel-2 raster row of sampled pixel
+    col = Sentinel-2 raster column of sampled pixel
 
 The existing SCL cloud-mask implementation is reused.
 """
@@ -31,28 +36,35 @@ import ee
 import numpy as np
 import pandas as pd
 import rasterio
+from scipy.ndimage import median_filter, uniform_filter
 
 from app.acquisition.config import (
     DEFAULT_REGION,
     DEFAULT_YEAR_PAIR,
     REGIONS,
 )
+
 from app.config import (
     FOREST_SAMPLES_DIR,
     DATA_DIR,
 )
+
 from app.gee_processing.cloud_mask import build_cloud_mask
 from app.gee_processing.config import CLOUD_SCL_CODES
 
 
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
 HANSEN_DATASET = "UMD/hansen/global_forest_change_2025_v1_13"
 
-# Hansen is ~30 m.
+# Hansen is approximately 30 m.
 HANSEN_SCALE = 30
 
 # Reference forest threshold.
-# Pixels with at least this percentage tree cover in 2000 are considered
-# reference forest for supervised training.
+# Pixels with at least this percentage tree cover in 2000
+# are considered reference forest for supervised training.
 TREE_COVER_THRESHOLD = 30
 
 # Maximum number of samples retained from each class.
@@ -61,7 +73,15 @@ DEFAULT_SAMPLES_PER_CLASS = 25_000
 # Random seed makes dataset generation reproducible.
 RANDOM_SEED = 42
 
-# Sentinel-2 spectral features used by the existing AI pipeline.
+# Spatial context window inspired by the reference SSLT paper.
+# 15 x 15 pixels is used to estimate local NBR context.
+SPATIAL_WINDOW = 15
+
+
+# ============================================================
+# SENTINEL-2 FEATURES
+# ============================================================
+
 SPECTRAL_BANDS = [
     "B1",
     "B2",
@@ -77,29 +97,66 @@ SPECTRAL_BANDS = [
     "B12",
 ]
 
+
 FEATURE_COLUMNS = [
     *[f"delta_{band}" for band in SPECTRAL_BANDS],
     "delta_ndvi",
     "delta_nbr",
     "delta_ndwi",
     "delta_ndmi",
+    # Spatial NBR/context features.
+    "nbr_local_median_2023",
+    "nbr_local_median_2025",
+    "snbr_2023",
+    "snbr_2025",
+    "delta_snbr",
+    "nbr_change_zscore",
 ]
 
-OUTPUT_DIR = os.path.join(DATA_DIR, "supervised")
-TRAINING_CSV = os.path.join(OUTPUT_DIR, "training_samples.csv")
-METADATA_JSON = os.path.join(OUTPUT_DIR, "dataset_metadata.json")
-REFERENCE_RASTER = os.path.join(OUTPUT_DIR, "hansen_reference.tif")
 
+# ============================================================
+# OUTPUT PATHS
+# ============================================================
+
+OUTPUT_DIR = os.path.join(
+    DATA_DIR,
+    "supervised",
+)
+
+TRAINING_CSV = os.path.join(
+    OUTPUT_DIR,
+    "training_samples.csv",
+)
+
+METADATA_JSON = os.path.join(
+    OUTPUT_DIR,
+    "dataset_metadata.json",
+)
+
+REFERENCE_RASTER = os.path.join(
+    OUTPUT_DIR,
+    "hansen_reference.tif",
+)
+
+
+# ============================================================
+# CUSTOM ERROR
+# ============================================================
 
 class SupervisedDatasetError(Exception):
     """Raised when supervised training data cannot be created."""
 
+
+# ============================================================
+# EARTH ENGINE
+# ============================================================
 
 def _initialize_ee() -> None:
     """Initialize Earth Engine using the project's existing credentials."""
 
     try:
         ee.Initialize()
+
     except Exception as exc:
         raise SupervisedDatasetError(
             "Earth Engine initialization failed. "
@@ -107,7 +164,14 @@ def _initialize_ee() -> None:
         ) from exc
 
 
-def _bbox_to_geometry(bbox: dict) -> ee.Geometry:
+# ============================================================
+# GEOMETRY
+# ============================================================
+
+def _bbox_to_geometry(
+    bbox: dict,
+) -> ee.Geometry:
+
     return ee.Geometry.Rectangle(
         [
             bbox["left"],
@@ -118,14 +182,20 @@ def _bbox_to_geometry(bbox: dict) -> ee.Geometry:
     )
 
 
+# ============================================================
+# HANSEN REFERENCE
+# ============================================================
+
 def download_hansen_reference(
     output_path: str = REFERENCE_RASTER,
     region_key: str = DEFAULT_REGION,
 ) -> str:
     """
-    Download Hansen tree-cover and loss-year reference data for the project AOI.
+    Download Hansen tree-cover and loss-year reference data
+    for the project AOI.
 
     The downloaded raster contains:
+
         band 1 = treecover2000
         band 2 = lossyear
     """
@@ -138,16 +208,28 @@ def download_hansen_reference(
         )
 
     bbox = REGIONS[region_key]["bbox"]
-    geometry = _bbox_to_geometry(bbox)
+
+    geometry = _bbox_to_geometry(
+        bbox
+    )
 
     image = (
         ee.Image(HANSEN_DATASET)
-        .select(["treecover2000", "lossyear"])
+        .select(
+            [
+                "treecover2000",
+                "lossyear",
+            ]
+        )
     )
 
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    os.makedirs(
+        os.path.dirname(output_path),
+        exist_ok=True,
+    )
 
     try:
+
         url = image.getDownloadURL(
             {
                 "region": geometry,
@@ -156,40 +238,64 @@ def download_hansen_reference(
                 "format": "GEO_TIFF",
             }
         )
+
     except Exception as exc:
+
         raise SupervisedDatasetError(
             f"Could not create Hansen download URL: {exc}"
         ) from exc
 
     import requests
 
-    response = requests.get(url, timeout=300)
+    response = requests.get(
+        url,
+        timeout=300,
+    )
 
     if response.status_code != 200:
+
         raise SupervisedDatasetError(
             "Hansen download failed: "
             f"HTTP {response.status_code}: "
             f"{response.text[:300]}"
         )
 
-    with open(output_path, "wb") as f:
-        f.write(response.content)
+    with open(
+        output_path,
+        "wb",
+    ) as f:
+
+        f.write(
+            response.content
+        )
 
     return output_path
 
 
-def _read_sentinel_raster(path: str) -> tuple[np.ndarray, dict]:
+# ============================================================
+# SENTINEL RASTER READER
+# ============================================================
+
+def _read_sentinel_raster(
+    path: str,
+) -> tuple[np.ndarray, dict]:
     """
     Read the 26-band Sentinel-2 raster.
 
     Returns:
-        array: shape (bands, rows, cols)
-        profile: rasterio profile
+        array:
+            shape = (bands, rows, cols)
+
+        profile:
+            rasterio profile
     """
 
     with rasterio.open(path) as src:
+
         array = src.read()
+
         profile = src.profile.copy()
+
         descriptions = src.descriptions
 
     expected = tuple(
@@ -224,20 +330,34 @@ def _read_sentinel_raster(path: str) -> tuple[np.ndarray, dict]:
     )
 
     if tuple(descriptions) != expected:
+
         raise SupervisedDatasetError(
             "Unexpected Sentinel-2 band order in "
-            f"{path}. Expected {expected}, got {descriptions}."
+            f"{path}. Expected {expected}, "
+            f"got {descriptions}."
         )
 
     return array, profile
 
 
-def _safe_ratio(numerator: np.ndarray, denominator: np.ndarray) -> np.ndarray:
+# ============================================================
+# SAFE RATIO
+# ============================================================
+
+def _safe_ratio(
+    numerator: np.ndarray,
+    denominator: np.ndarray,
+) -> np.ndarray:
     """Compute a ratio while avoiding division-by-zero."""
 
-    result = np.zeros_like(numerator, dtype=np.float32)
+    result = np.zeros_like(
+        numerator,
+        dtype=np.float32,
+    )
 
-    valid = np.abs(denominator) > 1e-8
+    valid = (
+        np.abs(denominator) > 1e-8
+    )
 
     np.divide(
         numerator,
@@ -249,37 +369,65 @@ def _safe_ratio(numerator: np.ndarray, denominator: np.ndarray) -> np.ndarray:
     return result
 
 
+# ============================================================
+# SPECTRAL INDICES
+# ============================================================
+
 def _compute_indices(
     array: np.ndarray,
 ) -> dict[str, np.ndarray]:
     """
     Compute vegetation/water indices from a Sentinel-2 array.
 
-    Band positions are based on the project's validated 26-band layout.
+    Band positions are based on the project's validated
+    26-band layout.
     """
 
     # 0-based positions.
-    b2 = array[1].astype(np.float32)
-    b4 = array[3].astype(np.float32)
-    b8 = array[7].astype(np.float32)
-    b11 = array[10].astype(np.float32)
-    b12 = array[11].astype(np.float32)
 
+    b2 = array[1].astype(
+        np.float32
+    )
+
+    b3 = array[2].astype(
+        np.float32
+    )
+
+    b4 = array[3].astype(
+        np.float32
+    )
+
+    b8 = array[7].astype(
+        np.float32
+    )
+
+    b11 = array[10].astype(
+        np.float32
+    )
+
+    b12 = array[11].astype(
+        np.float32
+    )
+
+    # NDVI
     ndvi = _safe_ratio(
         b8 - b4,
         b8 + b4,
     )
 
+    # NBR
     nbr = _safe_ratio(
         b8 - b12,
         b8 + b12,
     )
 
+    # Standard Green-NIR NDWI
     ndwi = _safe_ratio(
-        b3 := array[2].astype(np.float32),
-        b8 + b3,
+        b3 - b8,
+        b3 + b8,
     )
 
+    # NDMI
     ndmi = _safe_ratio(
         b8 - b11,
         b8 + b11,
@@ -293,16 +441,26 @@ def _compute_indices(
     }
 
 
+# ============================================================
+# BUILD CHANGE FEATURES
+# ============================================================
+
 def _build_change_features(
     base: np.ndarray,
     comparison: np.ndarray,
 ) -> tuple[np.ndarray, np.ndarray]:
     """
-    Build 16-dimensional Sentinel-2 change features.
+    Build the Sentinel-2 change features used by the supervised model.
+
+    The original 16 features are retained. Six additional spatial-context
+    features are derived from local NBR neighbourhood statistics, inspired
+    by the spatial-normalization idea used in the reference SSLT paper.
 
     Returns:
+
         feature_array:
-            shape (16, rows, cols)
+            shape = (22, rows, cols)
+
         valid_mask:
             True where both observations are cloud-valid.
     """
@@ -313,9 +471,7 @@ def _build_change_features(
     base_cloud = build_cloud_mask(base_scl)
     comparison_cloud = build_cloud_mask(comparison_scl)
 
-    valid_mask = ~(
-        base_cloud | comparison_cloud
-    )
+    valid_mask = ~(base_cloud | comparison_cloud)
 
     base_indices = _compute_indices(base)
     comparison_indices = _compute_indices(comparison)
@@ -327,6 +483,10 @@ def _build_change_features(
         for i, name in enumerate(SPECTRAL_BANDS)
     }
 
+    # --------------------------------------------------------
+    # Original spectral band changes
+    # --------------------------------------------------------
+
     for band_name in SPECTRAL_BANDS:
         index = band_indices[band_name]
 
@@ -336,6 +496,10 @@ def _build_change_features(
         )
 
         features.append(delta)
+
+    # --------------------------------------------------------
+    # Original index changes
+    # --------------------------------------------------------
 
     for index_name in [
         "ndvi",
@@ -350,10 +514,115 @@ def _build_change_features(
 
         features.append(delta.astype(np.float32))
 
+    # --------------------------------------------------------
+    # Paper-inspired spatial NBR context
+    # --------------------------------------------------------
+    # The reference SSLT work uses local spatial normalization of NBR to
+    # reduce phenological/local background variation. We use the same
+    # centre/local-median idea here, adapted to our two-date dataset.
+
+    base_nbr = base_indices["nbr"].astype(np.float32)
+    comparison_nbr = comparison_indices["nbr"].astype(np.float32)
+
+    # Local median NBR provides neighbourhood context.
+    base_local_median = median_filter(
+        base_nbr,
+        size=SPATIAL_WINDOW,
+        mode="nearest",
+    ).astype(np.float32)
+
+    comparison_local_median = median_filter(
+        comparison_nbr,
+        size=SPATIAL_WINDOW,
+        mode="nearest",
+    ).astype(np.float32)
+
+    # Local variance is computed efficiently from first/second moments.
+    base_mean = uniform_filter(
+        base_nbr,
+        size=SPATIAL_WINDOW,
+        mode="nearest",
+    )
+    comparison_mean = uniform_filter(
+        comparison_nbr,
+        size=SPATIAL_WINDOW,
+        mode="nearest",
+    )
+
+    base_sq_mean = uniform_filter(
+        base_nbr * base_nbr,
+        size=SPATIAL_WINDOW,
+        mode="nearest",
+    )
+    comparison_sq_mean = uniform_filter(
+        comparison_nbr * comparison_nbr,
+        size=SPATIAL_WINDOW,
+        mode="nearest",
+    )
+
+    base_local_std = np.sqrt(
+        np.maximum(base_sq_mean - base_mean * base_mean, 0.0)
+    ).astype(np.float32)
+
+    comparison_local_std = np.sqrt(
+        np.maximum(
+            comparison_sq_mean - comparison_mean * comparison_mean,
+            0.0,
+        )
+    ).astype(np.float32)
+
+    # sNBR = centre NBR / local median NBR.
+    # A small denominator guard prevents unstable ratios.
+    base_snbr = _safe_ratio(
+        base_nbr,
+        base_local_median,
+    )
+
+    comparison_snbr = _safe_ratio(
+        comparison_nbr,
+        comparison_local_median,
+    )
+
+    delta_snbr = (
+        comparison_snbr - base_snbr
+    ).astype(np.float32)
+
+    nbr_change = (
+        comparison_nbr - base_nbr
+    ).astype(np.float32)
+
+    # Local-change z-score: disturbance magnitude relative to local
+    # NBR variability. This complements raw delta_NBR.
+    local_std = np.sqrt(
+        0.5 * (base_local_std * base_local_std
+               + comparison_local_std * comparison_local_std)
+    ).astype(np.float32)
+
+    nbr_change_zscore = _safe_ratio(
+        nbr_change,
+        local_std + np.float32(1e-3),
+    ).astype(np.float32)
+
+    features.extend([
+        base_local_median,
+        comparison_local_median,
+        base_snbr,
+        comparison_snbr,
+        delta_snbr,
+        nbr_change_zscore,
+    ])
+
     feature_array = np.stack(features).astype(np.float32)
 
-    return feature_array, valid_mask
+    return (
+        feature_array,
+        valid_mask,
+    )
 
+
+# ============================================================
+# REPROJECT HANSEN TO SENTINEL GRID
+# ============================================================
 
 def _reproject_reference_to_sentinel_grid(
     reference_path: str,
@@ -363,27 +632,47 @@ def _reproject_reference_to_sentinel_grid(
     """
     Reproject Hansen reference data onto the Sentinel-2 grid.
 
-    Nearest-neighbour is used because tree-cover and loss-year are
-    categorical/reference values, not continuous measurements.
+    Nearest-neighbour is used because tree-cover and loss-year
+    are categorical/reference values.
     """
 
     from rasterio.warp import reproject
     from rasterio.enums import Resampling
 
     output = np.zeros(
-        (2, sentinel_shape[0], sentinel_shape[1]),
+        (
+            2,
+            sentinel_shape[0],
+            sentinel_shape[1],
+        ),
         dtype=np.float32,
     )
 
-    with rasterio.open(reference_path) as src:
-        for band_index in range(1, 3):
+    with rasterio.open(
+        reference_path
+    ) as src:
+
+        for band_index in range(
+            1,
+            3,
+        ):
+
             reproject(
-                source=rasterio.band(src, band_index),
-                destination=output[band_index - 1],
+                source=rasterio.band(
+                    src,
+                    band_index,
+                ),
+                destination=output[
+                    band_index - 1
+                ],
                 src_transform=src.transform,
                 src_crs=src.crs,
-                dst_transform=sentinel_profile["transform"],
-                dst_crs=sentinel_profile["crs"],
+                dst_transform=sentinel_profile[
+                    "transform"
+                ],
+                dst_crs=sentinel_profile[
+                    "crs"
+                ],
                 dst_width=sentinel_shape[1],
                 dst_height=sentinel_shape[0],
                 resampling=Resampling.nearest,
@@ -391,6 +680,10 @@ def _reproject_reference_to_sentinel_grid(
 
     return output
 
+
+# ============================================================
+# SAMPLE TRAINING PIXELS
+# ============================================================
 
 def _sample_training_pixels(
     features: np.ndarray,
@@ -402,26 +695,45 @@ def _sample_training_pixels(
     Create a balanced supervised dataset.
 
     Positive:
-        treecover2000 >= threshold AND lossyear in 2024/2025
+        treecover2000 >= threshold
+        AND lossyear in 2024/2025
 
     Negative:
-        treecover2000 >= threshold AND lossyear == 0
+        treecover2000 >= threshold
+        AND lossyear == 0
 
-    Existing ECO-SENTINEL detection_class is deliberately NOT used.
+    Existing ECO-SENTINEL detection_class is deliberately
+    NOT used.
+
+    The row/col coordinates of every sampled pixel are retained
+    so spatial/contextual features can be calculated later.
     """
 
     tree_cover = reference[0]
+
     loss_year = reference[1]
 
     reference_forest = (
-        tree_cover >= TREE_COVER_THRESHOLD
+        tree_cover
+        >= TREE_COVER_THRESHOLD
     )
+
+    # --------------------------------------------------------
+    # Positive samples
+    # --------------------------------------------------------
 
     positive_mask = (
         valid_mask
         & reference_forest
-        & np.isin(loss_year, [24, 25])
+        & np.isin(
+            loss_year,
+            [24, 25],
+        )
     )
+
+    # --------------------------------------------------------
+    # Negative samples
+    # --------------------------------------------------------
 
     negative_mask = (
         valid_mask
@@ -437,7 +749,9 @@ def _sample_training_pixels(
         negative_mask.ravel()
     )
 
-    rng = np.random.default_rng(RANDOM_SEED)
+    rng = np.random.default_rng(
+        RANDOM_SEED
+    )
 
     positive_count = min(
         len(positive_indices),
@@ -450,16 +764,23 @@ def _sample_training_pixels(
     )
 
     if positive_count == 0:
+
         raise SupervisedDatasetError(
-            "No positive Hansen forest-loss samples were found "
-            "for 2024/2025 inside the project AOI."
+            "No positive Hansen forest-loss samples "
+            "were found for 2024/2025 inside the "
+            "project AOI."
         )
 
     if negative_count == 0:
+
         raise SupervisedDatasetError(
-            "No negative reference-forest samples were found "
-            "for the project AOI."
+            "No negative reference-forest samples "
+            "were found for the project AOI."
         )
+
+    # --------------------------------------------------------
+    # Random balanced sampling
+    # --------------------------------------------------------
 
     positive_indices = rng.choice(
         positive_indices,
@@ -480,10 +801,18 @@ def _sample_training_pixels(
         ]
     )
 
+    # --------------------------------------------------------
+    # Recover original raster coordinates
+    # --------------------------------------------------------
+
     rows, cols = np.unravel_index(
         selected_indices,
         valid_mask.shape,
     )
+
+    # --------------------------------------------------------
+    # Extract feature values
+    # --------------------------------------------------------
 
     X = features[
         :,
@@ -491,18 +820,47 @@ def _sample_training_pixels(
         cols,
     ].T
 
+    # --------------------------------------------------------
+    # Build labels
+    # --------------------------------------------------------
+
     labels = np.concatenate(
         [
-            np.ones(positive_count, dtype=np.int8),
-            np.zeros(negative_count, dtype=np.int8),
+            np.ones(
+                positive_count,
+                dtype=np.int8,
+            ),
+            np.zeros(
+                negative_count,
+                dtype=np.int8,
+            ),
         ]
     )
 
-    return pd.DataFrame(
+    # --------------------------------------------------------
+    # Build dataframe
+    # --------------------------------------------------------
+
+    dataframe = pd.DataFrame(
         X,
         columns=FEATURE_COLUMNS,
-    ).assign(label=labels)
+    )
 
+    # IMPORTANT:
+    # Preserve exact Sentinel raster coordinates.
+
+    dataframe["row"] = rows
+
+    dataframe["col"] = cols
+
+    dataframe["label"] = labels
+
+    return dataframe
+
+
+# ============================================================
+# BUILD TRAINING DATASET
+# ============================================================
 
 def build_training_dataset(
     base_path: str | None = None,
@@ -516,36 +874,64 @@ def build_training_dataset(
     Build the supervised Random Forest training dataset.
 
     The Sentinel-2 rasters are the model inputs.
+
     Hansen is the independent reference label source.
     """
 
+    # --------------------------------------------------------
+    # Default Sentinel paths
+    # --------------------------------------------------------
+
     if base_path is None:
+
         base_path = os.path.join(
             FOREST_SAMPLES_DIR,
             "Forest_Sample_2023.tif",
         )
 
     if comparison_path is None:
+
         comparison_path = os.path.join(
             FOREST_SAMPLES_DIR,
             "Forest_Sample_2025.tif",
         )
 
-    if not os.path.exists(base_path):
+    # --------------------------------------------------------
+    # Validate Sentinel files
+    # --------------------------------------------------------
+
+    if not os.path.exists(
+        base_path
+    ):
+
         raise SupervisedDatasetError(
             f"Base raster not found: {base_path}"
         )
 
-    if not os.path.exists(comparison_path):
+    if not os.path.exists(
+        comparison_path
+    ):
+
         raise SupervisedDatasetError(
             f"Comparison raster not found: {comparison_path}"
         )
 
-    if not os.path.exists(reference_path):
+    # --------------------------------------------------------
+    # Hansen reference
+    # --------------------------------------------------------
+
+    if not os.path.exists(
+        reference_path
+    ):
+
         download_hansen_reference(
             output_path=reference_path,
             region_key=region_key,
         )
+
+    # --------------------------------------------------------
+    # Read Sentinel rasters
+    # --------------------------------------------------------
 
     base, base_profile = _read_sentinel_raster(
         base_path
@@ -555,26 +941,45 @@ def build_training_dataset(
         comparison_path
     )
 
+    # --------------------------------------------------------
+    # Validate dimensions
+    # --------------------------------------------------------
+
     if base.shape != comparison.shape:
+
         raise SupervisedDatasetError(
-            "Base and comparison rasters do not have "
-            "the same shape."
+            "Base and comparison rasters do not "
+            "have the same shape."
         )
+
+    # --------------------------------------------------------
+    # Validate spatial alignment
+    # --------------------------------------------------------
 
     if (
         base_profile["transform"]
         != comparison_profile["transform"]
-        or base_profile["crs"]
+        or
+        base_profile["crs"]
         != comparison_profile["crs"]
     ):
+
         raise SupervisedDatasetError(
             "Base and comparison rasters are not aligned."
         )
+
+    # --------------------------------------------------------
+    # Build change features
+    # --------------------------------------------------------
 
     features, valid_mask = _build_change_features(
         base,
         comparison,
     )
+
+    # --------------------------------------------------------
+    # Align Hansen reference
+    # --------------------------------------------------------
 
     reference = _reproject_reference_to_sentinel_grid(
         reference_path,
@@ -582,12 +987,20 @@ def build_training_dataset(
         base.shape[1:],
     )
 
+    # --------------------------------------------------------
+    # Sample balanced training pixels
+    # --------------------------------------------------------
+
     dataframe = _sample_training_pixels(
         features,
         valid_mask,
         reference,
         samples_per_class,
     )
+
+    # --------------------------------------------------------
+    # Save CSV
+    # --------------------------------------------------------
 
     os.makedirs(
         os.path.dirname(output_csv),
@@ -599,31 +1012,91 @@ def build_training_dataset(
         index=False,
     )
 
+    # --------------------------------------------------------
+    # Metadata
+    # --------------------------------------------------------
+
     metadata = {
-        "base_year": DEFAULT_YEAR_PAIR["base_year"],
-        "comparison_year": DEFAULT_YEAR_PAIR["comparison_year"],
-        "region": REGIONS[region_key],
+        "base_year": DEFAULT_YEAR_PAIR[
+            "base_year"
+        ],
+
+        "comparison_year": DEFAULT_YEAR_PAIR[
+            "comparison_year"
+        ],
+
+        "region": REGIONS[
+            region_key
+        ],
+
         "reference_dataset": HANSEN_DATASET,
-        "reference_treecover_threshold": TREE_COVER_THRESHOLD,
-        "positive_loss_years": [2024, 2025],
-        "feature_columns": FEATURE_COLUMNS,
-        "samples_per_class": samples_per_class,
-        "total_samples": int(len(dataframe)),
-        "positive_samples": int(
-            (dataframe["label"] == 1).sum()
-        ),
-        "negative_samples": int(
-            (dataframe["label"] == 0).sum()
-        ),
-        "output_csv": output_csv,
-        "reference_raster": reference_path,
-        "cloud_scl_codes": sorted(CLOUD_SCL_CODES),
+
+        "reference_treecover_threshold":
+            TREE_COVER_THRESHOLD,
+
+        "positive_loss_years": [
+            2024,
+            2025,
+        ],
+
+        "feature_columns":
+            FEATURE_COLUMNS,
+
+        "coordinate_columns": [
+            "row",
+            "col",
+        ],
+
+        "samples_per_class":
+            samples_per_class,
+
+        "total_samples":
+            int(len(dataframe)),
+
+        "positive_samples":
+            int(
+                (
+                    dataframe["label"]
+                    == 1
+                ).sum()
+            ),
+
+        "negative_samples":
+            int(
+                (
+                    dataframe["label"]
+                    == 0
+                ).sum()
+            ),
+
+        "output_csv":
+            output_csv,
+
+        "reference_raster":
+            reference_path,
+
+        "cloud_scl_codes":
+            sorted(
+                CLOUD_SCL_CODES
+            ),
+
+        "spatial_context_window": SPATIAL_WINDOW,
+        "spatial_context_features": [
+            "nbr_local_median_2023",
+            "nbr_local_median_2025",
+            "snbr_2023",
+            "snbr_2025",
+            "delta_snbr",
+            "nbr_change_zscore",
+        ],
     }
 
     with open(
         METADATA_JSON,
         "w",
+        encoding="utf-8",
     ) as f:
+
         json.dump(
             metadata,
             f,
@@ -633,7 +1106,12 @@ def build_training_dataset(
     return metadata
 
 
+# ============================================================
+# SCRIPT ENTRY POINT
+# ============================================================
+
 if __name__ == "__main__":
+
     result = build_training_dataset()
 
     print(

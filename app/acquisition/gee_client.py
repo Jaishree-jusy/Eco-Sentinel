@@ -53,9 +53,14 @@ class GEEAuthenticationError(Exception):
 class GEEAcquisitionError(Exception):
     pass
 
+def initialize_earth_engine(project=None):
+    """Initialize Earth Engine using locally stored credentials.
 
-def initialize_earth_engine():
-    """Initialize Earth Engine using locally stored credentials."""
+    Args:
+        project: GEE project ID string. If None, uses the GEE_PROJECT_ID
+                 from acquisition config. Explicitly pass a different project
+                 for isolated tests.
+    """
 
     if ee is None:
         raise GEEAuthenticationError(
@@ -63,13 +68,17 @@ def initialize_earth_engine():
             "Run: pip install earthengine-api"
         )
 
+    from app.acquisition.config import GEE_PROJECT_ID
+    resolved_project = project or GEE_PROJECT_ID
+
     try:
-        ee.Initialize()
+        ee.Initialize(project=resolved_project)
     except Exception as e:
         raise GEEAuthenticationError(
-            "Earth Engine is not authenticated on this machine. "
-            "Run:\n\n"
-            "    earthengine authenticate\n\n"
+            "Earth Engine initialization failed. "
+            f"Project: {resolved_project!r}. "
+            "Ensure credentials are valid (run: earthengine authenticate) "
+            "and the project ID in app/acquisition/config.py is correct.\n\n"
             f"(Original error: {e})"
         )
 
@@ -92,24 +101,37 @@ def find_best_image(
     max_cloud_cover_pct,
 ):
     """
-    Find the NEWEST suitable Sentinel-2 image.
+    Find the NEWEST, best-covering suitable Sentinel-2 image.
 
-    The search is restricted to:
-      - the supplied AOI
-      - the supplied date window
-      - the supplied maximum cloud-cover threshold
+    Selection strategy (in priority order):
+      1. Restrict to the supplied AOI, date window, and max cloud threshold.
+      2. Among qualifying images, identify the newest acquisition timestamp
+         (newest by system:time_start milliseconds, descending).
+      3. Among all images sharing that newest timestamp (same overpass,
+         different MGRS granules), select the one with the highest
+         AOI coverage fraction.
 
-    Among qualifying images, the newest acquisition is selected.
+    This avoids selecting a small adjacent granule (e.g. T43PDP, ~15% of
+    the AOI) when a co-temporal granule covers it much better (e.g.
+    T43PDQ, ~97%).
 
     Returns:
         (metadata, ee_image)
 
-    metadata is JSON serializable.
-    ee_image is the actual Earth Engine object and must never be
-    written into a manifest.
+    metadata is JSON serializable and includes:
+        - gee_image_id
+        - acquisition_date (ms since epoch)
+        - cloud_cover_pct
+        - aoi_coverage_pct  (fraction of the AOI covered by this granule, 0–100)
+        - selection_reason  (human-readable explanation of why this was chosen)
+
+    ee_image is the actual Earth Engine object (use for downloads only).
+
+    Returns (None, None) if no qualifying image is found.
     """
 
     region = _bbox_to_ee_geometry(bbox)
+    region_area = region.area(1).getInfo()
 
     collection = (
         ee.ImageCollection(COLLECTION)
@@ -121,7 +143,6 @@ def find_best_image(
                 max_cloud_cover_pct,
             )
         )
-        # IMPORTANT:
         # Newest acquisition first.
         .sort("system:time_start", False)
     )
@@ -131,21 +152,83 @@ def find_best_image(
     if count == 0:
         return None, None
 
-    image = collection.first()
+    if count == 1:
+        # Fast path: only one candidate.
+        image = collection.first()
+        info = image.getInfo()
+        props = info["properties"]
 
-    info = image.getInfo()
+        img_geom = image.geometry()
+        inter_area = region.intersection(img_geom, 1).area(1).getInfo()
+        coverage_pct = (inter_area / region_area * 100) if region_area > 0 else 0.0
+
+        metadata = {
+            "gee_image_id": info["id"],
+            "acquisition_date": props.get("system:time_start"),
+            "cloud_cover_pct": props.get(CLOUD_PROPERTY),
+            "aoi_coverage_pct": round(coverage_pct, 2),
+            "selection_reason": "only qualifying image in window",
+        }
+        return metadata, image
+
+    # -------------------------------------------------------------------
+    # Multiple candidates: find the newest timestamp, then pick the
+    # granule with the highest AOI coverage among same-timestamp images.
+    # -------------------------------------------------------------------
+
+    # Fetch the first image to get the newest timestamp.
+    newest_image = collection.first()
+    newest_info = newest_image.getInfo()
+    newest_ts = newest_info["properties"].get("system:time_start")
+
+    # Fetch all images sharing the same timestamp (same overpass).
+    img_list = collection.toList(50)
+    list_size = img_list.size().getInfo()
+
+    best_image = None
+    best_coverage_pct = -1.0
+    best_info = None
+
+    for i in range(list_size):
+        img = ee.Image(img_list.get(i))
+        info = img.getInfo()
+        ts = info["properties"].get("system:time_start")
+
+        # Stop when we move past the newest timestamp group.
+        if ts != newest_ts:
+            break
+
+        img_geom = img.geometry()
+        inter_area = region.intersection(img_geom, 1).area(1).getInfo()
+        coverage_pct = (inter_area / region_area * 100) if region_area > 0 else 0.0
+
+        if coverage_pct > best_coverage_pct:
+            best_coverage_pct = coverage_pct
+            best_image = img
+            best_info = info
+
+    if best_image is None:
+        # Fallback: return the newest image without coverage filter.
+        best_image = newest_image
+        best_info = newest_info
+        best_coverage_pct = 0.0
+
+    props = best_info["properties"]
 
     metadata = {
-        "gee_image_id": info["id"],
-        "acquisition_date": info["properties"].get(
-            "system:time_start"
-        ),
-        "cloud_cover_pct": info["properties"].get(
-            CLOUD_PROPERTY
+        "gee_image_id": best_info["id"],
+        "acquisition_date": props.get("system:time_start"),
+        "cloud_cover_pct": props.get(CLOUD_PROPERTY),
+        "aoi_coverage_pct": round(best_coverage_pct, 2),
+        "selection_reason": (
+            "highest AOI coverage among co-temporal granules"
+            if list_size > 1
+            else "only qualifying image in window"
         ),
     }
 
-    return metadata, image
+    return metadata, best_image
+
 
 
 def _compute_tile_bboxes(

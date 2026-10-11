@@ -390,6 +390,7 @@ def _acquire_live_comparison_imagery(
                 **metadata,
                 "was_new_download": False,
                 "was_realigned": was_realigned,
+                "local_path": aligned_path,
             },
             False,
         )
@@ -491,6 +492,7 @@ def _acquire_live_comparison_imagery(
             "was_new_download": True,
             "was_realigned": was_realigned,
             "acquired_at": acquired_at,
+            "local_path": aligned_path,
         },
         True,
     )
@@ -565,7 +567,17 @@ def run_acquisition(
     # Step 1: Validate local/static datasets
     # =========================================================
 
+    
     catalog = build_catalog()
+    required_local_keys = _static_and_baseline_keys(base_year)
+
+    print("ACQUISITION GADM VALID:",
+          catalog["datasets"].get("gadm_forest_boundary", {}).get("valid"))
+    print("ACQUISITION REQUIRED KEYS:", required_local_keys)
+
+    missing_or_invalid = []
+    dataset_refs = {}
+
 
     required_local_keys = (
         _static_and_baseline_keys(
@@ -615,6 +627,26 @@ def run_acquisition(
         }
 
     if missing_or_invalid:
+        manifest_path = os.path.join(
+            ACQUISITION_RUNS_DIR,
+            f"run_{run_id}.json",
+        )
+        os.makedirs(ACQUISITION_RUNS_DIR, exist_ok=True)
+        with open(manifest_path, "w") as f:
+            json.dump({
+                "run_id": run_id,
+                "triggered_at": triggered_at,
+                "trigger_mode": trigger_mode,
+                "status": "failed",
+                "error_message": f"Required local datasets not valid: {missing_or_invalid}",
+                "forced": force,
+                "region": REGIONS.get(region_key, {}),
+                "base_year": base_year,
+                "comparison_year": comparison_year,
+                "datasets": dataset_refs,
+                "use_live_gee": use_live_gee,
+                "gee_metadata": None,
+            }, f, indent=2)
 
         _append_run_log(
             {
@@ -622,6 +654,7 @@ def run_acquisition(
                 "triggered_at": triggered_at,
                 "trigger_mode": trigger_mode,
                 "status": "failed",
+                "manifest_path": manifest_path,
                 "reason": missing_or_invalid,
             }
         )
@@ -629,7 +662,7 @@ def run_acquisition(
         raise AcquisitionError(
             "Acquisition run aborted - "
             "required local datasets "
-            f"not valid: "
+            "not valid: "
             f"{missing_or_invalid}"
         )
 
@@ -652,63 +685,98 @@ def run_acquisition(
     gee_meta = None
     is_new_acquisition = True
 
-    if use_live_gee:
+    try:
+        if use_live_gee:
 
-        (
-            comparison_ref,
-            gee_meta,
-            is_new_acquisition,
-        ) = (
-            _acquire_live_comparison_imagery(
-                region_bbox,
-                comparison_year,
-                run_id,
-                baseline_path,
-            )
-        )
-
-        dataset_refs[
-            f"forest_sample_{comparison_year}"
-        ] = comparison_ref
-
-    else:
-
-        if (
-            comparison_year
-            not in YEAR_TO_DATASET_KEYS
-        ):
-            raise AcquisitionError(
-                "use_live_gee=False requires "
-                f"a registered local dataset "
-                f"for year {comparison_year}."
+            (
+                comparison_ref,
+                gee_meta,
+                is_new_acquisition,
+            ) = (
+                _acquire_live_comparison_imagery(
+                    region_bbox,
+                    comparison_year,
+                    run_id,
+                    baseline_path,
+                )
             )
 
-        key = (
-            YEAR_TO_DATASET_KEYS[
+            dataset_refs[
+                f"forest_sample_{comparison_year}"
+            ] = comparison_ref
+
+        else:
+
+            if (
                 comparison_year
-            ]["raw_imagery"]
-        )
+                not in YEAR_TO_DATASET_KEYS
+            ):
+                raise AcquisitionError(
+                    "use_live_gee=False requires "
+                    f"a registered local dataset "
+                    f"for year {comparison_year}."
+                )
 
-        record = (
-            catalog["datasets"]
-            .get(key)
-        )
-
-        if (
-            record is None
-            or not record["valid"]
-        ):
-            raise AcquisitionError(
-                f"Local comparison dataset "
-                f"'{key}' is missing or invalid."
+            key = (
+                YEAR_TO_DATASET_KEYS[
+                    comparison_year
+                ]["raw_imagery"]
             )
 
-        dataset_refs[key] = {
-            "path": record["path"],
-            "type": record["type"],
-            "role": record["role"],
-            "sha256": record["sha256"],
-        }
+            record = (
+                catalog["datasets"]
+                .get(key)
+            )
+
+            if (
+                record is None
+                or not record["valid"]
+            ):
+                raise AcquisitionError(
+                    f"Local comparison dataset "
+                    f"'{key}' is missing or invalid."
+                )
+
+            dataset_refs[key] = {
+                "path": record["path"],
+                "type": record["type"],
+                "role": record["role"],
+                "sha256": record["sha256"],
+            }
+
+    except Exception as e:
+        manifest_path = os.path.join(
+            ACQUISITION_RUNS_DIR,
+            f"run_{run_id}.json",
+        )
+        os.makedirs(ACQUISITION_RUNS_DIR, exist_ok=True)
+        with open(manifest_path, "w") as f:
+            json.dump({
+                "run_id": run_id,
+                "triggered_at": triggered_at,
+                "trigger_mode": trigger_mode,
+                "status": "failed",
+                "error_message": str(e),
+                "forced": force,
+                "region": REGIONS.get(region_key, {}),
+                "base_year": base_year,
+                "comparison_year": comparison_year,
+                "datasets": dataset_refs,
+                "use_live_gee": use_live_gee,
+                "gee_metadata": None,
+            }, f, indent=2)
+
+        _append_run_log(
+            {
+                "run_id": run_id,
+                "triggered_at": triggered_at,
+                "trigger_mode": trigger_mode,
+                "status": "failed",
+                "manifest_path": manifest_path,
+                "error_message": str(e),
+            }
+        )
+        raise AcquisitionError(str(e)) if not isinstance(e, AcquisitionError) else e
 
     # =========================================================
     # Step 3: Determine run status

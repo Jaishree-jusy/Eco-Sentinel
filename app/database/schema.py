@@ -18,6 +18,7 @@ import sqlite3
 
 from app.config import DB_PATH
 
+
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS alerts (
     alert_id TEXT PRIMARY KEY,
@@ -35,10 +36,19 @@ CREATE TABLE IF NOT EXISTS alerts (
     geometry_geojson TEXT,
     synced_at TEXT NOT NULL
 );
-CREATE INDEX IF NOT EXISTS idx_alerts_branch ON alerts(branch);
-CREATE INDEX IF NOT EXISTS idx_alerts_severity ON alerts(severity_level);
-CREATE INDEX IF NOT EXISTS idx_alerts_region ON alerts(region_division);
-CREATE INDEX IF NOT EXISTS idx_alerts_area_type ON alerts(region_area_type);
+
+CREATE INDEX IF NOT EXISTS idx_alerts_branch
+    ON alerts(branch);
+
+CREATE INDEX IF NOT EXISTS idx_alerts_severity
+    ON alerts(severity_level);
+
+CREATE INDEX IF NOT EXISTS idx_alerts_region
+    ON alerts(region_division);
+
+CREATE INDEX IF NOT EXISTS idx_alerts_area_type
+    ON alerts(region_area_type);
+
 
 CREATE TABLE IF NOT EXISTS evidence (
     alert_id TEXT PRIMARY KEY REFERENCES alerts(alert_id),
@@ -50,6 +60,7 @@ CREATE TABLE IF NOT EXISTS evidence (
     synced_at TEXT NOT NULL
 );
 
+
 CREATE TABLE IF NOT EXISTS blockchain_blocks (
     block_index INTEGER PRIMARY KEY,
     alert_id TEXT NOT NULL,
@@ -59,7 +70,10 @@ CREATE TABLE IF NOT EXISTS blockchain_blocks (
     timestamp TEXT NOT NULL,
     synced_at TEXT NOT NULL
 );
-CREATE INDEX IF NOT EXISTS idx_blocks_alert ON blockchain_blocks(alert_id);
+
+CREATE INDEX IF NOT EXISTS idx_blocks_alert
+    ON blockchain_blocks(alert_id);
+
 
 CREATE TABLE IF NOT EXISTS pipeline_runs (
     pipeline_run_id TEXT PRIMARY KEY,
@@ -81,6 +95,7 @@ CREATE TABLE IF NOT EXISTS pipeline_runs (
     blockchain_run_id TEXT
 );
 
+
 CREATE TABLE IF NOT EXISTS gee_acquisitions (
     gee_image_id TEXT PRIMARY KEY,
     local_path TEXT NOT NULL,
@@ -91,29 +106,51 @@ CREATE TABLE IF NOT EXISTS gee_acquisitions (
 );
 """
 
-# New nullable columns added to the existing `alerts` table for the
-# AI/legality layers. Additive only - existing rows keep all their
-# existing values; new columns are simply NULL until re-synced.
+
+# Nullable columns added to the existing `alerts` table for
+# AI/ML/legality layers.
+#
+# Additive only:
+# - Existing rows are preserved.
+# - Existing historical AI fields remain available.
+# - Current Random Forest fields are added without deleting
+#   or renaming anything.
 _NEW_ALERT_COLUMNS = [
+    # Historical/legacy detection field.
     ("ai_disturbance_score", "REAL"),
+
+    # Current supervised ML detection fields.
     ("detection_class", "TEXT"),
+    ("ml_confidence", "REAL"),
+
+    # Legality / downstream classification fields.
     ("legality_status", "TEXT"),
     ("matched_authorization_id", "TEXT"),
+    ("final_category", "TEXT"),
 ]
 
 
 def _apply_alert_column_migrations(conn):
-    existing_columns = {row[1] for row in conn.execute("PRAGMA table_info(alerts)").fetchall()}
+    existing_columns = {
+        row[1]
+        for row in conn.execute("PRAGMA table_info(alerts)").fetchall()
+    }
+
     for column_name, column_type in _NEW_ALERT_COLUMNS:
         if column_name not in existing_columns:
-            conn.execute(f"ALTER TABLE alerts ADD COLUMN {column_name} {column_type}")
+            conn.execute(
+                f"ALTER TABLE alerts ADD COLUMN {column_name} {column_type}"
+            )
 
 
 def get_connection(db_path=None):
     db_path = db_path or DB_PATH
+
     os.makedirs(os.path.dirname(db_path), exist_ok=True)
+
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
+
     # Idempotent - CREATE TABLE IF NOT EXISTS is a cheap no-op once the
     # schema already exists. Guarantees every query sees existing tables,
     # even on a totally fresh database (e.g. the dashboard is started
@@ -121,7 +158,10 @@ def get_connection(db_path=None):
     # without this, queries would crash with "no such table" instead of
     # gracefully returning "no data yet".
     conn.executescript(SCHEMA)
+
+    # Apply additive migrations for alert fields.
     _apply_alert_column_migrations(conn)
+
     return conn
 
 

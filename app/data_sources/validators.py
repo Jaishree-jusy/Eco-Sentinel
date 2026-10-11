@@ -1,20 +1,19 @@
+
 """
 Validators for each dataset type used in ECO-SENTINEL Module 1.
 
-Each validator takes a file path and returns a dict:
+Each validator returns:
     {
         "valid": bool,
-        "errors": [str, ...],     # empty if valid
-        "warnings": [str, ...],   # non-fatal issues
-        "metadata": {...}          # type-specific metadata for the catalog
+        "errors": [str, ...],
+        "warnings": [str, ...],
+        "metadata": {...}
     }
-
-Design note: a "warning" does not fail validation (e.g. CRS mismatch between
-rasters is worth flagging now, but Module 3/5 will reproject as needed rather
-than blocking us at ingestion time).
 """
 
 import os
+import traceback
+
 import rasterio
 import fiona
 import geopandas as gpd
@@ -24,12 +23,16 @@ from app.data_sources.config import REQUIRED_FIRE_CSV_COLUMNS
 
 
 def _base_result():
-    return {"valid": True, "errors": [], "warnings": [], "metadata": {}}
+    return {
+        "valid": True,
+        "errors": [],
+        "warnings": [],
+        "metadata": {},
+    }
 
 
 def validate_raster(path):
-    """Validate a GeoTIFF: file opens, has a CRS, has at least one band,
-    has non-zero dimensions, and bounds are sane."""
+    """Validate a GeoTIFF and collect its metadata."""
     result = _base_result()
 
     if not os.path.exists(path):
@@ -62,21 +65,31 @@ def validate_raster(path):
                     "right": src.bounds.right,
                     "top": src.bounds.top,
                 },
-                "resolution": {"x": src.res[0], "y": src.res[1]},
+                "resolution": {
+                    "x": src.res[0],
+                    "y": src.res[1],
+                },
                 "dtype": src.dtypes[0] if src.count > 0 else None,
                 "nodata": src.nodata,
             }
 
     except Exception as e:
         result["valid"] = False
-        result["errors"].append(f"Could not open raster: {e}")
+        result["errors"].append(
+            f"Could not open raster: {type(e).__name__}: {e}"
+        )
 
     return result
 
 
 def validate_gpkg(path):
-    """Validate a GeoPackage: file opens, has at least one layer with
-    geometries, and has a CRS."""
+    """
+    Validate a GeoPackage by checking its layers, reading a layer,
+    and collecting metadata.
+
+    Geometry validity checks are warnings only. A geometry-operation
+    error must not invalidate a readable GeoPackage.
+    """
     result = _base_result()
 
     if not os.path.exists(path):
@@ -85,8 +98,6 @@ def validate_gpkg(path):
         return result
 
     try:
-        # fiona.listlayers is stable across geopandas versions (unlike
-        # gpd.list_layers, which isn't available in older geopandas releases).
         layer_names = fiona.listlayers(path)
 
         if not layer_names:
@@ -94,44 +105,80 @@ def validate_gpkg(path):
             result["errors"].append("GeoPackage contains no layers")
             return result
 
-        # Read the first layer to confirm it actually loads and has geometry.
-        gdf = gpd.read_file(path, layer=layer_names[0])
+        layer_name = layer_names[0]
+        gdf = gpd.read_file(path, layer=layer_name)
 
         if gdf.empty:
             result["valid"] = False
-            result["errors"].append(f"Layer '{layer_names[0]}' has no features")
+            result["errors"].append(
+                f"Layer '{layer_name}' has no features"
+            )
 
         if gdf.crs is None:
             result["valid"] = False
-            result["errors"].append("GeoPackage layer has no CRS defined")
+            result["errors"].append(
+                "GeoPackage layer has no CRS defined"
+            )
 
-        invalid_geom_count = (~gdf.geometry.is_valid).sum() if not gdf.empty else 0
-        if invalid_geom_count > 0:
+        # Geometry validation is non-fatal.
+        # Catch errors from Shapely/GEOS or incompatible geometry types.
+        try:
+            if not gdf.empty and gdf.geometry is not None:
+                invalid_geom_count = int(
+                    (~gdf.geometry.is_valid).sum()
+                )
+
+                if invalid_geom_count:
+                    result["warnings"].append(
+                        f"{invalid_geom_count} invalid geometries "
+                        f"found in layer '{layer_name}'"
+                    )
+
+        except Exception as geom_error:
             result["warnings"].append(
-                f"{invalid_geom_count} invalid geometries found in layer '{layer_names[0]}'"
+                "Geometry validity check could not be completed: "
+                f"{type(geom_error).__name__}: {geom_error}"
+            )
+
+        # Collect metadata separately so a bounds/geometry operation
+        # failure does not erase successful layer-reading results.
+        bounds = None
+        try:
+            if not gdf.empty:
+                bounds = [
+                    float(value) for value in gdf.total_bounds
+                ]
+        except Exception as bounds_error:
+            result["warnings"].append(
+                "Could not calculate layer bounds: "
+                f"{type(bounds_error).__name__}: {bounds_error}"
             )
 
         result["metadata"] = {
             "layers": layer_names,
-            "primary_layer": layer_names[0],
+            "primary_layer": layer_name,
             "feature_count": len(gdf),
             "crs": str(gdf.crs) if gdf.crs else None,
             "columns": list(gdf.columns),
-            "bounds": list(gdf.total_bounds) if not gdf.empty else None,
+            "bounds": bounds,
         }
 
     except Exception as e:
         result["valid"] = False
-        result["errors"].append(f"Could not open GeoPackage: {e}")
+        result["errors"].append(
+            f"Could not open GeoPackage: "
+            f"{type(e).__name__}: {e}\n{traceback.format_exc()}"
+        )
 
     return result
 
 
 def validate_csv(path, required_columns=None):
-    """Validate a CSV: file opens, is non-empty, and has the required columns
-    (defaults to the FIRMS fire-archive schema)."""
+    """Validate a CSV and check its required columns."""
     result = _base_result()
-    required_columns = required_columns or REQUIRED_FIRE_CSV_COLUMNS
+    required_columns = (
+        required_columns or REQUIRED_FIRE_CSV_COLUMNS
+    )
 
     if not os.path.exists(path):
         result["valid"] = False
@@ -146,34 +193,60 @@ def validate_csv(path, required_columns=None):
             result["errors"].append("CSV has no rows")
             return result
 
-        missing_cols = [c for c in required_columns if c not in df.columns]
+        missing_cols = [
+            column
+            for column in required_columns
+            if column not in df.columns
+        ]
+
         if missing_cols:
             result["valid"] = False
-            result["errors"].append(f"Missing required columns: {missing_cols}")
+            result["errors"].append(
+                f"Missing required columns: {missing_cols}"
+            )
 
-        # Sanity-check lat/lon ranges if those columns exist.
         if "latitude" in df.columns:
-            bad_lat = df[(df["latitude"] < -90) | (df["latitude"] > 90)]
+            bad_lat = df[
+                (df["latitude"] < -90)
+                | (df["latitude"] > 90)
+            ]
             if not bad_lat.empty:
-                result["warnings"].append(f"{len(bad_lat)} rows have out-of-range latitude")
+                result["warnings"].append(
+                    f"{len(bad_lat)} rows have out-of-range latitude"
+                )
 
         if "longitude" in df.columns:
-            bad_lon = df[(df["longitude"] < -180) | (df["longitude"] > 180)]
+            bad_lon = df[
+                (df["longitude"] < -180)
+                | (df["longitude"] > 180)
+            ]
             if not bad_lon.empty:
-                result["warnings"].append(f"{len(bad_lon)} rows have out-of-range longitude")
+                result["warnings"].append(
+                    f"{len(bad_lon)} rows have out-of-range longitude"
+                )
 
         result["metadata"] = {
             "row_count": len(df),
             "columns": list(df.columns),
             "date_range": {
-                "min": str(df["acq_date"].min()) if "acq_date" in df.columns else None,
-                "max": str(df["acq_date"].max()) if "acq_date" in df.columns else None,
+                "min": (
+                    str(df["acq_date"].min())
+                    if "acq_date" in df.columns
+                    else None
+                ),
+                "max": (
+                    str(df["acq_date"].max())
+                    if "acq_date" in df.columns
+                    else None
+                ),
             },
         }
 
     except Exception as e:
         result["valid"] = False
-        result["errors"].append(f"Could not read CSV: {e}")
+        result["errors"].append(
+            f"Could not read CSV: {type(e).__name__}: {e}"
+        )
 
     return result
 

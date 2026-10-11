@@ -118,6 +118,8 @@ def run_full_pipeline(
                 "pipeline_run_id": pipeline_run_id, "status": "no_new_data",
                 "message": "No new satellite imagery available - downstream pipeline not rerun, previous results preserved.",
                 "stage_run_ids": stage_run_ids,
+                "gee_metadata": acq_manifest.get("gee_metadata"),
+                "acquisition_manifest": acq_manifest,
             }
 
         try:
@@ -183,6 +185,8 @@ def run_full_pipeline(
         return {
             "pipeline_run_id": pipeline_run_id, "status": "success",
             "stage_run_ids": stage_run_ids, "sync_stats": sync_stats,
+            "gee_metadata": acq_manifest.get("gee_metadata"),
+            "acquisition_manifest": acq_manifest,
         }
 
     except PipelineRunError as e:

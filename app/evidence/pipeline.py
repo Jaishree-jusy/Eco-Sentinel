@@ -1,11 +1,9 @@
-"""
-Module 8 pipeline orchestration.
 
-run_evidence_generation() takes the latest Module 7 alert list (inside
-forest only - Module 7A/outside-forest alerts explicitly skip evidence
-generation and blockchain per the architecture) and produces, per alert:
-a PDF report, JSON metadata, single-feature GeoJSON, and a true-color map
-snapshot.
+"""
+Module 8 evidence pipeline.
+
+Supports explicit source imagery and writes each run to a separate folder.
+Does not modify acquisition manifests, existing evidence, alerts, or blockchain.
 """
 
 import os
@@ -34,46 +32,72 @@ def _find_latest(pattern, timestamp_key):
     candidates = []
     for path in glob.glob(pattern):
         try:
-            with open(path) as f:
+            with open(path, encoding="utf-8") as f:
                 data = json.load(f)
-            candidates.append((data[timestamp_key], path, data))
-        except (json.JSONDecodeError, KeyError):
+            candidates.append((data[timestamp_key], data))
+        except (OSError, json.JSONDecodeError, KeyError):
             continue
+
     if not candidates:
         return None
-    candidates.sort(key=lambda x: x[0])
-    return candidates[-1][2]
+
+    candidates.sort(key=lambda item: item[0])
+    return candidates[-1][1]
 
 
 def _find_latest_alert_manifest():
-    manifest = _find_latest(os.path.join(ALERTS_DIR, "alert_generation_*.json"), "generated_at")
+    manifest = _find_latest(
+        os.path.join(ALERTS_DIR, "alert_generation_*.json"),
+        "generated_at",
+    )
     if manifest is None:
-        raise EvidenceGenerationError(
-            "No Module 7 alert-generation manifest found. Run Module 7 "
-            "(python -m app.alerts.cli generate) first."
-        )
+        raise EvidenceGenerationError("No alert-generation manifest found.")
     return manifest
 
 
 def _find_latest_boundary_check_manifest():
-    manifest = _find_latest(os.path.join(BOUNDARY_CHECK_DIR, "boundary_check_*.json"), "checked_at")
+    manifest = _find_latest(
+        os.path.join(BOUNDARY_CHECK_DIR, "boundary_check_*.json"),
+        "checked_at",
+    )
     if manifest is None:
-        raise EvidenceGenerationError(
-            "No Module 6 boundary-check manifest found. Run Module 6 first."
-        )
+        raise EvidenceGenerationError("No boundary-check manifest found.")
     return manifest
 
 
 def _find_latest_acquisition_manifest():
-    manifest = _find_latest(os.path.join(ACQUISITION_RUNS_DIR, "run_*.json"), "triggered_at")
+    manifest = _find_latest(
+        os.path.join(ACQUISITION_RUNS_DIR, "run_*.json"),
+        "triggered_at",
+    )
     if manifest is None:
-        raise EvidenceGenerationError(
-            "No Module 2 acquisition manifest found. Run Module 2 first."
-        )
+        raise EvidenceGenerationError("No acquisition manifest found.")
     return manifest
 
 
-def run_evidence_generation(alert_manifest=None, boundary_manifest=None, acquisition_manifest=None, limit=None):
+def run_evidence_generation(
+    alert_manifest=None,
+    boundary_manifest=None,
+    acquisition_manifest=None,
+    limit=None,
+    raw_imagery_path=None,
+    source_metadata=None,
+    output_root=None,
+):
+    """
+    Generate evidence for inside-forest alerts.
+
+    raw_imagery_path:
+        Optional explicit raster path. When supplied, the historical
+        acquisition manifest is read but never modified.
+
+    source_metadata:
+        Optional verified acquisition/comparison metadata for PDFs and JSON.
+
+    output_root:
+        Optional parent folder for isolated evidence output. A unique
+        subfolder is created for every run.
+    """
     if alert_manifest is None:
         alert_manifest = _find_latest_alert_manifest()
     if boundary_manifest is None:
@@ -83,39 +107,75 @@ def run_evidence_generation(alert_manifest=None, boundary_manifest=None, acquisi
 
     inside_alerts_path = alert_manifest["inside_forest_alerts"]["path"]
     inside_geojson_path = boundary_manifest["inside_forest"]["path"]
-    comparison_year = boundary_manifest["comparison_year"]
 
-    raw_imagery_key = f"forest_sample_{comparison_year}"
-    if raw_imagery_key not in acquisition_manifest["datasets"]:
-        raise EvidenceGenerationError(f"Acquisition manifest missing '{raw_imagery_key}'.")
-    raw_imagery_path = acquisition_manifest["datasets"][raw_imagery_key]["path"]
+    comparison_year = str(boundary_manifest["comparison_year"])
+    base_year = str(boundary_manifest.get("base_year", "Unknown"))
 
-    if not os.path.exists(inside_alerts_path):
-        raise EvidenceGenerationError(f"Inside-forest alerts file not found: {inside_alerts_path}")
-    if not os.path.exists(inside_geojson_path):
-        raise EvidenceGenerationError(f"Inside-forest GeoJSON not found: {inside_geojson_path}")
+    # Only use the explicit raster when the caller has supplied one.
+    # Otherwise retain the original manifest-key lookup behavior.
+    if raw_imagery_path is None:
+        raw_imagery_key = f"forest_sample_{comparison_year}"
+        if raw_imagery_key not in acquisition_manifest.get("datasets", {}):
+            raise EvidenceGenerationError(
+                f"Acquisition manifest missing '{raw_imagery_key}'. "
+                "Supply raw_imagery_path explicitly for a verified source raster."
+            )
+        raw_imagery_path = acquisition_manifest["datasets"][
+            raw_imagery_key
+        ]["path"]
 
-    with open(inside_alerts_path) as f:
+    if not os.path.isfile(inside_alerts_path):
+        raise EvidenceGenerationError(
+            f"Inside-forest alerts file not found: {inside_alerts_path}"
+        )
+    if not os.path.isfile(inside_geojson_path):
+        raise EvidenceGenerationError(
+            f"Inside-forest GeoJSON not found: {inside_geojson_path}"
+        )
+    if not os.path.isfile(raw_imagery_path):
+        raise EvidenceGenerationError(
+            f"Source raster not found: {raw_imagery_path}"
+        )
+
+    with open(inside_alerts_path, encoding="utf-8") as f:
         alerts = json.load(f)
 
     if limit is not None:
+        if not isinstance(limit, int) or limit < 1:
+            raise EvidenceGenerationError("limit must be a positive integer.")
         alerts = alerts[:limit]
 
     if not alerts:
         raise EvidenceGenerationError("No inside-forest alerts to process.")
 
     polygons_gdf = gpd.read_file(inside_geojson_path)
-    geometry_by_polygon_id = dict(zip(polygons_gdf["polygon_id"], polygons_gdf.geometry))
+    geometry_by_polygon_id = dict(
+        zip(polygons_gdf["polygon_id"], polygons_gdf.geometry)
+    )
     crs = polygons_gdf.crs
 
+    # Keep all outputs isolated from historical evidence folders.
     run_id = str(uuid.uuid4())
-    os.makedirs(EVIDENCE_STORE_DIR, exist_ok=True)
+    parent_dir = output_root or EVIDENCE_STORE_DIR
+    run_evidence_root = os.path.join(parent_dir, f"evidence_run_{run_id}")
+    os.makedirs(run_evidence_root, exist_ok=False)
+
+    source_info = dict(source_metadata or {})
+    source_info.setdefault("base_year", base_year)
+    source_info.setdefault("comparison_year", comparison_year)
+    source_info.setdefault(
+        "comparison_period", f"{base_year} vs {comparison_year}"
+    )
+    source_info.setdefault(
+        "source_acquisition_run_id", acquisition_manifest.get("run_id")
+    )
+    source_info["source_raster_path"] = os.path.abspath(raw_imagery_path)
 
     evidence_records = []
     failed = []
     skipped_already_done = 0
     total = len(alerts)
-    progress_interval = max(1, total // 20)  # ~20 progress lines regardless of total size
+    progress_interval = max(1, total // 20)
 
     with rasterio.open(raw_imagery_path) as raster_src:
         for i, alert in enumerate(alerts, start=1):
@@ -124,33 +184,15 @@ def run_evidence_generation(alert_manifest=None, boundary_manifest=None, acquisi
             geometry = geometry_by_polygon_id.get(polygon_id)
 
             if geometry is None:
-                failed.append({"alert_id": alert_id, "reason": f"No geometry found for polygon_id {polygon_id}"})
-                continue
-
-            alert_dir = os.path.join(EVIDENCE_STORE_DIR, alert_id)
-            expected_files = [
-                os.path.join(alert_dir, "map_snapshot.png"),
-                os.path.join(alert_dir, "polygon.geojson"),
-                os.path.join(alert_dir, "report.pdf"),
-                os.path.join(alert_dir, "metadata.json"),
-            ]
-
-            # Resumability: if this alert's evidence was already fully
-            # generated by a previous (possibly interrupted) run, skip it
-            # rather than redoing expensive work.
-            if all(os.path.exists(p) for p in expected_files):
-                skipped_already_done += 1
-                evidence_records.append({
+                failed.append({
                     "alert_id": alert_id,
-                    "evidence_dir": alert_dir,
-                    "map_snapshot": expected_files[0],
-                    "geojson": expected_files[1],
-                    "pdf_report": expected_files[2],
-                    "metadata": expected_files[3],
+                    "reason": f"No geometry found for polygon_id {polygon_id}",
                 })
                 continue
 
-            os.makedirs(alert_dir, exist_ok=True)
+            # New folder per run; never reuse or overwrite old alert evidence.
+            alert_dir = os.path.join(run_evidence_root, str(alert_id))
+            os.makedirs(alert_dir, exist_ok=False)
 
             try:
                 map_path = os.path.join(alert_dir, "map_snapshot.png")
@@ -160,13 +202,23 @@ def run_evidence_generation(alert_manifest=None, boundary_manifest=None, acquisi
                 export_alert_geojson(alert, geometry, crs, geojson_path)
 
                 pdf_path = os.path.join(alert_dir, "report.pdf")
-                generate_pdf_report(alert, map_path, pdf_path)
+                generate_pdf_report(
+                    alert,
+                    map_path,
+                    pdf_path,
+                    source_metadata=source_info,
+                )
 
                 metadata_path = os.path.join(alert_dir, "metadata.json")
                 build_and_write_metadata(
                     alert,
-                    {"map_snapshot": map_path, "geojson": geojson_path, "pdf_report": pdf_path},
+                    {
+                        "map_snapshot": map_path,
+                        "geojson": geojson_path,
+                        "pdf_report": pdf_path,
+                    },
                     metadata_path,
+                    source_metadata=source_info,
                 )
 
                 evidence_records.append({
@@ -177,28 +229,42 @@ def run_evidence_generation(alert_manifest=None, boundary_manifest=None, acquisi
                     "pdf_report": pdf_path,
                     "metadata": metadata_path,
                 })
-            except Exception as e:
-                failed.append({"alert_id": alert_id, "reason": str(e)})
+
+            except Exception as exc:
+                failed.append({
+                    "alert_id": alert_id,
+                    "reason": str(exc),
+                })
 
             if i % progress_interval == 0 or i == total:
-                print(f"  ...processed {i}/{total} alerts "
-                      f"({len(evidence_records)} done, {len(failed)} failed, {skipped_already_done} skipped)")
+                print(
+                    f"  ...processed {i}/{total} alerts "
+                    f"({len(evidence_records)} done, "
+                    f"{len(failed)} failed, "
+                    f"{skipped_already_done} skipped)"
+                )
 
     manifest = {
         "run_id": run_id,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source_alert_generation_run_id": alert_manifest.get("run_id"),
+        "source_boundary_check_run_id": boundary_manifest.get("run_id"),
+        "source_acquisition_run_id": acquisition_manifest.get("run_id"),
+        "source_imagery": source_info,
         "requested_limit": limit,
         "total_alerts_processed": len(alerts),
         "successful": len(evidence_records),
         "skipped_already_done": skipped_already_done,
         "failed": len(failed),
         "failures": failed,
+        "evidence_root": run_evidence_root,
         "evidence_records": evidence_records,
     }
 
-    manifest_path = os.path.join(EVIDENCE_STORE_DIR, f"evidence_generation_{run_id}.json")
-    with open(manifest_path, "w") as f:
+    manifest_path = os.path.join(
+        run_evidence_root, f"evidence_generation_{run_id}.json"
+    )
+    with open(manifest_path, "x", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
 
     manifest["manifest_path"] = manifest_path

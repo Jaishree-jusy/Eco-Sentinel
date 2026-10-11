@@ -161,6 +161,21 @@ def trigger_now(
     )
 
 
+_scheduler = None
+
+
+def get_scheduler():
+    """Return the active BackgroundScheduler instance if any."""
+    global _scheduler
+    return _scheduler
+
+
+def is_scheduler_running():
+    """Return True if the background live-monitoring scheduler is active."""
+    global _scheduler
+    return _scheduler is not None and _scheduler.running
+
+
 def start_scheduler():
     """
     Start the automatic live-monitoring scheduler.
@@ -173,6 +188,12 @@ def start_scheduler():
     image has already been processed. Only a genuinely new image
     proceeds through the full pipeline.
     """
+
+    global _scheduler
+
+    if _scheduler is not None and _scheduler.running:
+        logger.info("Live-monitoring scheduler is already running.")
+        return _scheduler
 
     scheduler = BackgroundScheduler()
 
@@ -190,6 +211,7 @@ def start_scheduler():
     )
 
     scheduler.start()
+    _scheduler = scheduler
 
     logger.info(
         "Live-monitoring scheduler started. "
@@ -197,3 +219,14 @@ def start_scheduler():
     )
 
     return scheduler
+
+
+def stop_scheduler():
+    """Stop the background live-monitoring scheduler if running."""
+    global _scheduler
+    if _scheduler is not None:
+        try:
+            if _scheduler.running:
+                _scheduler.shutdown(wait=False)
+        finally:
+            _scheduler = None

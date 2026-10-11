@@ -45,6 +45,11 @@ GEE_ACQUISITION_WINDOW_DAYS = 30  # search the most recent N days for a usable i
 GEE_OUTPUT_DIR_NAME = "forest_samples"  # same folder as historical files
 GEE_IMAGE_REGISTRY_PATH_NAME = "gee_image_registry.json"
 
+# Google Earth Engine project ID required for ee.Initialize().
+# Calling ee.Initialize() without this project ID fails with
+# "no project found" on this authenticated machine.
+GEE_PROJECT_ID = "ecosentinel-503413"
+
 # Maps a year to the dataset registry keys (from Module 1) needed for that year.
 # Module 3 onward reads dataset paths from the manifest, not from this map directly.
 YEAR_TO_DATASET_KEYS = {

@@ -26,3 +26,6 @@ scikit-learn==1.7.2
 
 # --- Utilities ---
 python-dotenv==1.0.1
+
+flask-cors
+gunicorn
