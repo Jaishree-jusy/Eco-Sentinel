@@ -46,6 +46,26 @@ def _find_latest(directory, prefix, timestamp_key):
     return candidates[-1][2]
 
 
+def _resolve_data_path(path, directory):
+    """Resolve manifest paths across Windows and Linux deployments.
+
+    Manifests may contain absolute paths from the machine that generated
+    them. If that path does not exist here, try the filename in the expected
+    data directory. Return None if neither path exists.
+    """
+    if not path:
+        return None
+
+    if os.path.exists(path):
+        return path
+
+    candidate = os.path.join(directory, os.path.basename(path))
+    if os.path.exists(candidate):
+        return candidate
+
+    return None
+
+
 def _load_geometry_lookup(boundary_manifest):
     """polygon_id -> GeoJSON geometry string, from both branches'
     boundary-check output (source of truth for shapes)."""
@@ -53,9 +73,12 @@ def _load_geometry_lookup(boundary_manifest):
     lookup = {}
 
     for key in ("inside_forest", "outside_forest"):
-        path = boundary_manifest[key]["path"]
+        path = _resolve_data_path(
+            boundary_manifest[key]["path"],
+            BOUNDARY_CHECK_DIR,
+        )
 
-        if not os.path.exists(path):
+        if not path:
             continue
 
         gdf = gpd.read_file(path)
@@ -107,9 +130,12 @@ def sync_database(db_path=None):
         # Inside-forest alerts
         # --------------------------------------------------------------
 
-        inside_path = alert_manifest["inside_forest_alerts"]["path"]
+        inside_path = _resolve_data_path(
+            alert_manifest["inside_forest_alerts"]["path"],
+            ALERTS_DIR,
+        )
 
-        if os.path.exists(inside_path):
+        if inside_path:
 
             with open(inside_path) as f:
                 inside_alerts = json.load(f)
@@ -206,9 +232,12 @@ def sync_database(db_path=None):
         # Outside-forest alerts
         # --------------------------------------------------------------
 
-        outside_path = alert_manifest["outside_forest_alerts"]["path"]
+        outside_path = _resolve_data_path(
+            alert_manifest["outside_forest_alerts"]["path"],
+            ALERTS_DIR,
+        )
 
-        if os.path.exists(outside_path):
+        if outside_path:
 
             with open(outside_path) as f:
                 outside_alerts = json.load(f)
